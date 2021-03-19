@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-03-19T08:17:11.491Z</updated>
+    <updated>2021-03-19T16:04:22.348Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Tangent617.github.io"/>
     <link rel="self" href="https://Tangent617.github.io/atom.xml"/>
@@ -10,6 +10,137 @@
     <logo>https://Tangent617.github.io/images/avatar.png</logo>
     <icon>https://Tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
+    <entry>
+        <title type="html"><![CDATA[阿里巴巴算法工程师笔试&面试]]></title>
+        <id>https://Tangent617.github.io/post/alibaba-algorithm-engineer-written-examination-and-interview/</id>
+        <link href="https://Tangent617.github.io/post/alibaba-algorithm-engineer-written-examination-and-interview/">
+        </link>
+        <updated>2021-03-19T15:17:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>持续更新，随测随更。🤗</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>持续更新，随测随更。🤗</p>
+<!-- more -->
+<h1 id="素质测评">素质测评</h1>
+<p>阿里素质测评总计50分钟左右，共四部分：文字理解、数学、图形推断、性格测试。前三部分每部分10题左右，每部分10分钟左右。性格测试我记得有98个题目，不计时，大概需要30分钟。</p>
+<h2 id="文字理解">文字理解</h2>
+<p>给一段话，做阅读理解。</p>
+<h2 id="数学">数学</h2>
+<p>读条形图、拆线图、饼图等统计图，然后计算给的题。</p>
+<h2 id="图形推断">图形推断</h2>
+<p>找规律。<br>
+前三个难度：图形推断 &gt; 文字理解 &gt; 数学</p>
+<h2 id="性格测试">性格测试</h2>
+<blockquote>
+<p>每道题给你三个选项，从中选出最适合你和最不适合你的词条。词条大多与工作方式、性格、领导力有关，比如创新、听取别人意见、意志力、负责人、信任他人、社交等等关键词。有些词条会反复出现，这是为了让最后的测试结果更科学，因为你可能同一个词条在不同组中有不一样的权重，或者我们自己都不确定到底哪个更合适，多次测取能输出一个更稳定综合的结果。因为没有计时，所以大可安下心来作答。<br>
+我觉得这里没必要找诀窍，如实作答就好。毕竟，找工作是双向选择，要是找到给你脾性不和的，身心受折磨的是你自己；找到情投意合的，才能和同事们一起开天辟地啊！</p>
+</blockquote>
+<p>但总觉得选得前后不一也不好，太极端也不好。</p>
+<h1 id="笔试">笔试</h1>
+<p>1h，2道题，ACM赛制。<br>
+用的是牛客的评测系统，网页上调用摄像头和录屏，同时手机开小程序（但不用架在后面录像，就在一边摆着证明你没有看手机就行）。<s>我感觉没用，因为完全可以在旁边再开另一个电脑。</s></p>
+<h2 id="第一题">第一题</h2>
+<h3 id="题意">题意</h3>
+<p>给一个数组，问把至少一半的数改为平方数最少多少步。<br>
+改法：+1或-1.</p>
+<h3 id="思路">思路</h3>
+<p>分别统计每一个数需要的次数，排序再找前一半的数相加得到答案。<br>
+<code>bool is_square()</code>写多了，不用管。</p>
+<h3 id="代码">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int maxn = 2e5 + 5;
+
+bool is_square(int x) {
+    int sqrt_x = sqrt(x);
+    if (sqrt_x * sqrt_x == x)
+        return true;
+    return false;
+}
+
+int need_quan(int x) {
+    int sqrt_x = sqrt(x);
+    return min(x - sqrt_x * sqrt_x, (sqrt_x + 1) * (sqrt_x + 1) - x);
+}
+
+int main(int argc, const char * argv[])
+{
+    int n, a[maxn], b[maxn], ans = 0;
+    cin &gt;&gt; n;
+    for (int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+        b[i] = need_quan(a[i]);
+    }
+    sort(b, b + n);
+    int half = (n &amp; 1) ? n / 2 + 1 : n / 2;
+    for (int i = 0; i &lt; half; i++) {
+        ans += b[i];
+    }
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>很简单，10min以内过了。接下来的时间都在第二题里自闭。</p>
+<h2 id="第二题">第二题</h2>
+<h3 id="题意-2">题意</h3>
+<p>给两个数组a[n]、b[n]，选3组，i&lt;j&lt;k，要求a[i]&lt;=a[j]&lt;=a[k]，问b[i]+b[j]+b[k]最小值。</p>
+<h3 id="样例">样例</h3>
+<h4 id="输入">输入</h4>
+<pre><code>8
+9 8 6 7 7 2 9 2
+9 1 10 8 6 4 8 6
+</code></pre>
+<h4 id="输出">输出</h4>
+<pre><code>24
+</code></pre>
+<h3 id="思路-2">思路</h3>
+<p>很迷惑为什么不是选4、5、7组，得到答案22.<br>
+牛客有个问问题的小窗，问完得到答复是题没问题。<br>
+于是回去读题，就是想不通。<br>
+交了个O(n<sup>3</sup>)的代码，但居然没T而是WA了，大概过了26%的点。</p>
+<h3 id="代码-2">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+const int maxn = 3005;
+
+int main(int argc, const char * argv[])
+{
+    int n, a[maxn], b[maxn], ans = 3e5 + 5;
+    cin &gt;&gt; n;
+    for (int i = 0; i &lt; n; i++)
+        cin &gt;&gt; a[i];
+    for (int i = 0; i &lt; n; i++)
+        cin &gt;&gt; b[i];
+    if (n &lt; 3) {
+        cout &lt;&lt; -1 &lt;&lt; endl;
+        return 0;
+    }
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = i + 1; j &lt; n; j++) {
+            if (a[i] &gt; a[j])
+                break;
+            for (int k = j + 1; k &lt; n; k++) {
+                if (a[i] &gt; a[k] || a[j] &gt; a[k])
+                    continue;
+                ans = min(ans, b[i] + b[j] + b[k]);
+                //cout&lt;&lt;b[i]&lt;&lt;' '&lt;&lt;b[j]&lt;&lt;' '&lt;&lt;b[k]&lt;&lt;endl;
+            }
+        }
+    }
+    if (ans == 3e5 + 5)
+        ans = -1;
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>真的快崩溃了，又看了40min题没看出来哪里理解的不对。</p>
+<hr>
+<p>后期没什么事可写会陆续搬一些曾经在其它平台写过的文章到小站来，丰富一下这里。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《扎克·施奈德版正义联盟》影评]]></title>
         <id>https://Tangent617.github.io/post/zack-snyders-justice-league-movie-review/</id>

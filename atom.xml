@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-03-24T10:40:34.198Z</updated>
+    <updated>2021-03-26T14:01:37.924Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Tangent617.github.io"/>
     <link rel="self" href="https://Tangent617.github.io/atom.xml"/>
@@ -11,9 +11,72 @@
     <icon>https://Tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
     <entry>
-        <title type="html"><![CDATA[阿里巴巴算法工程师笔试&面试]]></title>
-        <id>https://Tangent617.github.io/post/alibaba-algorithm-engineer-written-examination-and-interview/</id>
-        <link href="https://Tangent617.github.io/post/alibaba-algorithm-engineer-written-examination-and-interview/">
+        <title type="html"><![CDATA[腾讯云产品部后台开发实习面试]]></title>
+        <id>https://Tangent617.github.io/post/tencent-csig-background-development-internship-interview/</id>
+        <link href="https://Tangent617.github.io/post/tencent-csig-background-development-internship-interview/">
+        </link>
+        <updated>2021-03-26T13:32:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>更新中</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>更新中</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<p>形式：牛客网的面试系统</p>
+<h2 id="面试">面试</h2>
+<h3 id="自我介绍">自我介绍</h3>
+<p>blablabla……<br>
+Q：用什么语言？<br>
+A：C++，偶尔Java。</p>
+<h3 id="网络">网络</h3>
+<p>Q：TCP连接的建立与释放？<br>
+A：三次握手、四次挥手。</p>
+<h3 id="操作系统">操作系统</h3>
+<p>Q：linux用么？<br>
+A：用的少，写过小的程序，没做过大的项目。<br>
+Q：建立进程的命令？<br>
+A：C++里的create_pid_thread函数？<br>
+Q：不，那是线程。</p>
+<h3 id="c">C++</h3>
+<p>Q：虚函数与纯虚函数区别？<br>
+A：虚函数是父类里不写全到子类里写，纯虚忘了。<br>
+Q：为啥要这么干？<br>
+A：每一个子类可以写不一样的，实现不同的功能。<br>
+Q：STL中的数据结构的底层实现？<br>
+A：vector是连续的数组，list是链表，map是红黑树，queue和stack忘了。</p>
+<h2 id="笔试">笔试</h2>
+<p>在线编码，结束面试之后网页直接跳出了，所以代码没保存。</p>
+<h3 id="二叉树的层序遍历">二叉树的层序遍历</h3>
+<p>队列实现，写得挺快。</p>
+<h3 id="1到n2大的螺旋数组">1到n<sup>2</sup>大的螺旋数组</h3>
+<h4 id="样例">样例</h4>
+<pre><code>1
+1
+</code></pre>
+<pre><code>2
+1 2
+4 3
+</code></pre>
+<pre><code>3
+1 2 3
+8 9 4
+7 6 5
+</code></pre>
+<p>循环计数，保存方向。<br>
+出了点小bug：循环结尾是n<sup>2</sup>写成n了。</p>
+<h3 id="两个有序链表合并">两个有序链表合并</h3>
+<p>循环。<br>
+链表的处理卡了很长时间，出了好几个bug，被指出了好几次。</p>
+<h2 id="总结">总结</h2>
+<p>耳机返听很难受，说话时候过一个延时还给我放我刚说的话，以致于说话被它影响一顿一顿的。<br>
+问了这次结果什么时候出和下一面时间，答复是还有其他事他要先走了。感觉要凉。</p>
+<hr>
+<p>接下来可能会写《<a href="https://movie.douban.com/subject/26613692/">哥斯拉大战金刚</a>》和《<a href="https://movie.douban.com/subject/30466931/">波斯语课</a>》影评。写了就把超链接换成影评网址，没写就放豆瓣链接。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[阿里巴巴算法工程师实习笔试&面试]]></title>
+        <id>https://Tangent617.github.io/post/alibaba-algorithm-engineer-internship-written-interview/</id>
+        <link href="https://Tangent617.github.io/post/alibaba-algorithm-engineer-internship-written-interview/">
         </link>
         <updated>2021-03-19T15:17:01.000Z</updated>
         <summary type="html"><![CDATA[<p>持续更新，随测随更。🤗</p>

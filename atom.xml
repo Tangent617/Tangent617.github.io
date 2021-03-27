@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-03-27T09:40:59.566Z</updated>
+    <updated>2021-03-27T14:25:46.394Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Tangent617.github.io"/>
     <link rel="self" href="https://Tangent617.github.io/atom.xml"/>
@@ -10,6 +10,38 @@
     <logo>https://Tangent617.github.io/images/avatar.png</logo>
     <icon>https://Tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
+    <entry>
+        <title type="html"><![CDATA[《哥斯拉大战金刚》省流版]]></title>
+        <id>https://Tangent617.github.io/post/godzilla-vs-kong-movie-review/</id>
+        <link href="https://Tangent617.github.io/post/godzilla-vs-kong-movie-review/">
+        </link>
+        <updated>2021-03-27T14:08:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>🦖🆚🦧<br>
+原文：https://movie.douban.com/review/13347891/</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>🦖🆚🦧<br>
+原文：https://movie.douban.com/review/13347891/</p>
+<!-- more -->
+<pre><code>        ———                                                            
+
+      /   👀       \                     - ——————————————————— -  
+
+     &gt;               ｜                  ｜           京         ｜ 
+
+            哥斯拉     》                 ｜                      ｜ 
+
+👋                        》            ｜           东          ｜
+
+     ｜                      》          ｜                      ｜
+
+  ｜                            \        ｜          🐶          ｜
+
+     /                          尾巴/    ｜                      ｜
+
+ ————   /      ————  /                                   
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[腾讯云产品部后台开发实习面试]]></title>
         <id>https://Tangent617.github.io/post/tencent-csig-background-development-internship-interview/</id>
@@ -74,7 +106,7 @@ A：cin和cout要刷新缓存区，scanf和printf不用。</p>
 <p>耳机返听很难受，说话时候过一个延时还给我放我刚说的话，以致于说话被它影响一顿一顿的。<br>
 问了这次结果什么时候出和下一面时间，答复是还有其他事他要先走了。感觉要凉。</p>
 <hr>
-<p>接下来可能会写《<a href="https://movie.douban.com/subject/26613692/">哥斯拉大战金刚</a>》和《<a href="https://movie.douban.com/subject/30466931/">波斯语课</a>》影评。写了就把超链接换成影评网址，没写就放豆瓣链接。</p>
+<p>接下来可能会写《<a href="https://tangent617.github.io/post/godzilla-vs-kong-movie-review/">哥斯拉大战金刚</a>》和《<a href="https://movie.douban.com/subject/30466931/">波斯语课</a>》影评。写了就把超链接换成影评网址，没写就放豆瓣链接。</p>
 ]]></content>
     </entry>
     <entry>

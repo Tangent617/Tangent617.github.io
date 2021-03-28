@@ -1,0 +1,329 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>字节跳动电商后台开发实习面试 | Xiaoyan Guo</title>
+<link rel="shortcut icon" href="https://Tangent617.github.io/favicon.ico?v=1616938208474">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Tangent617.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="字节跳动电商后台开发实习面试 | Xiaoyan Guo - Atom Feed" href="https://Tangent617.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="封面没找到合适的图，稍微糊了那么一点。🤦‍♀
+HR说要实习4个月，所以并不是特别想去。当练习了。
+
+一面
+面试
+形式：牛客视频，耳机返听终于没了。
+数据库
+Q：简历中没看到项目相关的内容，但是发现了作品有个图书馆的，讲讲？
+A：用的mys..." />
+    <meta name="keywords" content="面试" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Tangent617.github.io">
+  <img class="avatar" src="https://Tangent617.github.io/images/avatar.png?v=1616938208474" alt="">
+  </a>
+  <h1 class="site-title">
+    Xiaoyan Guo
+  </h1>
+  <p class="site-description">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34228071&auto=1&height=66"></iframe>
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/Tangent617" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/SheeranGuo" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/gxy617" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.zhihu.com/people/guo-xiao-yan-27" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.instagram.com/tangent617/" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              字节跳动电商后台开发实习面试
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-03-28
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://Tangent617.github.io/tag/v-63w7cb4/" class="post-tag">
+                  # 面试
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Tangent617.github.io/post-images/bytedance-background-development-internship-interview.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>封面没找到合适的图，稍微糊了那么一点。🤦‍♀<br>
+HR说要实习4个月，所以并不是特别想去。当练习了。</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="面试">面试</h2>
+<p>形式：牛客视频，耳机返听终于没了。</p>
+<h3 id="数据库">数据库</h3>
+<p>Q：简历中没看到项目相关的内容，但是发现了作品有个图书馆的，讲讲？<br>
+A：用的mysql实现的图书馆后台，前端做了个客户端。<br>
+Q：table？<br>
+A：图书、学生、借书续借还书的预订和记录。<br>
+Q：索引？<br>
+A：书名、学号、书名学号时间的联合索引。<br>
+Q：底层实现？<br>
+A：B+树。<br>
+Q：还有的数据库用哈希，B+树和Hash区别？<br>
+A：效率不一样吧。数据多了的话Hash值可能会重复。<br>
+Q：除了这还有什么其他原因？<br>
+A：不知道。<br>
+Q：如何避免Hash冲突？<br>
+A：用更有效的算法。或者Hash完再Hash一次？<br>
+Q：哪个快？<br>
+A：没仔细了解过。<br>
+Q：隔离级别？<br>
+A：read uncommitted, read committed, repeatable read, serializable。顺便说了脏读、不可重复读和幻读和哪个模式下哪个会出哪个问题。<br>
+Q：你说默认是repeatable read，那就是可重复读了？会幻读吗？<br>
+A：对，避免了不可重复读的问题，但是可能发生幻读。<br>
+Q：这4种级别如何实现？<br>
+A：（救命）没了解。<br>
+Q：blablabla（听不懂的词）和备份？<br>
+A：数据库会定期备份，万一哪个事务执行错了方便回滚。<br>
+Q：咋回滚？<br>
+A：把之前执行的语句反过来执行一遍。insert变成delete，delete变成insert。<br>
+Q：那是不是还要保存执行的语句？<br>
+A：会存log的，log里就是所有进行过的操作。<br>
+Q：redis？<br>
+A：没听过。<br>
+Q：怎么联系的前端？用没用blablabla？<br>
+A：（不知道你说的啥），我调的API可以在其他语言比如C++或者Java里用sql的。</p>
+<h4 id="总结">总结</h4>
+<p>学的数据库那门课虽然叫《数据库原理》但是讲的大多是怎样使用数据库而不是它的底层实现……就，很头大。</p>
+<h3 id="操作系统">操作系统</h3>
+<p>Q：消息队列？<br>
+A：进程间通讯的一种方式，一个进程可以把信息传递给另一个。<br>
+Q：进程？线程？协程？<br>
+A：<em>又来？</em><br>
+Q：缓存处理？<br>
+A：了解不多。</p>
+<h3 id="网络">网络</h3>
+<p>Q：浏览器输入网址后发生的一串事？<br>
+A：<em>还来？</em><br>
+Q：DNS怎么找？比如a.b.com，从前往后还是从后往前？<br>
+A：域名从后往前，先找.com再.b.com最后a.b.com。<br>
+Q：DNS用什么协议？<br>
+A：？？？<br>
+Q：意思是DNS用TCP还是UDP？<br>
+A：不知道，TCP吧？<br>
+Q：TCP和UDP区别？<br>
+A：TCP有握手挥手，保证可靠传输，UDP不管。<br>
+Q：那DNS应该是用UDP，TCP太慢了，用UDP失败就重发。<br>
+A：行，有道理。<br>
+Q：一个视频应用，用的是UDP但是想保证可靠传输要怎么做？<br>
+A：程序上实现个丢包重传吧，UDP没法搞了。（好像没表达清楚）<br>
+Q：是不是可以在应用层来实现呀！<br>
+A：对对对，你说的都对。</p>
+<h4 id="总结-2">总结</h4>
+<p>数据库和网络问的比较细，会问一些之前没有注意过的知识点。</p>
+<h2 id="笔试">笔试</h2>
+<p>形式：还是牛客网面试系统，后期卡得一匹。<br>
+代码又没存。</p>
+<h3 id="题干">题干</h3>
+<p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。<br>
+你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。<br>
+返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0。</p>
+<h4 id="只能买卖一次">只能买卖一次</h4>
+<p>就循环扫一遍，保存前面的最小值，取当前值和最小值的差的最大值。</p>
+<h4 id="无限次买卖">无限次买卖</h4>
+<p>若当前值大于昨天的值，就认为昨天买今天卖，更新答案，否则不动。</p>
+<h4 id="最多交易k次">最多交易k次</h4>
+<p>DP保存已进行的买卖次数和当前是买是卖，双重循环复杂度O(n*k).</p>
+<pre><code class="language-c++">dp[j][0] = max(dp[j][0], dp[j-1][1] - prices[i]);
+dp[j][1] = max(dp[j][1], dp[j][0] + prices[i]);
+</code></pre>
+<p>但他说递推公式出了点问题，最后还是错了。还想改一改但是时间到了。</p>
+<h2 id="反问">反问</h2>
+<p>Q：这个岗位具体做啥？听你之前说主要语言是go，除了golang之外我还需要了解点啥？<br>
+A：后端、缓存、框架、rpc。<br>
+Q：啥时候出结果？什么时间下一次面试？<br>
+A：1～2天吧，hr会联系。</p>
+<h2 id="总结-3">总结</h2>
+<p>啥也不会，多半要凉。</p>
+<hr>
+<p>又到了预告环节，但还没想好下一篇写啥。<br>
+整得好像我这博客一天天的除了<code>面试</code>和<code>电影</code>就没别的了一样。<br>
+动漫方面《<a href="https://www.bilibili.com/bangumi/play/ep373878">工作细胞</a>》又没什么可写的，上大学之后生物知识已经忘得连在肾长哪都不知道了。等下个月初《<a href="https://www.bilibili.com/bangumi/play/ep379656">进击的巨人</a>》漫画完结更个漫评吧，动画剧情和漫画大概率差别不大就不分开写了。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%80%E9%9D%A2">一面</a>
+<ul>
+<li><a href="#%E9%9D%A2%E8%AF%95">面试</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C">网络</a>
+<ul>
+<li><a href="#%E6%80%BB%E7%BB%93-2">总结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%94%E8%AF%95">笔试</a>
+<ul>
+<li><a href="#%E9%A2%98%E5%B9%B2">题干</a>
+<ul>
+<li><a href="#%E5%8F%AA%E8%83%BD%E4%B9%B0%E5%8D%96%E4%B8%80%E6%AC%A1">只能买卖一次</a></li>
+<li><a href="#%E6%97%A0%E9%99%90%E6%AC%A1%E4%B9%B0%E5%8D%96">无限次买卖</a></li>
+<li><a href="#%E6%9C%80%E5%A4%9A%E4%BA%A4%E6%98%93k%E6%AC%A1">最多交易k次</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%8D%E9%97%AE">反问</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93-3">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Tangent617.github.io/post/godzilla-vs-kong-movie-review/">
+              <h3 class="post-title">
+                《哥斯拉大战金刚》省流版
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">&nbspGridea</a>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<span id="busuanzi_container_site_uv" style='display:none'>&nbsp&nbsp&nbsp&nbsp&#128064;访客量<span id="busuanzi_value_site_uv"></span>次</span>
+  <a class="rss" href="https://Tangent617.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-03-31T16:12:19.639Z</updated>
+    <updated>2021-03-31T16:42:15.253Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -16,7 +16,14 @@
         <link href="https://tangent617.github.io/post/huawei-general-software-development-internship-interview/">
         </link>
         <updated>2021-03-31T14:43:43.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="投递部门">投递部门</h1>
+        <summary type="html"><![CDATA[<p>算法岗主要用机器学习东西多，所以还是投了软件开发。🙇‍♀</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>算法岗主要用机器学习东西多，所以还是投了软件开发。🙇‍♀</p>
+<!-- more -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=38592976&auto=1&height=66"></iframe>
+<h1 id="投递部门">投递部门</h1>
 <p>(领域)通用软件开发工程师<br>
 (第一意向部门)Cloud BU<br>
 (第二意向部门)中央软件院<br>

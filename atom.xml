@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-03-28T15:56:53.946Z</updated>
+    <updated>2021-03-31T15:52:04.085Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Tangent617.github.io"/>
     <link rel="self" href="https://Tangent617.github.io/atom.xml"/>
@@ -11,16 +11,262 @@
     <icon>https://Tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
     <entry>
+        <title type="html"><![CDATA[华为通用软件开发工程师实习笔试&面试]]></title>
+        <id>https://Tangent617.github.io/post/huawei-general-software-development-internship-interview/</id>
+        <link href="https://Tangent617.github.io/post/huawei-general-software-development-internship-interview/">
+        </link>
+        <updated>2021-03-31T14:43:43.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="投递部门">投递部门</h1>
+<p>(领域)通用软件开发工程师<br>
+(第一意向部门)Cloud BU<br>
+(第二意向部门)中央软件院<br>
+(中国/上海,中国/东莞,中国/北京,中国/南京,中国/廊坊,中国/成都,中国/杭州,中国/武汉,中国/深圳,中国/苏州,中国/西安)<br>
+撤销申请</p>
+<h1 id="笔试">笔试</h1>
+<ul>
+<li>牛客网的OJ</li>
+<li>共享屏幕与摄像头</li>
+<li>3道编程题共600分（具体每道题多少分值忘记了），硬件应该是做选择题</li>
+<li>时间2h</li>
+<li>ACM式输入输出（与阿里相同，不同于之前面试中常见的只写函数模式）</li>
+<li>虽然允许中途上厕所但是隔壁宿舍敲门催打扫卫生依然没有给开</li>
+<li>不允许截屏等保存题目所以下文根据回忆大致复述一下题目大意</li>
+</ul>
+<h2 id="足球比赛排名">足球比赛排名</h2>
+<h3 id="题意">题意</h3>
+<p>双循环赛，给出每场比赛的比分，赢的加3分，平局各加1分，输的不加分，最后按<em>先分数排名后字典序排名</em>输出每一队的得分。</p>
+<h3 id="分析">分析</h3>
+<p>结构体排序，可以用STL于是直接调用<code>sort()</code>就可以了。<br>
+用<code>map</code>保存所有出场的队伍名字，方便后期遍历。</p>
+<h3 id="代码">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+#include &lt;map&gt;
+using namespace std;
+
+map&lt;char, bool&gt; mp;
+
+struct node {
+    char name;
+    int score;
+} a[30];
+
+void init() {
+    for (int i = 0; i &lt; 26; i++) {
+        a[i].name = 'a' + i;
+        a[i].score = 0;
+    }
+}
+
+bool cmp(node x, node y) {
+    if (x.score == y.score)
+        return x.name &lt; y.name;
+    return x.score &gt; y.score;
+}
+
+int main(int argc, const char * argv[])
+{
+    //char s[10];
+    string s;
+    int cnt = 0;
+    init();
+    while (1) {
+        getline(cin, s);
+        if (s == &quot;&quot;) break;
+
+        if (!mp[s[0]]) cnt++;
+        if (!mp[s[2]]) cnt++;
+        mp[s[0]] = true;
+        mp[s[2]] = true;
+
+        if (s[4] &gt; s[6]) {
+            a[s[0]-'a'].score += 3;
+        } else if (s[4] &lt; s[6]) {
+            a[s[2]-'a'].score += 3;
+        } else {
+            a[s[0]-'a'].score += 1;
+            a[s[2]-'a'].score += 1;
+        }
+    }
+
+    sort(a, a + 26, cmp);
+
+    for (int i = 0; i &lt; cnt; i++) {
+        if (mp[a[i].name]) {
+            printf(&quot;%c %d&quot;, a[i].name, a[i].score);
+            if (i &lt; cnt - 1)
+                printf(&quot;,&quot;);
+            mp[a[i].name] = false;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="猜帽子数量">猜帽子数量</h2>
+<h3 id="题意-2">题意</h3>
+<p>一群人，每个人都戴一种颜色的帽子，其中部分人给出<em>其他人中有多少人和自己的帽子同一种颜色</em>，问人群中最少有多少人能够满足上述条件。</p>
+<h3 id="样例">样例</h3>
+<h4 id="输入1">输入1</h4>
+<pre><code>[1,  1,  2]
+</code></pre>
+<h4 id="输出1">输出1</h4>
+<pre><code>5
+</code></pre>
+<h4 id="输入2">输入2</h4>
+<pre><code>[]
+</code></pre>
+<h4 id="输出2">输出2</h4>
+<pre><code>0
+</code></pre>
+<p>之所以把样例放在这是因为它的输入太难搞了，卡了好久。</p>
+<h3 id="分析-2">分析</h3>
+<p>把给出相同数字的人放在一起。假设一个人给出的数字为x，那么最多可以有x+1个人戴相同颜色帽子，如果和他给出相同数字的人多于x+1，那就要新开另一个颜色。所以对于n个给出相同数字的人，他们至少要用到的颜色样数为：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⌈</mo></mrow><annotation encoding="application/x-tex">\lceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>n</mi><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{x+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0987230000000001em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⌉</mo></mrow><annotation encoding="application/x-tex">\rceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">⌉</span></span></span></span><br>
+代码中用每达到x+1就清空重计数来实现：</p>
+<h3 id="代码-2">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const int max_info = 1005;
+
+int main(int argc, const char * argv[])
+{
+    int x, ans = 0;
+    int num[max_info] = {0};
+    getchar();
+    while (1) {
+        cin &gt;&gt; x;//cout&lt;&lt;x&lt;&lt;endl;
+        if (!cin &gt;&gt; x) {
+            cout &lt;&lt; 0 &lt;&lt; endl;
+            return 0;
+        }
+        if (!num[x]) {
+            ans += x + 1;
+        }
+        num[x] = (num[x] + 1) % (x + 1);
+        if (getchar() != ',') break;
+    }
+    printf(&quot;%d\n&quot;, ans);
+    return 0;
+}
+</code></pre>
+<h2 id="移动的最少步数">移动的最少步数</h2>
+<h3 id="题意-3">题意</h3>
+<p>给2个字符串（小写字母组成）和1个整数。整数代表游标位置，游标可以左右移动。从a串给出的初始位置开始，不断移动游标将b串一个一个拼出来，问最少步数。</p>
+<h3 id="分析-3">分析</h3>
+<p>广度优先搜索+剪枝<br>
+保存每个状态：a串游标位置，b串拼到哪和步数。<br>
+拼好了就进行b串下一位，没拼好就继续探索a串的左一个和右一个，b串全拼完时跳出。</p>
+<h3 id="代码-3">代码</h3>
+<h4 id="写t了的dfs初稿">写T了的dfs初稿</h4>
+<pre><code class="language-c++">void dfs(int ai, int bi, int step, int last_dir) {//cout&lt;&lt;ai&lt;&lt;' '&lt;&lt;bi&lt;&lt;' '&lt;&lt;step&lt;&lt;endl;
+    if (bi == blen) {
+        ans = min(ans, step);
+        return;
+    }
+    if (a[ai] == b[bi]) {
+        dfs(ai, bi + 1, step, 0);
+    } else {
+        /*vis[ai] = true;
+        if (!vis[(ai - 1 + alen) % alen])
+            dfs((ai - 1 + alen) % alen, bi, step + 1);
+        if (!vis[(ai + 1) % alen])
+            dfs((ai + 1) % alen, bi, step + 1);
+        vis[ai] = false;
+        这里删了是因为用过一次的字母可以再一次用*/
+        if (last_dir != 1) {
+            dfs((ai - 1 + alen) % alen, bi, step + 1, -1);
+        }
+        if (last_dir != -1) {
+            dfs((ai + 1) % alen, bi, step + 1, 1);
+        }
+    }
+}
+</code></pre>
+<p>因为判重没写好所以弃了，换写bfs。</p>
+<h4 id="成功ac的bfs完整版">成功AC的bfs完整版</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+using namespace std;
+
+string a, b;
+const int maxa = 1005, maxb = 105;
+int ans = maxa * maxb;
+int alen, blen;
+//bool vis[maxa];
+
+typedef pair&lt;int, int&gt; p;
+map&lt;p, bool&gt; mp;
+
+struct node {
+    int ai, bi, step;
+} st;
+
+int bfs() {
+    queue&lt;node&gt; q;
+    q.push(st);
+    while (!q.empty()) {
+        node head = q.front(), tail;
+        q.pop();
+        if (head.bi == blen) {
+            return head.step;
+        }
+        if (a[head.ai] == b[head.bi]) {
+            tail.ai = head.ai;
+            tail.bi = head.bi + 1;
+            tail.step = head.step;
+            q.push(tail);
+        } else {
+            tail.ai = (head.ai - 1 + alen) % alen;
+            tail.bi = head.bi;
+            tail.step = head.step + 1;
+            if (!mp[make_pair(tail.ai, tail.bi)]) {
+                q.push(tail);
+                mp[make_pair(tail.ai, tail.bi)] = true;
+            }
+                
+            tail.ai = (head.ai + 1) % alen;
+            tail.bi = head.bi;
+            tail.step = head.step + 1;
+            if (!mp[make_pair(tail.ai, tail.bi)]) {
+                q.push(tail);
+                mp[make_pair(tail.ai, tail.bi)] = true;
+            }
+        }
+    }
+    return -1;
+}
+
+int main(int argc, const char * argv[])
+{
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; st.ai;
+    alen = a.length(), blen = b.length();
+    //dfs(st, 0, 0, 0);
+    st.bi = 0; st.step = 0;
+    cout &lt;&lt; bfs() &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>当然也要判重，不然会<code>MLE</code>。<br>
+判重用的pair保存两个字符串遍历到的位置（bfs中后达到的node因为step会更大所以不用理会了），比之前dfs里记录上一次转换方向要靠谱很多。</p>
+<h2 id="总结">总结</h2>
+<p>1.5h做完，3道题全部100%通过率，稳过了。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[字节跳动电商后台开发实习面试]]></title>
         <id>https://Tangent617.github.io/post/bytedance-background-development-internship-interview/</id>
         <link href="https://Tangent617.github.io/post/bytedance-background-development-internship-interview/">
         </link>
         <updated>2021-03-28T11:58:10.000Z</updated>
         <summary type="html"><![CDATA[<p>封面没找到合适的图，稍微糊了那么一点。🤦‍♀<br>
-HR说要实习4个月，所以并不是特别想去。当练习了。</p>
+一面就凉掉了。🙄</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>封面没找到合适的图，稍微糊了那么一点。🤦‍♀<br>
-HR说要实习4个月，所以并不是特别想去。当练习了。</p>
+一面就凉掉了。🙄</p>
 <!-- more -->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
@@ -154,8 +400,12 @@ A：1～2天吧，hr会联系。</p>
 
  ————   /      ————  /                                   
 </code></pre>
-<p>顺便点几首歌听：</p>
- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2351723684&auto=1&height=430"></iframe>]]></content>
+<p><strong>顺便点几首歌听</strong></p>
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2351723684&auto=1&height=430"></iframe>
+<p><strong>传统艺能</strong><br>
+1080P 外挂字幕<br>
+复制这段内容后打开百度网盘App，操作更方便哦。 链接:https://pan.baidu.com/s/1knXejs_aKXyKJp-OESEHtA 提取码:r4ay</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[腾讯云产品部后台开发实习面试]]></title>

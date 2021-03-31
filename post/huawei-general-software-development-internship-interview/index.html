@@ -1,0 +1,475 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>华为通用软件开发工程师实习笔试&amp;面试 | Xiaoyan Guo</title>
+<link rel="shortcut icon" href="https://Tangent617.github.io/favicon.ico?v=1617205919469">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Tangent617.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="华为通用软件开发工程师实习笔试&amp;面试 | Xiaoyan Guo - Atom Feed" href="https://Tangent617.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="投递部门
+(领域)通用软件开发工程师
+(第一意向部门)Cloud BU
+(第二意向部门)中央软件院
+(中国/上海,中国/东莞,中国/北京,中国/南京,中国/廊坊,中国/成都,中国/杭州,中国/武汉,中国/深圳,中国/苏州,中国/西安)
+撤销..." />
+    <meta name="keywords" content="面试" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Tangent617.github.io">
+  <img class="avatar" src="https://Tangent617.github.io/images/avatar.png?v=1617205919469" alt="">
+  </a>
+  <h1 class="site-title">
+    Xiaoyan Guo
+  </h1>
+  <p class="site-description">
+    郭笑嫣的秘密小窝
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/Tangent617" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/SheeranGuo" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/gxy617" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.zhihu.com/people/guo-xiao-yan-27" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.instagram.com/tangent617/" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              华为通用软件开发工程师实习笔试&amp;面试
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-03-31
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://Tangent617.github.io/tag/v-63w7cb4/" class="post-tag">
+                  # 面试
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Tangent617.github.io/post-images/huawei-general-software-development-internship-interview.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="投递部门">投递部门</h1>
+<p>(领域)通用软件开发工程师<br>
+(第一意向部门)Cloud BU<br>
+(第二意向部门)中央软件院<br>
+(中国/上海,中国/东莞,中国/北京,中国/南京,中国/廊坊,中国/成都,中国/杭州,中国/武汉,中国/深圳,中国/苏州,中国/西安)<br>
+撤销申请</p>
+<h1 id="笔试">笔试</h1>
+<ul>
+<li>牛客网的OJ</li>
+<li>共享屏幕与摄像头</li>
+<li>3道编程题共600分（具体每道题多少分值忘记了），硬件应该是做选择题</li>
+<li>时间2h</li>
+<li>ACM式输入输出（与阿里相同，不同于之前面试中常见的只写函数模式）</li>
+<li>虽然允许中途上厕所但是隔壁宿舍敲门催打扫卫生依然没有给开</li>
+<li>不允许截屏等保存题目所以下文根据回忆大致复述一下题目大意</li>
+</ul>
+<h2 id="足球比赛排名">足球比赛排名</h2>
+<h3 id="题意">题意</h3>
+<p>双循环赛，给出每场比赛的比分，赢的加3分，平局各加1分，输的不加分，最后按<em>先分数排名后字典序排名</em>输出每一队的得分。</p>
+<h3 id="分析">分析</h3>
+<p>结构体排序，可以用STL于是直接调用<code>sort()</code>就可以了。<br>
+用<code>map</code>保存所有出场的队伍名字，方便后期遍历。</p>
+<h3 id="代码">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+#include &lt;map&gt;
+using namespace std;
+
+map&lt;char, bool&gt; mp;
+
+struct node {
+    char name;
+    int score;
+} a[30];
+
+void init() {
+    for (int i = 0; i &lt; 26; i++) {
+        a[i].name = 'a' + i;
+        a[i].score = 0;
+    }
+}
+
+bool cmp(node x, node y) {
+    if (x.score == y.score)
+        return x.name &lt; y.name;
+    return x.score &gt; y.score;
+}
+
+int main(int argc, const char * argv[])
+{
+    //char s[10];
+    string s;
+    int cnt = 0;
+    init();
+    while (1) {
+        getline(cin, s);
+        if (s == &quot;&quot;) break;
+
+        if (!mp[s[0]]) cnt++;
+        if (!mp[s[2]]) cnt++;
+        mp[s[0]] = true;
+        mp[s[2]] = true;
+
+        if (s[4] &gt; s[6]) {
+            a[s[0]-'a'].score += 3;
+        } else if (s[4] &lt; s[6]) {
+            a[s[2]-'a'].score += 3;
+        } else {
+            a[s[0]-'a'].score += 1;
+            a[s[2]-'a'].score += 1;
+        }
+    }
+
+    sort(a, a + 26, cmp);
+
+    for (int i = 0; i &lt; cnt; i++) {
+        if (mp[a[i].name]) {
+            printf(&quot;%c %d&quot;, a[i].name, a[i].score);
+            if (i &lt; cnt - 1)
+                printf(&quot;,&quot;);
+            mp[a[i].name] = false;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="猜帽子数量">猜帽子数量</h2>
+<h3 id="题意-2">题意</h3>
+<p>一群人，每个人都戴一种颜色的帽子，其中部分人给出<em>其他人中有多少人和自己的帽子同一种颜色</em>，问人群中最少有多少人能够满足上述条件。</p>
+<h3 id="样例">样例</h3>
+<h4 id="输入1">输入1</h4>
+<pre><code>[1,  1,  2]
+</code></pre>
+<h4 id="输出1">输出1</h4>
+<pre><code>5
+</code></pre>
+<h4 id="输入2">输入2</h4>
+<pre><code>[]
+</code></pre>
+<h4 id="输出2">输出2</h4>
+<pre><code>0
+</code></pre>
+<p>之所以把样例放在这是因为它的输入太难搞了，卡了好久。</p>
+<h3 id="分析-2">分析</h3>
+<p>把给出相同数字的人放在一起。假设一个人给出的数字为x，那么最多可以有x+1个人戴相同颜色帽子，如果和他给出相同数字的人多于x+1，那就要新开另一个颜色。所以对于n个给出相同数字的人，他们至少要用到的颜色样数为：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⌈</mo></mrow><annotation encoding="application/x-tex">\lceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>n</mi><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{x+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0987230000000001em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⌉</mo></mrow><annotation encoding="application/x-tex">\rceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">⌉</span></span></span></span><br>
+代码中用每达到x+1就清空重计数来实现：</p>
+<h3 id="代码-2">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const int max_info = 1005;
+
+int main(int argc, const char * argv[])
+{
+    int x, ans = 0;
+    int num[max_info] = {0};
+    getchar();
+    while (1) {
+        cin &gt;&gt; x;//cout&lt;&lt;x&lt;&lt;endl;
+        if (!cin &gt;&gt; x) {
+            cout &lt;&lt; 0 &lt;&lt; endl;
+            return 0;
+        }
+        if (!num[x]) {
+            ans += x + 1;
+        }
+        num[x] = (num[x] + 1) % (x + 1);
+        if (getchar() != ',') break;
+    }
+    printf(&quot;%d\n&quot;, ans);
+    return 0;
+}
+</code></pre>
+<h2 id="移动的最少步数">移动的最少步数</h2>
+<h3 id="题意-3">题意</h3>
+<p>给2个字符串（小写字母组成）和1个整数。整数代表游标位置，游标可以左右移动。从a串给出的初始位置开始，不断移动游标将b串一个一个拼出来，问最少步数。</p>
+<h3 id="分析-3">分析</h3>
+<p>广度优先搜索+剪枝<br>
+保存每个状态：a串游标位置，b串拼到哪和步数。<br>
+拼好了就进行b串下一位，没拼好就继续探索a串的左一个和右一个，b串全拼完时跳出。</p>
+<h3 id="代码-3">代码</h3>
+<h4 id="写t了的dfs初稿">写T了的dfs初稿</h4>
+<pre><code class="language-c++">void dfs(int ai, int bi, int step, int last_dir) {//cout&lt;&lt;ai&lt;&lt;' '&lt;&lt;bi&lt;&lt;' '&lt;&lt;step&lt;&lt;endl;
+    if (bi == blen) {
+        ans = min(ans, step);
+        return;
+    }
+    if (a[ai] == b[bi]) {
+        dfs(ai, bi + 1, step, 0);
+    } else {
+        /*vis[ai] = true;
+        if (!vis[(ai - 1 + alen) % alen])
+            dfs((ai - 1 + alen) % alen, bi, step + 1);
+        if (!vis[(ai + 1) % alen])
+            dfs((ai + 1) % alen, bi, step + 1);
+        vis[ai] = false;
+        这里删了是因为用过一次的字母可以再一次用*/
+        if (last_dir != 1) {
+            dfs((ai - 1 + alen) % alen, bi, step + 1, -1);
+        }
+        if (last_dir != -1) {
+            dfs((ai + 1) % alen, bi, step + 1, 1);
+        }
+    }
+}
+</code></pre>
+<p>因为判重没写好所以弃了，换写bfs。</p>
+<h4 id="成功ac的bfs完整版">成功AC的bfs完整版</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+using namespace std;
+
+string a, b;
+const int maxa = 1005, maxb = 105;
+int ans = maxa * maxb;
+int alen, blen;
+//bool vis[maxa];
+
+typedef pair&lt;int, int&gt; p;
+map&lt;p, bool&gt; mp;
+
+struct node {
+    int ai, bi, step;
+} st;
+
+int bfs() {
+    queue&lt;node&gt; q;
+    q.push(st);
+    while (!q.empty()) {
+        node head = q.front(), tail;
+        q.pop();
+        if (head.bi == blen) {
+            return head.step;
+        }
+        if (a[head.ai] == b[head.bi]) {
+            tail.ai = head.ai;
+            tail.bi = head.bi + 1;
+            tail.step = head.step;
+            q.push(tail);
+        } else {
+            tail.ai = (head.ai - 1 + alen) % alen;
+            tail.bi = head.bi;
+            tail.step = head.step + 1;
+            if (!mp[make_pair(tail.ai, tail.bi)]) {
+                q.push(tail);
+                mp[make_pair(tail.ai, tail.bi)] = true;
+            }
+                
+            tail.ai = (head.ai + 1) % alen;
+            tail.bi = head.bi;
+            tail.step = head.step + 1;
+            if (!mp[make_pair(tail.ai, tail.bi)]) {
+                q.push(tail);
+                mp[make_pair(tail.ai, tail.bi)] = true;
+            }
+        }
+    }
+    return -1;
+}
+
+int main(int argc, const char * argv[])
+{
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; st.ai;
+    alen = a.length(), blen = b.length();
+    //dfs(st, 0, 0, 0);
+    st.bi = 0; st.step = 0;
+    cout &lt;&lt; bfs() &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>当然也要判重，不然会<code>MLE</code>。<br>
+判重用的pair保存两个字符串遍历到的位置（bfs中后达到的node因为step会更大所以不用理会了），比之前dfs里记录上一次转换方向要靠谱很多。</p>
+<h2 id="总结">总结</h2>
+<p>1.5h做完，3道题全部100%通过率，稳过了。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E6%8A%95%E9%80%92%E9%83%A8%E9%97%A8">投递部门</a></li>
+<li><a href="#%E7%AC%94%E8%AF%95">笔试</a>
+<ul>
+<li><a href="#%E8%B6%B3%E7%90%83%E6%AF%94%E8%B5%9B%E6%8E%92%E5%90%8D">足球比赛排名</a>
+<ul>
+<li><a href="#%E9%A2%98%E6%84%8F">题意</a></li>
+<li><a href="#%E5%88%86%E6%9E%90">分析</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ul>
+</li>
+<li><a href="#%E7%8C%9C%E5%B8%BD%E5%AD%90%E6%95%B0%E9%87%8F">猜帽子数量</a>
+<ul>
+<li><a href="#%E9%A2%98%E6%84%8F-2">题意</a></li>
+<li><a href="#%E6%A0%B7%E4%BE%8B">样例</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A51">输入1</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA1">输出1</a></li>
+<li><a href="#%E8%BE%93%E5%85%A52">输入2</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA2">输出2</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E6%9E%90-2">分析</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81-2">代码</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A7%BB%E5%8A%A8%E7%9A%84%E6%9C%80%E5%B0%91%E6%AD%A5%E6%95%B0">移动的最少步数</a>
+<ul>
+<li><a href="#%E9%A2%98%E6%84%8F-3">题意</a></li>
+<li><a href="#%E5%88%86%E6%9E%90-3">分析</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81-3">代码</a>
+<ul>
+<li><a href="#%E5%86%99t%E4%BA%86%E7%9A%84dfs%E5%88%9D%E7%A8%BF">写T了的dfs初稿</a></li>
+<li><a href="#%E6%88%90%E5%8A%9Fac%E7%9A%84bfs%E5%AE%8C%E6%95%B4%E7%89%88">成功AC的bfs完整版</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Tangent617.github.io/post/bytedance-background-development-internship-interview/">
+              <h3 class="post-title">
+                字节跳动电商后台开发实习面试
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">&nbspGridea</a>
+  <a class="rss" href="https://Tangent617.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

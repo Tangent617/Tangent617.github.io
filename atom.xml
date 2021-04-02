@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-01T04:53:28.335Z</updated>
+    <updated>2021-04-02T08:47:16.735Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -478,6 +478,33 @@ A：cin和cout要刷新缓存区，scanf和printf不用。</p>
 <h2 id="总结">总结</h2>
 <p>耳机返听很难受，说话时候过一个延时还给我放我刚说的话，以致于说话被它影响一顿一顿的。<br>
 问了这次结果什么时候出和下一面时间，答复是还有其他事他要先走了。感觉要凉。</p>
+<h1 id="二面">二面</h1>
+<h2 id="面前">面前</h2>
+<p><img src="https://tangent617.github.io/post-images/1617350818057.JPG" alt="" loading="lazy"><br>
+千万不要让面试官认为你要留学，要给他留以希望。<br>
+还有这突然出现的笔试是什么鬼？</p>
+<h2 id="面试-2">面试</h2>
+<p>形式：突然给我打来电话面了20分钟。</p>
+<h3 id="自我介绍-2">自我介绍</h3>
+<p>略</p>
+<h3 id="算法">算法</h3>
+<p>Q：<s>听你说你打ACM哦！这么说你很勇哦？</s> 于是开始问算法。10亿个QQ号排序？<br>
+A：<em>我真服了又来？</em><br>
+Q：有没有比O(nlogn)更快的？<br>
+A：（现学现卖）桶排序！<br>
+Q：？？？啥<br>
+A：用的少，不能细讲。<br>
+Q：上台阶，可以上1凳可以2凳，问上n级台阶多少种情况？<br>
+A：动归，dp[1] = 1, dp[2] = 2, dp[i] = dp[i-1] + dp[i-2]。<br>
+Q：给一个大矩阵，按第三列的值排序？<br>
+A：单独保存第三列的索引，记录它原来的位置，排序，再挪剩下的？</p>
+<h3 id="网络-2">网络</h3>
+<p>Q：为啥TCP三次握手保证可靠性？<br>
+A： 确认了客户端和服务端可联通。<br>
+Q：各个时期？<br>
+A：好像叫time_wait吧，要等ACK等一段时间。</p>
+<h2 id="总结-2">总结</h2>
+<p>就，挺懵逼的。不过答得还行。</p>
 <hr>
 <p>接下来可能会写《<a href="https://tangent617.github.io/post/godzilla-vs-kong-movie-review/">哥斯拉大战金刚</a>》和《<a href="https://movie.douban.com/subject/30466931/">波斯语课</a>》影评。写了就把超链接换成影评网址，没写就放豆瓣链接。</p>
 ]]></content>
@@ -775,6 +802,81 @@ A：现在是周末，所以应该是下周吧。</p>
 <h2 id="总结-2">总结</h2>
 <p>这次面试的体验超级棒！面试官非常友好，对我也比较满意。<br>
 昨天腾讯差点给我整自闭了，今天阿里给了我巨大的安慰。</p>
+<h1 id="三面">三面</h1>
+<h2 id="面试-3">面试</h2>
+<p>形式：牛客视频面试。</p>
+<h3 id="工作介绍">工作介绍</h3>
+<p>主要是云监控。</p>
+<h3 id="自我介绍-3">自我介绍</h3>
+<p>略</p>
+<h3 id="计算机基础">计算机基础</h3>
+<p>Q：进程和线程？<br>
+A：<em>梅开三度</em><br>
+Q：进程资源哪些是共享的，哪些是独有的？<br>
+A：我知道有一些方式可以实现进程间通讯，这不知道。<br>
+Q：排序都有哪些？<br>
+A：O(n<sup>2</sup>)的有冒泡和选择，O(nlogn)的有快排和归并。<br>
+Q：有没有更快的？<br>
+A：O(n)的不知道。<br>
+Q：桶排序？<br>
+A：用的不多，不太了解。<br>
+Q：数据库建表要考虑哪些？<br>
+A：要有主键，后面放其他信息，主键不能有重复的。</p>
+<h2 id="笔试-3">笔试</h2>
+<pre><code class="language-c++">//评测题目:  二叉树序列化和反序列化
+// define binary tree struct
+// give tree struct =&gt; string
+// string =&gt; tree struct
+
+struct node {
+  int val;
+  node* left, right;
+};
+string s;
+
+string treeToString(node* tree) {
+  if (tree == null) return &quot;!&quot;; // end
+  return intToString(tree -&gt; val) + '@' + treeToString(tree -&gt; left) + '@' + treeToString(tree -&gt; right);
+}
+
+&quot;4!!@2@5!!@1@3!!&quot;
+
+node* stringToTree(string s) {
+  if (s == &quot;!&quot;) return null;
+  node* cur;
+  
+  
+  //cur -&gt; val = s[0];
+  string sub_s;
+  for (int i = 0; s[i] != '@';i++) {
+    sub_s.push_back(s[i]);
+  }
+  cur -&gt; val = stringToInt(sub_s);
+  
+  cur -&gt; left = stringToTree(s);
+  s = s.substring(sub_s.length());
+  if (s != &quot;&quot;)
+    cur -&gt; right = stringToTree(s);
+  
+  return cur;
+}
+
+
+   1
+  / \
+ 2   3
+/ \ 
+4  5
+</code></pre>
+<p>没做过这种，开始没搞清楚他要干啥，写了很久。<br>
+开始写成中序遍历错了，于是改为前序遍历。</p>
+<h2 id="反问-3">反问</h2>
+<p>Q：这份工作需要哪些技能？比如C++，进程之类？<br>
+A：前面问的都是你们上课学过的计算机基础问题，要实际看。<br>
+Q：后面还有多少面？<br>
+A：过了的话是一个交叉面和一个hr面，没过就又进简历池了。</p>
+<h2 id="总结-3">总结</h2>
+<p>要凉要凉</p>
 <hr>
 <p>接下来更字节跳动面经，但是他要求实习4个月导致我有点不想去。</p>
 ]]></content>

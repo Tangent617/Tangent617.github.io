@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>阿里巴巴算法工程师实习笔试&amp;面试 | Xiaoyan Guo</title>
-<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1617252805422">
+<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1617353234552">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="阿里巴巴算法工程师实习笔试&amp;面试 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
@@ -26,7 +26,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://tangent617.github.io">
-  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1617252805422" alt="">
+  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1617353234552" alt="">
   </a>
   <h1 class="site-title">
     Xiaoyan Guo
@@ -106,7 +106,7 @@
                 2021-03-19
               </span>
               <span>
-                12 min read
+                14 min read
               </span>
               
                 <a href="https://tangent617.github.io/tag/v-63w7cb4/" class="post-tag">
@@ -404,6 +404,81 @@ A：现在是周末，所以应该是下周吧。</p>
 <h2 id="总结-2">总结</h2>
 <p>这次面试的体验超级棒！面试官非常友好，对我也比较满意。<br>
 昨天腾讯差点给我整自闭了，今天阿里给了我巨大的安慰。</p>
+<h1 id="三面">三面</h1>
+<h2 id="面试-3">面试</h2>
+<p>形式：牛客视频面试。</p>
+<h3 id="工作介绍">工作介绍</h3>
+<p>主要是云监控。</p>
+<h3 id="自我介绍-3">自我介绍</h3>
+<p>略</p>
+<h3 id="计算机基础">计算机基础</h3>
+<p>Q：进程和线程？<br>
+A：<em>梅开三度</em><br>
+Q：进程资源哪些是共享的，哪些是独有的？<br>
+A：我知道有一些方式可以实现进程间通讯，这不知道。<br>
+Q：排序都有哪些？<br>
+A：O(n<sup>2</sup>)的有冒泡和选择，O(nlogn)的有快排和归并。<br>
+Q：有没有更快的？<br>
+A：O(n)的不知道。<br>
+Q：桶排序？<br>
+A：用的不多，不太了解。<br>
+Q：数据库建表要考虑哪些？<br>
+A：要有主键，后面放其他信息，主键不能有重复的。</p>
+<h2 id="笔试-3">笔试</h2>
+<pre><code class="language-c++">//评测题目:  二叉树序列化和反序列化
+// define binary tree struct
+// give tree struct =&gt; string
+// string =&gt; tree struct
+
+struct node {
+  int val;
+  node* left, right;
+};
+string s;
+
+string treeToString(node* tree) {
+  if (tree == null) return &quot;!&quot;; // end
+  return intToString(tree -&gt; val) + '@' + treeToString(tree -&gt; left) + '@' + treeToString(tree -&gt; right);
+}
+
+&quot;4!!@2@5!!@1@3!!&quot;
+
+node* stringToTree(string s) {
+  if (s == &quot;!&quot;) return null;
+  node* cur;
+  
+  
+  //cur -&gt; val = s[0];
+  string sub_s;
+  for (int i = 0; s[i] != '@';i++) {
+    sub_s.push_back(s[i]);
+  }
+  cur -&gt; val = stringToInt(sub_s);
+  
+  cur -&gt; left = stringToTree(s);
+  s = s.substring(sub_s.length());
+  if (s != &quot;&quot;)
+    cur -&gt; right = stringToTree(s);
+  
+  return cur;
+}
+
+
+   1
+  / \
+ 2   3
+/ \ 
+4  5
+</code></pre>
+<p>没做过这种，开始没搞清楚他要干啥，写了很久。<br>
+开始写成中序遍历错了，于是改为前序遍历。</p>
+<h2 id="反问-3">反问</h2>
+<p>Q：这份工作需要哪些技能？比如C++，进程之类？<br>
+A：前面问的都是你们上课学过的计算机基础问题，要实际看。<br>
+Q：后面还有多少面？<br>
+A：过了的话是一个交叉面和一个hr面，没过就又进简历池了。</p>
+<h2 id="总结-3">总结</h2>
+<p>要凉要凉</p>
 <hr>
 <p>接下来更字节跳动面经，但是他要求实习4个月导致我有点不想去。</p>
 
@@ -487,6 +562,20 @@ A：现在是周末，所以应该是下周吧。</p>
 </li>
 <li><a href="#%E5%8F%8D%E9%97%AE-2">反问</a></li>
 <li><a href="#%E6%80%BB%E7%BB%93-2">总结</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E9%9D%A2">三面</a>
+<ul>
+<li><a href="#%E9%9D%A2%E8%AF%95-3">面试</a>
+<ul>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D">工作介绍</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D-3">自我介绍</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80">计算机基础</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%94%E8%AF%95-3">笔试</a></li>
+<li><a href="#%E5%8F%8D%E9%97%AE-3">反问</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93-3">总结</a></li>
 </ul>
 </li>
 </ul>

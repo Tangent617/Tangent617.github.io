@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-05T03:00:18.006Z</updated>
+    <updated>2021-04-05T03:51:14.073Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -10,6 +10,138 @@
     <logo>https://tangent617.github.io/images/avatar.png</logo>
     <icon>https://tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
+    <entry>
+        <title type="html"><![CDATA[腾讯2021实习生招聘-技术研发综合-第二次笔试]]></title>
+        <id>https://tangent617.github.io/post/tencent-2021-intern-tech-development-exam/</id>
+        <link href="https://tangent617.github.io/post/tencent-2021-intern-tech-development-exam/">
+        </link>
+        <updated>2021-04-05T03:03:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>第一次还在提前批里就没参加。🤷‍♀</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>第一次还在提前批里就没参加。🤷‍♀</p>
+<!-- more -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
+<h1 id="形式">形式</h1>
+<p>牛客网评测<br>
+5道题，2h。<br>
+1道核心代码模式，4道ACM模式。</p>
+<h1 id="题">题</h1>
+<h2 id="修剪大树">修剪大树</h2>
+<h3 id="题意">题意</h3>
+<p>给一棵二叉树，剪掉最少的点变成满二叉树。</p>
+<h3 id="分析">分析</h3>
+<p>开始题写的完全二叉树，跟他提了之后改成满二叉树。<br>
+但依然一个点没过，很迷惑。<br>
+思路是先计算没有<code>NULL</code>的最大层数，再把这层以下的全删掉。</p>
+<h3 id="代码">代码</h3>
+<p>case通过率0%（只过样例了），不献丑了。</p>
+<h2 id="消消乐">消消乐</h2>
+<h3 id="题意-2">题意</h3>
+<p>给一串数，两个相邻的和为10可以消掉，问最多消多少次。</p>
+<h3 id="分析-2">分析</h3>
+<p>用栈保存，栈顶与当前和为10就弹出，否则压入。</p>
+<h3 id="代码-2">代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stack&gt;
+using namespace std;
+
+const int maxn = 1e6 + 5;
+
+int main(int argc, const char * argv[])
+{
+    int n, a[maxn];
+    string str;
+    stack&lt;int&gt; s;
+    cin &gt;&gt; n &gt;&gt; str;
+    for (int i = 0; i &lt; n; i++) {
+        a[i] = str[i] - '0';
+        if (!s.empty() &amp;&amp; a[i] + s.top() == 10) {
+            s.pop();
+        } else {
+            s.push(a[i]);
+        }
+    }
+    cout &lt;&lt; s.size() &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>case通过率：100%</p>
+<h2 id="钢索计时">钢索计时</h2>
+<h3 id="题意-3">题意</h3>
+<p>有两个钢索，一群人要过，只有一个平衡木，要两个人一起架着走。<br>
+给出每个人过桥的时间，如果一个快的和一个慢和一起过就按慢的时间算。<br>
+问最短时间。</p>
+<h3 id="分析-3">分析</h3>
+<p>不断用时间最少的两个人把平衡木来回带。<br>
+比如这样：<br>
+要过河：</p>
+<pre><code>
+1 2 3 4 5
+</code></pre>
+<p>1和2先过去</p>
+<pre><code>1 2
+    3 4 5
+</code></pre>
+<p>1把杆子带回来</p>
+<pre><code>  2
+1   3 4 5
+</code></pre>
+<p>4和5过去</p>
+<pre><code>  2   4 5
+1   3
+</code></pre>
+<p>2把杆子带回来</p>
+<pre><code>      4 5
+1 2 3
+</code></pre>
+<p>1和2再走</p>
+<pre><code>1 2   4 5
+    3
+</code></pre>
+<p>1带杆子回</p>
+<pre><code>  2   4 5
+1   3
+</code></pre>
+<p>1和3过</p>
+<pre><code>1 2 3 4 5
+
+</code></pre>
+<p>规律是4次一组：2 1 a[i] 2</p>
+<h3 id="代码-3">代码</h3>
+<p>找的规律应该还是有疏漏，case通过率90%。<br>
+代码改好了再放上来。</p>
+<h2 id="共享充电">共享充电</h2>
+<h3 id="题意-4">题意</h3>
+<p>有n个手机共用一个充电器，给出充电器的充电速度w、每个手机的电量a[i]和耗电速度b[i]，问能保持每个手机都有电的时间最长为多少。</p>
+<h3 id="分析-4">分析</h3>
+<p>设总充电时间为t，每个手机充电时间为t[i]。</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo>∗</mo><mi>t</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>+</mo><mi>a</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>=</mo><mi>b</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>∗</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">w*t[i] + a[i] = b[i] * t
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">t</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span></span></p>
+<p>求和得：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo>∗</mo><mi>t</mi><mo>+</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><msub><mi>a</mi><mi>i</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><msub><mi>b</mi><mi>i</mi></msub><mo>∗</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">w*t + \sum_{i=0}^n{a_i} =  \sum_{i=0}^n{b_i} * t
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69841em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span></span></p>
+<p>所以:</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mo>(</mo><mi>a</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>)</mo></mrow><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mo>(</mo><mi>b</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>)</mo><mo>−</mo><mi>w</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">t = \frac{sum(a[i])}{sum(b[i]) - w}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>但错就错在求完之后代入发现有的t[i]是负数，手机也不能给手机充电啊……</p>
+<h3 id="代码-4">代码</h3>
+<p>按上面的写case通过率为10%。</p>
+<h2 id="砝码">砝码</h2>
+<h3 id="题意-5">题意</h3>
+<p>给一些砝码的质量和一个物品的质量，用这些砝码正好称出来k（整数）个物品，求k最小值，不能则输出-1.</p>
+<h3 id="分析-5">分析</h3>
+<p>来不及了，没做完。</p>
+<h3 id="代码-5">代码</h3>
+<p>没写。</p>
+<h1 id="总结">总结</h1>
+<p>一个题不会就爬走做下一个，然后下一个不会又换，结果哪个都没做明白。<br>
+嚎啕大哭.jpg</p>
+<hr>
+<p>看完<a href="https://movie.douban.com/subject/30337857/">《行尸走肉》第十季</a>了，更个剧评。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[腾讯TEG后台开发实习面试]]></title>
         <id>https://tangent617.github.io/post/tencent-teg-background-development-internship-interview/</id>
@@ -57,7 +189,7 @@ A：TEG部门，游戏方面的，但不是直接做游戏，是做一个平台�
 <h2 id="总结">总结</h2>
 <p>真的啥也不会，啥也想不起来，有史以来答得最烂的一次，要凉。但量面试官很和蔼。</p>
 <hr>
-<p>这两天看完<a href="https://movie.douban.com/subject/30337857/">《行尸走肉》第十季</a>更个剧评。</p>
+<p>最近感冒了，脑壳疼，先睡了，明天更[笔试帖子]((https://tangent617.github.io/post/tencent-2021-intern-tech-development-exam/)。</p>
 ]]></content>
     </entry>
     <entry>

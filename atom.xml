@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-07T09:42:32.963Z</updated>
+    <updated>2021-04-07T09:45:55.694Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -34,7 +34,11 @@ A：操作系统、组成、网络啥的都学，也选了些选修课。<br>
 Q：准备考研吗？<br>
 A：不了，想准备留学。但如果有offer就先工作。<br>
 Q：你一个女生为啥会对算法竞赛感兴趣？<br>
-A：（幸亏我对打拳兴趣不大）大一听了学校ACM基地的宣讲，觉得很喜欢这种用各种数据结构算法解决问题。</p>
+A：（幸亏我对打拳兴趣不大）大一听了学校ACM基地的宣讲，觉得很喜欢这种用各种数据结构算法解决问题。<br>
+Q：现在还在参加吗？<br>
+A：下个月有个区域赛和一个天梯赛，打完这俩就退役了。<br>
+Q：哈哈，退役。<br>
+A：（？有这么好笑）</p>
 <h3 id="数据结构">数据结构</h3>
 <p>Q：排序？<br>
 A：冒泡、选择、快排、归并等。<br>

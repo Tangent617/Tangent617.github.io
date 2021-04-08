@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-07T15:08:29.735Z</updated>
+    <updated>2021-04-08T04:52:17.402Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -49,6 +49,8 @@ A：完全二叉树，分小根堆与大根堆。</p>
 <h3 id="操作系统">操作系统</h3>
 <p>Q：进程与线程？<br>
 A：进程是资源分配的最小单位，线程是CPU调度的最小单位。进程包含线程。<br>
+Q：调度？<br>
+A：先来先服务、短作业优先、时间片轮转。<br>
 Q：如何避免死锁？<br>
 A：说了信号量，加锁。</p>
 <h3 id="网络">网络</h3>

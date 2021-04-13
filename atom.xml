@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-12T11:21:05.176Z</updated>
+    <updated>2021-04-13T16:23:24.942Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -336,6 +336,165 @@ int main(int argc, const char * argv[])
 <h3 id="方法3">方法3</h3>
 <p>如果是一维的话就2个指针i和j依次找出每一段空隙，二维就每个空隙在纵坐标里也找。<br>
 觉得有点麻烦，没写。</p>
+<h3 id="方法4">方法4</h3>
+<p>今天面试官又问我有没有新想法，我说了“离散化+DP”，于是诞生了这个毒瘤方法。</p>
+<h4 id="题解">题解</h4>
+<p>开始动态规划的转移方程想得不对，后来灵机一动想到这么个神奇的东西：<br>
+先把所有点<strong>离散化</strong>，再记录每一个小网格的面积，把所有不能选的地方（小矩形所在处）全置为负无穷，然后用得到的新地图跑一遍<strong>最大子矩阵</strong>。<br>
+<strong>离散化</strong>是把所有点排序，用连续的整数值代替坐标，方便后续计算。<br>
+<strong>最大子矩阵</strong>是个二维的<strong>最大子序列</strong>，具体见<a href="https://www.jianshu.com/p/d5a5c75720c8">这个博客</a>，前人写过的东西菜鸡我就不复述一遍啦。<br>
+支持面重叠，未考虑边重叠的原因：输入数据为<code>double</code>，而浮点数是不能比较等于的。精度损失是可以忽略不计的。<br>
+时间复杂度O(k<sup>3</sup>)，空间复杂度O(k<sup>2</sup>)。</p>
+<h4 id="代码-2">代码</h4>
+<p>有点长，但是认真写了注释。</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;map&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+const int maxk = 1005, inf = 0x7fffffff;
+double n, m; // 场地边界
+int k; // 矩形个数
+struct square {
+    double x1, y1, x2, y2; // 原对角
+    int _x1, _y1, _x2, _y2; // 离散化后的对角
+} a[maxk];
+struct point {
+    double x, y; // 点坐标
+    int _x, _y; // 离散化后的点坐标
+} b[maxk*2];
+double pos_x[maxk*2], pos_y[maxk*2]; // 用序号找原位置
+map&lt;double, int&gt; mp_x, mp_y; // 查找离散化坐标，与pos_x和pos_y相反
+double g[maxk*2][maxk*2]; // 离散后的地图，存当前小块的面积
+int ans_x1, ans_y1, ans_x2, ans_y2; // 答案的对角坐标id
+
+void init() { // 初始化，置边界值
+    pos_x[0] = 0;
+    pos_x[k*2+1] = n;
+    pos_y[0] = 0;
+    pos_y[k*2+1] = n;
+
+    b[0]._x = 0;
+    b[k*2+1]._x = n;
+    b[0]._y = 0;
+    b[k*2+1]._y = m;
+}
+
+// 排序用
+bool cmp_x(point p1, point p2) {
+    return p1.x &lt; p2.x;
+}
+bool cmp_y(point p1, point p2) {
+    return p1.y &lt; p2.y;
+}
+
+void lsh() { // 离散化
+    sort(b, b + k * 2 + 1, cmp_x);
+    for (int i = 1; i &lt;= k * 2; i++) {
+        b[i]._x = i;
+        pos_x[i] = b[i].x;
+        mp_x[b[i].x] = i;
+    }
+    sort(b, b + k * 2 + 1, cmp_y);
+    for (int i = 1; i &lt;= k * 2; i++) {
+        b[i]._y = i;
+        pos_y[i] = b[i].y;
+        mp_y[b[i].y] = i;
+    }
+
+    for (int i = 1; i &lt;= k; i++) {
+        a[i]._x1 = mp_x[a[i].x1];
+        a[i]._x2 = mp_x[a[i].x2];
+        a[i]._y1 = mp_y[a[i].y1];
+        a[i]._y2 = mp_y[a[i].y2];
+    }
+}
+
+void make_map() {
+    // 存每一个小格的面积
+    for (int i = 0; i &lt;= k * 2 + 1; i++) {
+        for (int j = 0; j &lt;= k * 2 + 1; j++) {
+            g[i][j] = (pos_x[i+1] - pos_x[i]) * (pos_y[j+1] - pos_y[j]);
+        }
+    }
+
+    // 被占用的赋值为负无穷
+    for (int cnt = 1; cnt &lt;= k; cnt++) {
+        for (int i = a[cnt]._x1; i &lt; a[cnt]._x2; i++) {
+            for (int j = a[cnt]._y1; j &lt; a[cnt]._y2; j++) {
+                g[i][j] = -inf;
+            }
+        }
+    }
+}
+
+void test() { // 测试用，输出离散化后的地图
+    for (int i = 0; i &lt;= k * 2 + 1; i++) {
+        cout &lt;&lt; pos_x[i] &lt;&lt; ' ';
+    }
+    cout &lt;&lt; endl;
+    for (int j = 0; j &lt;= k * 2 + 1; j++) {
+        cout &lt;&lt; pos_y[j] &lt;&lt; ' ';
+    }
+    cout &lt;&lt; endl;
+
+    for (int i = 0; i &lt;= k * 2; i++) {
+        for (int j = 0; j &lt;= k * 2; j++) {
+            printf(&quot;%5lf &quot;, g[i][j]);
+        }
+        cout &lt;&lt; endl;
+    }
+}
+
+double max_matrix() { // 最大子矩阵和
+    double tmp[maxk*2], ans = -inf, ans_y1_tmp;
+    for (int i = 0; i &lt;= 2 * k; i++) {
+        memset(tmp, 0, sizeof tmp);
+        for (int j = i; j &lt;= 2 * k; j++) {
+            double sum = 0;
+            for (int h = 0; h &lt;= 2 * k; h++) {
+                tmp[h] += g[j][h];
+                sum += tmp[h];
+                if (sum &lt; 0) {
+                    sum = tmp[h];
+                    ans_y1_tmp = h;
+                }
+                if (sum &gt; ans) {
+                    ans = sum;
+                    ans_y1 = ans_y1_tmp;
+                    ans_y2 = h;
+                    ans_x1 = i;
+                    ans_x2 = j;
+                }
+            }
+        }
+    }
+    return ans;
+}
+
+int main(int argc, const char * argv[])
+{
+    //freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);
+    cin &gt;&gt; k &gt;&gt; n &gt;&gt; m;
+    init();
+    for (int i = 1; i &lt;= k; i++) { // 输入同时保存所有的点
+        cin &gt;&gt; a[i].x1 &gt;&gt; a[i].y1 &gt;&gt; a[i].x2 &gt;&gt; a[i].y2;
+        b[i*2-1].x = a[i].x1;
+        b[i*2-1].y = a[i].y1;
+        b[i*2].x = a[i].x2;
+        b[i*2].y = a[i].y2;
+    }
+    lsh();
+    make_map();
+    //test();
+    cout &lt;&lt; &quot;面积：&quot; &lt;&lt; max_matrix() &lt;&lt; endl;
+    //cout&lt;&lt; ans_x1 &lt;&lt; ',' &lt;&lt; ans_y1 &lt;&lt; ' ' &lt;&lt; ans_x2 &lt;&lt; ',' &lt;&lt; ans_y2 &lt;&lt; endl;
+    cout &lt;&lt; &quot;左上角：&quot; &lt;&lt; pos_x[ans_x1] &lt;&lt; ',' &lt;&lt; pos_y[ans_y1] &lt;&lt; endl;
+    cout &lt;&lt; &quot;右下角：&quot; &lt;&lt; pos_x[ans_x2+1] &lt;&lt; ',' &lt;&lt; pos_y[ans_y2+1] &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
 <h2 id="总结">总结</h2>
 <p>腾讯的面试简直一个比一个令人自闭。<br>
 但令人社死这是第一回嗷。</p>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-14T03:40:43.187Z</updated>
+    <updated>2021-04-14T03:44:36.775Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -20,6 +20,8 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>受影响的主要为两篇影评。😌</p>
 <!-- more -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
 <h2 id="解决方案">解决方案</h2>
 <p>在网页<code>head</code>部分加入以下代码，屏蔽自己网站的Referrer，在head标签内添加如下mata标签：</p>
 <pre><code class="language-html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;

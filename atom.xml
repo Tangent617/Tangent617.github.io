@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-13T16:29:31.785Z</updated>
+    <updated>2021-04-14T02:23:52.884Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -337,7 +337,7 @@ int main(int argc, const char * argv[])
 <p>如果是一维的话就2个指针i和j依次找出每一段空隙，二维就每个空隙在纵坐标里也找。<br>
 觉得有点麻烦，没写。</p>
 <h3 id="方法4">方法4</h3>
-<p>今天面试官又问我有没有新想法，我说了“离散化+DP”，于是诞生了这个毒瘤方法。</p>
+<p>过了两天面试官又问我有没有新想法，我说了“离散化+DP”，于是诞生了这个毒瘤方法。</p>
 <h4 id="题解">题解</h4>
 <p>开始动态规划的转移方程想得不对，后来灵机一动想到这么个神奇的东西：<br>
 先把所有点<strong>离散化</strong>，再记录每一个小网格的面积，把所有不能选的地方（小矩形所在处）全置为负无穷，然后用得到的新地图跑一遍<strong>最大子矩阵</strong>。<br>

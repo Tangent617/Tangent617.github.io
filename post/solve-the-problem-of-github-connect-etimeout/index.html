@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
 <title>博客GitHub联网问题修复 | Xiaoyan Guo</title>
-<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618477812529">
+<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618479040871">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="博客GitHub联网问题修复 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
@@ -12,17 +12,14 @@
 
 
 
-    <meta name="description" content="对大家浏览博客无影响，只是让我的更新上传工作更快了。🤗
+    <meta name="description" content="对大家浏览博客无影响，只是让我的更新上传工作更快了。💃
+博文封面图也是用来测试代理的，如果正常显示了图片证明了你打开了代理。🕺
 
+
+👀  views
 常出现问题
 Gridea在检测远程连接时经常报
-ERROR: connect ETIMEOUT
-一个GitHub的IP
-
-导致我经常无法及时更新博客。
-产生原因
-
-Github在国..." />
+ERROR: connect ETI..." />
     <meta name="keywords" content="Gridea" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -32,7 +29,7 @@ Github在国..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://tangent617.github.io">
-  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618477812529" alt="">
+  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618479040871" alt="">
   </a>
   <h1 class="site-title">
     Xiaoyan Guo
@@ -125,8 +122,11 @@ Github在国..." />
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>对大家浏览博客无影响，只是让我的更新上传工作更快了。🤗</p>
+                <p>对大家浏览博客无影响，只是让我的更新上传工作更快了。💃<br>
+博文封面图也是用来测试代理的，如果正常显示了图片证明了你打开了代理。🕺</p>
 <!-- more -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
 <h2 id="常出现问题">常出现问题</h2>
 <p><code>Gridea</code>在<code>检测远程连接</code>时经常报</p>
 <pre><code>ERROR: connect ETIMEOUT
@@ -142,7 +142,8 @@ Github在国..." />
 <li>尝试了Issues中修改<code>Hosts</code>增加可ping通的Github IP的操作，但效果甚微。</li>
 </ol>
 <h2 id="解决办法">解决办法</h2>
-<p>通过<code>Proxifier</code>软件单独对某一个app，如Gridea进行代理。（前提是已有可用代理）</p>
+<p>通过<code>Proxifier</code>软件单独对某一个app，如Gridea进行代理。（前提是已有可用代理）<br>
+我用的是Mac，PC上的操作相似，下面的软件也都是双平台均可用的。</p>
 <ol>
 <li>Proxifier可用<code>Homebrew</code>或在<a href="https://www.proxifier.com">官网</a>下载<pre><code class="language-bash">brew install proxifier
 </code></pre>
@@ -167,8 +168,9 @@ Dashboard-设置<br>
 </li>
 <li>进入旁边的<code>Rules</code>为<code>Gridea</code>设置代理<br>
 <img src="https://tangent617.github.io/post-images/1618477627419.png" alt="addRules" loading="lazy"><br>
-<img src="https://tangent617.github.io/post-images/1618477325829.png" alt="Rules" loading="lazy"><br>
-相似地，也可以为<code>Twitter</code>与<code>Telegram</code>等软件单独设置代理。</li>
+相似地，也可以为<code>Twitter</code>与<code>Telegram</code>等软件单独设置代理。<br>
+<img src="https://tangent617.github.io/post-images/1618478478583.png" alt="Rules" loading="lazy"></li>
+<li>同步博文的时候注意要保持代理软件开启，Proxifier随意</li>
 </ol>
 <h2 id="参考">参考</h2>
 <p>https://mitsea.medium.com/macos-下对特定软件使用科学代理-7a70d8236f62</p>

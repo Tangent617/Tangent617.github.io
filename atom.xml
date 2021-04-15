@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-15T09:10:15.652Z</updated>
+    <updated>2021-04-15T09:30:43.724Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -16,10 +16,14 @@
         <link href="https://tangent617.github.io/post/solve-the-problem-of-github-connect-etimeout/">
         </link>
         <updated>2021-04-15T08:02:29.000Z</updated>
-        <summary type="html"><![CDATA[<p>对大家浏览博客无影响，只是让我的更新上传工作更快了。🤗</p>
+        <summary type="html"><![CDATA[<p>对大家浏览博客无影响，只是让我的更新上传工作更快了。💃<br>
+博文封面图也是用来测试代理的，如果正常显示了图片证明了你打开了代理。🕺</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>对大家浏览博客无影响，只是让我的更新上传工作更快了。🤗</p>
+        <content type="html"><![CDATA[<p>对大家浏览博客无影响，只是让我的更新上传工作更快了。💃<br>
+博文封面图也是用来测试代理的，如果正常显示了图片证明了你打开了代理。🕺</p>
 <!-- more -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
 <h2 id="常出现问题">常出现问题</h2>
 <p><code>Gridea</code>在<code>检测远程连接</code>时经常报</p>
 <pre><code>ERROR: connect ETIMEOUT
@@ -35,7 +39,8 @@
 <li>尝试了Issues中修改<code>Hosts</code>增加可ping通的Github IP的操作，但效果甚微。</li>
 </ol>
 <h2 id="解决办法">解决办法</h2>
-<p>通过<code>Proxifier</code>软件单独对某一个app，如Gridea进行代理。（前提是已有可用代理）</p>
+<p>通过<code>Proxifier</code>软件单独对某一个app，如Gridea进行代理。（前提是已有可用代理）<br>
+我用的是Mac，PC上的操作相似，下面的软件也都是双平台均可用的。</p>
 <ol>
 <li>Proxifier可用<code>Homebrew</code>或在<a href="https://www.proxifier.com">官网</a>下载<pre><code class="language-bash">brew install proxifier
 </code></pre>
@@ -60,8 +65,9 @@ Dashboard-设置<br>
 </li>
 <li>进入旁边的<code>Rules</code>为<code>Gridea</code>设置代理<br>
 <img src="https://tangent617.github.io/post-images/1618477627419.png" alt="addRules" loading="lazy"><br>
-<img src="https://tangent617.github.io/post-images/1618477325829.png" alt="Rules" loading="lazy"><br>
-相似地，也可以为<code>Twitter</code>与<code>Telegram</code>等软件单独设置代理。</li>
+相似地，也可以为<code>Twitter</code>与<code>Telegram</code>等软件单独设置代理。<br>
+<img src="https://tangent617.github.io/post-images/1618478478583.png" alt="Rules" loading="lazy"></li>
+<li>同步博文的时候注意要保持代理软件开启，Proxifier随意</li>
 </ol>
 <h2 id="参考">参考</h2>
 <p>https://mitsea.medium.com/macos-下对特定软件使用科学代理-7a70d8236f62</p>

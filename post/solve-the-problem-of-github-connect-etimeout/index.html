@@ -3,23 +3,26 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
-<title>Hello Gridea | Xiaoyan Guo</title>
+<title>博客GitHub联网问题修复 | Xiaoyan Guo</title>
 <link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618477812529">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hello Gridea | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="博客GitHub联网问题修复 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="👏  欢迎使用 Gridea ！
-✍️  Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...
+    <meta name="description" content="对大家浏览博客无影响，只是让我的更新上传工作更快了。🤗
 
-Github
-Gridea 主页
-示例网站
-特性👇
-📝  你可以使用最酷的 Markdo..." />
+常出现问题
+Gridea在检测远程连接时经常报
+ERROR: connect ETIMEOUT
+一个GitHub的IP
+
+导致我经常无法及时更新博客。
+产生原因
+
+Github在国..." />
     <meta name="keywords" content="Gridea" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -102,11 +105,11 @@ Gridea 主页
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              博客GitHub联网问题修复
             </h2>
             <div class="post-info">
               <span>
-                2018-12-12
+                2021-04-15
               </span>
               <span>
                 2 min read
@@ -118,38 +121,69 @@ Gridea 主页
               
             </div>
             
-              <img class="post-feature-image" src="https://tangent617.github.io/post-images/hello-gridea.png" alt="">
+              <img class="post-feature-image" src="https://www.proxifier.com/logo-main.svg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+                <p>对大家浏览博客无影响，只是让我的更新上传工作更快了。🤗</p>
 <!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<h2 id="常出现问题">常出现问题</h2>
+<p><code>Gridea</code>在<code>检测远程连接</code>时经常报</p>
+<pre><code>ERROR: connect ETIMEOUT
+一个GitHub的IP
+</code></pre>
+<p>导致我经常无法及时更新博客。</p>
+<h2 id="产生原因">产生原因</h2>
+<ol>
+<li><code>Github</code>在国内的联网很慢</li>
+<li>软件内使用的<code>.git</code>配置的链接无法从<code>github</code>改为镜像站</li>
+<li>其他<code>VPN</code>或<code>代理</code>软件无法对其进行代理操作</li>
+<li>作者只给出了“🙁 同步遇到了错误，请查阅 FAQ 或 Issues 来寻找解决方案”，然而官网FAQ中并没有解决办法</li>
+<li>尝试了Issues中修改<code>Hosts</code>增加可ping通的Github IP的操作，但效果甚微。</li>
+</ol>
+<h2 id="解决办法">解决办法</h2>
+<p>通过<code>Proxifier</code>软件单独对某一个app，如Gridea进行代理。（前提是已有可用代理）</p>
+<ol>
+<li>Proxifier可用<code>Homebrew</code>或在<a href="https://www.proxifier.com">官网</a>下载<pre><code class="language-bash">brew install proxifier
+</code></pre>
+二代Mac版激活码<pre><code>P427L-9Y552-5433E-8DSR3-58Z68
+</code></pre>
+</li>
+<li>打开<code>Proxifier</code>，点击<code>Proxies</code>添加代理，写入代理与端口号。<br>
+<img src="https://tangent617.github.io/post-images/1618475487355.png" alt="Proxies" loading="lazy"><br>
+从上至下依次为：<code>蓝灯</code>、<code>ShadowsocksX-NG-R8</code>、<code>ClashX</code>。<br>
+查看常用的三个fanqiang软件代理地址方法：
+<ul>
+<li>蓝灯<br>
+账号-设置-显示高级设置<br>
+<img src="https://tangent617.github.io/post-images/1618476055082.png" alt="Lantern" loading="lazy"></li>
+<li>ShadowsocksX-NG-R8<br>
+高级设置<br>
+<img src="https://tangent617.github.io/post-images/1618476091487.png" alt="ssr" loading="lazy"></li>
+<li>ClashX<br>
+Dashboard-设置<br>
+<img src="https://tangent617.github.io/post-images/1618476202017.png" alt="clash" loading="lazy"></li>
+</ul>
+</li>
+<li>进入旁边的<code>Rules</code>为<code>Gridea</code>设置代理<br>
+<img src="https://tangent617.github.io/post-images/1618477627419.png" alt="addRules" loading="lazy"><br>
+<img src="https://tangent617.github.io/post-images/1618477325829.png" alt="Rules" loading="lazy"><br>
+相似地，也可以为<code>Twitter</code>与<code>Telegram</code>等软件单独设置代理。</li>
+</ol>
+<h2 id="参考">参考</h2>
+<p>https://mitsea.medium.com/macos-下对特定软件使用科学代理-7a70d8236f62</p>
+<hr>
+<p>明天更华为面经</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
+<li><a href="#%E5%B8%B8%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98">常出现问题</a></li>
+<li><a href="#%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0">产生原因</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">解决办法</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
 </ul>
 </li>
 </ul>
@@ -159,6 +193,15 @@ Gridea 主页
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tangent617.github.io/post/fix-bug-of-linking-pictures-not-showing/">
+              <h3 class="post-title">
+                外链图片显示问题已修复
+              </h3>
+            </a>
+          </div>
         
 
         

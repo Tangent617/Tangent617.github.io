@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
 <title>华为通用软件开发工程师实习笔试&amp;面试 | Xiaoyan Guo</title>
-<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618479040871">
+<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618571795225">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="华为通用软件开发工程师实习笔试&amp;面试 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
@@ -31,7 +31,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://tangent617.github.io">
-  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618479040871" alt="">
+  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618571795225" alt="">
   </a>
   <h1 class="site-title">
     Xiaoyan Guo
@@ -111,7 +111,7 @@
                 2021-03-31
               </span>
               <span>
-                8 min read
+                12 min read
               </span>
               
                 <a href="https://tangent617.github.io/tag/v-63w7cb4/" class="post-tag">
@@ -368,6 +368,124 @@ int main(int argc, const char * argv[])
 <p>1.5h做完，3道题全部100%通过率，稳过了。</p>
 <h1 id="综合测评">综合测评</h1>
 <p>36道题，每1个里面有几个选项，比如“我擅长在压力下工作”“我喜欢团队协作”等，可以选从“非常不同意”到“非常同意”之间7个程度。如果有好几个选同一个选项，它还会再加一题问哪个最符合你。</p>
+<h1 id="专业面试1">专业面试1</h1>
+<p>形式：ZOOM视频会议</p>
+<h2 id="小插曲">小插曲</h2>
+<p>开始意向工作地点写错了，填成西安但实际想去深圳，就不太想面，但hr来电话说之后还可能可以转，于是决定还是来试试。<br>
+很棒是看到群里有人签到之后等了很长时间，我就到时间直接面的。</p>
+<h2 id="面试">面试</h2>
+<h3 id="自我介绍">自我介绍</h3>
+<p>略<br>
+Q：用什么语言，C还是Java？<br>
+A：C/C++多一点，偶尔写Java。</p>
+<h3 id="项目">项目</h3>
+<p>Q：社团有做过项目吗？<br>
+A：比较小，说说我的课程大作业吧：<a href="https://github.com/Tangent617/L1brary">L1brary</a><br>
+Q：这个数据库是本地还是联网？<br>
+A：就用的华为的GaussDB云数据库。<br>
+Q：觉得很淦👍并让打开共享屏幕开始撸代码。<br>
+A：要退出一下开个权限，然后又接到了来自华为的机器人的无数面试短信和电话。</p>
+<h3 id="算法">算法</h3>
+<h4 id="有序数组二分">有序数组二分</h4>
+<pre><code class="language-c++">int l = 0, r = n, mid;
+while (l &lt;= r) { // 这里当时写错成&lt;了，应该是&lt;=
+    mid = (l + r) / 2;
+
+    if (k == a[mid]) {
+        cout &lt;&lt; mid &lt;&lt; endl;
+        return 0;
+    }
+
+    if (k &gt; a[mid]) {
+        l = mid + 1;
+    } else {
+        r = mid - 1;
+    }
+}
+cout &lt;&lt; -1 &lt;&lt; endl;
+</code></pre>
+<p>本来我是最后判断是否是找到的值的，因为<code>l = mid + 1</code>与<code>r = mid - 1</code>会将本来找到的正确值跳过，被纠正把判断等于改到了循环里面。<br>
+很久没手写递归了，一般直接调<code>upper_bound</code>和<code>lower_bound</code>用来着。<br>
+Q：复杂度？<br>
+A：O(log<sub>2</sub>n)。<br>
+Q：分治？<br>
+A：把一个大问题分解成同样的小问题来解决。</p>
+<h4 id="循环有序数组二分">循环有序数组二分</h4>
+<p>开始没听懂什么是循环有序数组，拐了弯路。<br>
+写了个乱七八糟不晓得在干嘛的代码：</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main(int argc, const char * argv[])
+{
+    int n = 10, a[100] = {7,8,9,0,1,2,3}, k;
+
+    int l = 0, r = n, mid;
+    while (l &lt;= r) {
+        mid = (l + r) / 2;
+
+        if (k == a[mid]) {
+            cout &lt;&lt; mid &lt;&lt; endl;
+            return 0;
+        }
+
+        if (k &gt; a[mid]) {
+            l = mid + 1;
+        } else {
+            if (k &lt; a[l])
+                l = mid + 1;
+            else
+                r = mid - 1;
+        }
+    }
+
+    cout &lt;&lt; -1 &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>面试官：不应该先比较k，应该先比较<code>mid</code>和<code>l</code>看拐点在哪边。<br>
+我：确实。那是需要写递归吧，因为不确定<code>k</code>会在哪边。对连续的一边跑普通的二分查找，对循环递增的一边继续刚刚的操作。</p>
+<h4 id="哈希">哈希</h4>
+<p>Q：哈希？<br>
+A：一一对应的一个算法，通过键值查表。<br>
+Q：给一字符串，统计每个字母出现次数？<br>
+A：用<code>map</code>存，一个字母一个字母扫，扫到的加个1.</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+using namespace std;
+
+map&lt;char, int&gt; mp;
+
+int main(int argc, const char * argv[])
+{
+    string s;
+    cin &gt;&gt; s;
+    for (int i = 0; i &lt; s.length(); i++) {
+        mp[s[i]]++;
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="发展思维">发展思维</h3>
+<h4 id="二进制">二进制</h4>
+<p>Q：假设有1000瓶液体，其中999瓶是水，1瓶是毒药，外观无法区分。假设你有10只小白鼠和无线多干净的试管，且假设毒药毒性极强，任何稀释都无效，如何在最短时间内找到哪瓶是毒药？<br>
+A：给小白鼠编号1-10，给瓶子也编号1-1000.比如第5个瓶子，二进制是101，所以让第1和3号小白鼠喝；这样把1000瓶都给分了。因为1000&lt;2<sup>10</sup>(1024)所以够用。最后看哪几只老鼠死了，根据它们的编号连起来是个二进制数，再转化成十进制就是毒药瓶子的序号。</p>
+<h4 id="一致性">一致性</h4>
+<p>Q：假设你是一个将军，你有两个突击小队A和B，现在要攻击一个城堡的南北门，A队已于南门就位，B对已于北门就位。得让A/B小队尽可能同时攻击南北门，发起攻击的时间差不能大于10分钟。<br>
+你和A/B直接都有电话线路进行沟通，但是这个电话线路不是安全的，随时有可能被敌人切断联系，A/B小队之间无任何沟通手段，彼此也不知道对方是否发起了攻击，你怎么才能实现这个攻击目标呢？<br>
+A：这是个什么方面的问题？虽然我看懂题了但是没懂要问个啥？<br>
+Q：就……如果给一个队打电话让进攻，给另一个打时候电话断了就不行。问咋办？<br>
+A：？？？那我能不能打电话给两个队都说9点进攻，这样只要9点之前电话有时间好使就行？<br>
+Q：嗯，没错就是这么回事。<br>
+A：？？？？？（就这）<br>
+Q：体现了数据库的一致性……<br>
+A：？？？？？？？（我直接迷惑）</p>
+<h3 id="反问">反问</h3>
+<p>Q：做的数据库内核开发？<br>
+A：对。ACID四个特性、分布式计算保证事务独立等。</p>
+<h2 id="总结-2">总结</h2>
+<p>有史以来参加过的最简单的一次面试。</p>
 <hr>
 <p>日后要是没什么可写的会陆续搬运一些之前在其他平台上写过的东西到小站来。</p>
 
@@ -415,6 +533,32 @@ int main(int argc, const char * argv[])
 </ul>
 </li>
 <li><a href="#%E7%BB%BC%E5%90%88%E6%B5%8B%E8%AF%84">综合测评</a></li>
+<li><a href="#%E4%B8%93%E4%B8%9A%E9%9D%A2%E8%AF%951">专业面试1</a>
+<ul>
+<li><a href="#%E5%B0%8F%E6%8F%92%E6%9B%B2">小插曲</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95">面试</a>
+<ul>
+<li><a href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D">自我介绍</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE">项目</a></li>
+<li><a href="#%E7%AE%97%E6%B3%95">算法</a>
+<ul>
+<li><a href="#%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%BA%8C%E5%88%86">有序数组二分</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%BA%8C%E5%88%86">循环有序数组二分</a></li>
+<li><a href="#%E5%93%88%E5%B8%8C">哈希</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%91%E5%B1%95%E6%80%9D%E7%BB%B4">发展思维</a>
+<ul>
+<li><a href="#%E4%BA%8C%E8%BF%9B%E5%88%B6">二进制</a></li>
+<li><a href="#%E4%B8%80%E8%87%B4%E6%80%A7">一致性</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%8D%E9%97%AE">反问</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93-2">总结</a></li>
+</ul>
+</li>
 </ul>
 
               </div>

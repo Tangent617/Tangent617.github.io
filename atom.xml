@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-17T13:31:53.170Z</updated>
+    <updated>2021-04-18T03:34:18.613Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -10,6 +10,139 @@
     <logo>https://tangent617.github.io/images/avatar.png</logo>
     <icon>https://tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
+    <entry>
+        <title type="html"><![CDATA[识别无符号数并计算其值]]></title>
+        <id>https://tangent617.github.io/post/recognize-an-unsigned-number-and-calculate-its-value/</id>
+        <link href="https://tangent617.github.io/post/recognize-an-unsigned-number-and-calculate-its-value/">
+        </link>
+        <updated>2021-04-18T03:22:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>编译原理作业exercise-2 1.5</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>编译原理作业exercise-2 1.5</p>
+<!-- more -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
+<h2 id="题目">题目</h2>
+<p>编写识别无符号数并计算其值的程序，已知图2（上面的封面图）是识别无符号数的状态转换图。要实现的程序具体要求如下:<br>
+(1) 在程序内采用二维数组保存识别无符号数的状态转换矩阵;<br>
+(2) 在识别无符号数的过程中，实现把输入的无符号数字符串转换成数值显示(不能使用类似atoi等函数实现);<br>
+(3) 要采用矩阵查表的方式进行状态切换和执行语义动作，而不是采用switch-case语句进行;</p>
+<h2 id="分析">分析</h2>
+<p>数字格式认为是a.bEc，<code>DFS</code>不断查找更新状态，串识别完毕且到达最终态时跳出。</p>
+<h2 id="代码">代码</h2>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+string s;
+// s = a . b E +/- c
+int a = 0, b = 0, c = 0;
+bool point = false, E = false, neg = false;
+char state_trans[7][7] = {
+    '0', 'd', '0', '.', '0', '0', '0',
+    '0', 'd', '.', '0', 'E', '0', '0',
+    '0', '0', 'd', '0', 'E', '0', '0',
+    '0', '0', 'd', '0', '0', '0', '0',
+    '0', '0', '0', '0', '0', '+', 'd',
+    '0', '0', '0', '0', '0', '0', 'd', 
+    '0', '0', '0', '0', '0', '0', 'd'
+};
+
+char simplify(char c) {
+    if (c &gt;= '0' &amp;&amp; c &lt;= '9') return 'd';
+    if (c == 'E' || c == 'e') return 'E';
+    if (c == '+' || c == '-') return '+';
+    return c;
+}
+
+void add_digit(char ch, int now_state) {
+    if (ch == '.')
+        point = true;
+    else if (ch == 'E')
+        E = true;
+    else if (ch == '+' || ch == '-') {
+        if (ch == '-')
+            neg = true;
+    } else if (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {
+        int digit = ch - '0';
+        if (now_state == 0 || now_state == 1)
+            a = a * 10 + digit;
+        else if (now_state == 2 || now_state == 3)
+            b = b * 10 + digit;
+        else if (now_state == 4 || now_state == 5 || now_state == 6)
+            c = c * 10 + digit;
+    } else {
+        cerr &lt;&lt; &quot;invalid input!&quot; &lt;&lt; endl;
+    }
+}
+
+void test() {
+    cout &lt;&lt; a;
+    if (point)
+        cout &lt;&lt; '.';
+    else
+        cout &lt;&lt; ' ';
+    cout &lt;&lt; b;
+    if (E)
+        cout &lt;&lt; 'E';
+    else
+        cout &lt;&lt; ' ';
+    if (neg)
+        cout &lt;&lt; '-';
+    else
+        cout &lt;&lt; '+';
+    cout &lt;&lt; c &lt;&lt; endl;
+}
+
+double cal_ans() {
+    //test();
+
+    double bb = b, ans;
+    while (bb &gt; 1)
+        bb /= 10;
+    ans = a + bb;
+
+    if (!E) { // a.b
+        return ans;
+    } else if (!neg) { // a.bEc
+        for (int i = 0; i &lt; c; i++) {
+            ans *= 10;
+        }
+        return ans;
+    } else { // a.bE-c
+        for (int i = 0; i &lt; c; i++) {
+            ans /= 10;
+        }
+        return ans;
+    }
+}
+
+double dfs(int pos, int state) {
+    if (pos == s.length() - 1 &amp;&amp; (state == 1 || state == 2 || state == 6))
+        return cal_ans();
+        
+    for (int next_state = 0; next_state &lt; 7; next_state++) {
+        if (state_trans[state][next_state] == simplify(s[pos+1])) {
+            int tmp_a = a, tmp_b = b, tmp_c = c;
+            bool tmp_point = point, tmp_E = E, tmp_neg = neg;
+            add_digit(s[pos+1], state);
+            return dfs(pos + 1, next_state);
+            a = tmp_a, b = tmp_b, c = tmp_c;
+            point = tmp_point, E = tmp_E, neg = tmp_neg;
+        }
+    }
+    return -1;
+}
+
+int main(int argc, const char * argv[])
+{
+    cin &gt;&gt; s;
+    cout &lt;&lt; dfs(-1, 0) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[博客GitHub联网问题修复]]></title>
         <id>https://tangent617.github.io/post/solve-the-problem-of-github-connect-etimeout/</id>
@@ -1350,124 +1483,15 @@ A：没听过。</p>
 A：把时域图变成频谱图。<br>
 Q：如果一个冲击变量它的傅立叶变换是啥？<br>
 A：太久了，忘了。</p>
+<h3 id="反问-2">反问</h3>
+<p>Q：都用些什么知识呀？C++？操作系统？<br>
+A：用C写的，操作系统之类的都用一些。</p>
 <h2 id="总结-3">总结</h2>
 <p>答得不算完美，但很和谐愉快。<br>
 结果出得好快，过啦！第二只offer差不多到手了。</p>
 <hr>
-<p>没参加今年的<a href="icpc.nwpu.edu.cn">EC-Final</a>（所以明天不写题解），打完银川就退役。<br>
+<p>没参加今年的<a href="http://icpc.nwpu.edu.cn">EC-Final</a>（所以明天不写题解），打完银川就退役。<br>
 不过明天会请来西工大参赛的初中同学吃个饭呀！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[字节跳动电商后台开发实习面试]]></title>
-        <id>https://tangent617.github.io/post/bytedance-background-development-internship-interview/</id>
-        <link href="https://tangent617.github.io/post/bytedance-background-development-internship-interview/">
-        </link>
-        <updated>2021-03-28T11:58:10.000Z</updated>
-        <summary type="html"><![CDATA[<p>封面没找到合适的图，稍微糊了那么一点。🤦‍♀<br>
-一面就凉掉了。🙄</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>封面没找到合适的图，稍微糊了那么一点。🤦‍♀<br>
-一面就凉掉了。🙄</p>
-<!-- more -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
-<h1 id="一面">一面</h1>
-<h2 id="面试">面试</h2>
-<p>形式：牛客视频，耳机返听终于没了。</p>
-<h3 id="数据库">数据库</h3>
-<p>Q：简历中没看到项目相关的内容，但是发现了作品有个图书馆的，讲讲？<br>
-A：用的mysql实现的图书馆后台，前端做了个客户端。<br>
-Q：table？<br>
-A：图书、学生、借书续借还书的预订和记录。<br>
-Q：索引？<br>
-A：书名、学号、书名学号时间的联合索引。<br>
-Q：底层实现？<br>
-A：B+树。<br>
-Q：还有的数据库用哈希，B+树和Hash区别？<br>
-A：效率不一样吧。数据多了的话Hash值可能会重复。<br>
-Q：除了这还有什么其他原因？<br>
-A：不知道。<br>
-Q：如何避免Hash冲突？<br>
-A：用更有效的算法。或者Hash完再Hash一次？<br>
-Q：哪个快？<br>
-A：没仔细了解过。<br>
-Q：查找一段时间内的借书记录？<br>
-A：select …… where 里面写一段时间范围。<br>
-Q：一段时间范围，B+和Hash都怎么做？<br>
-A：不会。<br>
-Q：隔离级别？<br>
-A：read uncommitted, read committed, repeatable read, serializable。顺便说了脏读、不可重复读和幻读和哪个模式下哪个会出哪个问题。<br>
-Q：你说默认是repeatable read，那就是可重复读了？会幻读吗？<br>
-A：对，避免了不可重复读的问题，但是可能发生幻读。<br>
-Q：这4种级别如何实现？<br>
-A：（救命）没了解。<br>
-Q：blablabla（听不懂的词）和备份？<br>
-A：数据库会定期备份，万一哪个事务执行错了方便回滚。<br>
-Q：咋回滚？<br>
-A：把之前执行的语句反过来执行一遍。insert变成delete，delete变成insert。<br>
-Q：那是不是还要保存执行的语句？<br>
-A：会存log的，log里就是所有进行过的操作。<br>
-Q：redis？<br>
-A：没听过。<br>
-Q：怎么联系的前端？用没用blablabla？<br>
-A：（不知道你说的啥），我调的API可以在其他语言比如C++或者Java里用sql的。</p>
-<h4 id="总结">总结</h4>
-<p>学的数据库那门课虽然叫《数据库原理》但是讲的大多是怎样使用数据库而不是它的底层实现……就，很头大。</p>
-<h3 id="操作系统">操作系统</h3>
-<p>Q：消息队列？<br>
-A：进程间通讯的一种方式，一个进程可以把信息传递给另一个。<br>
-Q：进程？线程？协程？<br>
-A：<em>又来？</em><br>
-Q：缓存处理？<br>
-A：了解不多。</p>
-<h3 id="网络">网络</h3>
-<p>Q：浏览器输入网址后发生的一串事？<br>
-A：<em>还来？</em><br>
-Q：DNS怎么找？比如a.b.com，从前往后还是从后往前？<br>
-A：域名从后往前，先找.com再.b.com最后a.b.com。<br>
-Q：DNS用什么协议？<br>
-A：？？？<br>
-Q：意思是DNS用TCP还是UDP？<br>
-A：不知道，TCP吧？<br>
-Q：TCP和UDP区别？<br>
-A：TCP有握手挥手，保证可靠传输，UDP不管。<br>
-Q：那DNS应该是用UDP，TCP太慢了，用UDP失败就重发。<br>
-A：行，有道理。<br>
-Q：一个视频应用，用的是UDP但是想保证可靠传输要怎么做？<br>
-A：程序上实现个丢包重传吧，UDP没法搞了。（好像没表达清楚）<br>
-Q：是不是可以在应用层来实现呀！<br>
-A：对对对，你说的都对。</p>
-<h4 id="总结-2">总结</h4>
-<p>数据库和网络问的比较细，会问一些之前没有注意过的知识点。</p>
-<h2 id="笔试">笔试</h2>
-<p>形式：还是牛客网面试系统，后期卡得一匹。<br>
-代码又没存。</p>
-<h3 id="题干">题干</h3>
-<p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。<br>
-你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。<br>
-返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0。</p>
-<h4 id="只能买卖一次">只能买卖一次</h4>
-<p>就循环扫一遍，保存前面的最小值，取当前值和最小值的差的最大值。</p>
-<h4 id="无限次买卖">无限次买卖</h4>
-<p>若当前值大于昨天的值，就认为昨天买今天卖，更新答案，否则不动。</p>
-<h4 id="最多交易k次">最多交易k次</h4>
-<p>DP保存已进行的买卖次数和当前是买是卖，双重循环复杂度O(n*k).</p>
-<pre><code class="language-c++">dp[j][0] = max(dp[j][0], dp[j-1][1] - prices[i]);
-dp[j][1] = max(dp[j][1], dp[j][0] + prices[i]);
-</code></pre>
-<p>但他说递推公式出了点问题，最后还是错了。还想改一改但是时间到了。</p>
-<h2 id="反问">反问</h2>
-<p>Q：这个岗位具体做啥？听你之前说主要语言是go，除了golang之外我还需要了解点啥？<br>
-A：后端、缓存、框架、rpc。<br>
-Q：啥时候出结果？什么时间下一次面试？<br>
-A：1～2天吧，hr会联系。</p>
-<h2 id="总结-3">总结</h2>
-<p>啥也不会，多半要凉。</p>
-<hr>
-<p>又到了预告环节，但还没想好下一篇写啥。<br>
-整得好像我这博客一天天的除了<code>面试</code>和<code>电影</code>就没别的了一样。<br>
-动漫方面《<a href="https://www.bilibili.com/bangumi/play/ep373878">工作细胞</a>》又没什么可写的，上大学之后生物知识已经忘得连在肾长哪都不知道了。</p>
 ]]></content>
     </entry>
 </feed>

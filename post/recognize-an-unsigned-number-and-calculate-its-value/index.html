@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
 <title>识别无符号数并计算其值 | Xiaoyan Guo</title>
-<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618716851619">
+<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618838345944">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="识别无符号数并计算其值 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
@@ -14,11 +14,12 @@
 
     <meta name="description" content="编译原理作业exercise-2 1.5
 
-
 👀  views
-题目
-编写识别无符号数并计算其值的程序，已知图2（上面的封面图）是识别无符号数的状态转换图。要实现的程序具体要求如下:
-(1) 在程序内采用二维数组保存识别无符号数的状态转换..." />
+要求
+
+在程序内采用二维数组保存识别无符号数的状态转换矩阵;
+在识别无符号数的过程中，实现把输入的无符号数字符串转换成数值显示(不能使用类似atoi等函数实现);
+要采用矩阵查..." />
     <meta name="keywords" content="编译原理" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -28,13 +29,13 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://tangent617.github.io">
-  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618716851619" alt="">
+  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618838345944" alt="">
   </a>
   <h1 class="site-title">
     Xiaoyan Guo
   </h1>
   <p class="site-description">
-    郭笑嫣的<s>秘密</s>不小心被企鹅hr发现的小窝
+    滑稽的<s>秘密</s>不小心被企鹅hr发现的小窝
   </p>
   <div class="menu-container">
     
@@ -108,7 +109,7 @@
                 2021-04-18
               </span>
               <span>
-                4 min read
+                5 min read
               </span>
               
                 <a href="https://tangent617.github.io/tag/1lD8aAkTk/" class="post-tag">
@@ -123,15 +124,36 @@
               <div class="post-content">
                 <p>编译原理作业exercise-2 1.5</p>
 <!-- more -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
-<h2 id="题目">题目</h2>
-<p>编写识别无符号数并计算其值的程序，已知图2（上面的封面图）是识别无符号数的状态转换图。要实现的程序具体要求如下:<br>
-(1) 在程序内采用二维数组保存识别无符号数的状态转换矩阵;<br>
-(2) 在识别无符号数的过程中，实现把输入的无符号数字符串转换成数值显示(不能使用类似atoi等函数实现);<br>
-(3) 要采用矩阵查表的方式进行状态切换和执行语义动作，而不是采用switch-case语句进行;</p>
-<h2 id="分析">分析</h2>
-<p>数字格式认为是a.bEc，<code>DFS</code>不断查找更新状态，串识别完毕且到达最终态时跳出。</p>
+<h1 id="要求">要求</h1>
+<ol>
+<li>在程序内采用二维数组保存识别无符号数的状态转换矩阵;</li>
+<li>在识别无符号数的过程中，实现把输入的无符号数字符串转换成数值显示(不能使用类似atoi等函数实现);</li>
+<li>要采用矩阵查表的方式进行状态切换和执行语义动作，而不是采用switch-case语句进行;</li>
+</ol>
+<h1 id="思路">思路</h1>
+<ol>
+<li>认为输入的字符串格式为<code>s = a . b E +/- c</code>，分别用3个变量a, b, c保存它们的值</li>
+<li>使用<code>bool point, E, neg;</code>记录是否出现小数点、E和负号</li>
+<li>使用邻接矩阵<code>char state_trans[7][7]</code>保存状态转移表<br>
+<code>state_trans[i][j]</code>代表从状态i转移到状态j需要的字符</li>
+<li>函数<code>char simplify(char c)</code>将读入的符号简化，方便用一个字符记录以便在矩阵中查询<br>
+（1）	将数字1~9统一为d<br>
+（2）	将E与e统一为E<br>
+（3）	将+与-统一为+</li>
+<li>函数<code>void add_digit(char ch, int now_state)</code>根据当前读入的字符和状态计算更新a, b c, point, E, neg的值<br>
+（1）	读入.则将point置true<br>
+（2）	读入E或e将E置true<br>
+（3）	读入-将neg置true<br>
+（4）	读入数字则根据当前的不同状态更新a, b, c的值</li>
+<li>函数<code>double cal_ans()</code>根据已经得到的a, b, c的值计算出最终结果<br>
+（1）	不断将b除以10直到其&lt;1得到小数位，初始ans置为a+b。<br>
+（2）	根据c的值对ans进行移位</li>
+<li>函数<code>double dfs(int pos, int state)</code>通过深度优先搜索遍历所有状态<br>
+（1）	若字符串全部遍历结束并且状态为最终态，则结束dfs得到答案<br>
+（2）	否则遍历6个状态分别判断是否可以到达，若能则更新状态进行下一步dfs</li>
+</ol>
+<h1 id="实现">实现</h1>
 <h2 id="代码">代码</h2>
 <pre><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
@@ -244,15 +266,26 @@ int main(int argc, const char * argv[])
     return 0;
 }
 </code></pre>
+<h2 id="编译">编译</h2>
+<pre><code class="language-bash">cd exercise-2
+g++-10 main.cpp -o main
+</code></pre>
+<h2 id="运行">运行</h2>
+<pre><code class="language-bash">./main
+</code></pre>
+<hr>
+<p>最近<a href="https://tangent617.github.io/tag/1lD8aAkTk/">编译原理</a>要做的事情好多，慢慢做慢慢发。</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E8%A6%81%E6%B1%82">要求</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a>
 <ul>
-<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
-<li><a href="#%E5%88%86%E6%9E%90">分析</a></li>
 <li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91">编译</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C">运行</a></li>
 </ul>
 </li>
 </ul>
@@ -280,6 +313,7 @@ int main(int argc, const char * argv[])
   <a class="rss" href="https://tangent617.github.io/atom.xml" target="_blank">
     <i class="ri-rss-line"></i> RSS
   </a>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </div>
 
       </div>

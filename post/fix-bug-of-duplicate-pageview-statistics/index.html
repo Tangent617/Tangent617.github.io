@@ -3,11 +3,11 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
-<title>浏览量重复统计bug已修复 | Xiaoyan Guo</title>
-<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618838345944">
+<title>浏览量重复统计bug修复 | Xiaoyan Guo</title>
+<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618889831964">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="浏览量重复统计bug已修复 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="浏览量重复统计bug修复 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -18,10 +18,11 @@
 问题
 每点一次任何一篇文章都会给所有文章加访问量。
 原因
-可能是我给每一篇文章都加上了引入busuanzi.js的片段。
+依然在调查。
 解决
 网站总体
-仅在主题的footer.ejs或heade..." />
+仅在主题的footer.ejs或header.ejs中加入
+&lt;script async..." />
     <meta name="keywords" content="Gridea" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -31,7 +32,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://tangent617.github.io">
-  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618838345944" alt="">
+  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618889831964" alt="">
   </a>
   <h1 class="site-title">
     Xiaoyan Guo
@@ -104,7 +105,7 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              浏览量重复统计bug已修复
+              浏览量重复统计bug修复
             </h2>
             <div class="post-info">
               <span>
@@ -130,7 +131,7 @@
 <h1 id="问题">问题</h1>
 <p>每点一次任何一篇文章都会给所有文章加访问量。</p>
 <h1 id="原因">原因</h1>
-<p><em>可能</em>是我给每一篇文章都加上了引入<code>busuanzi.js</code>的片段。</p>
+<p>依然在调查。</p>
 <h1 id="解决">解决</h1>
 <h2 id="网站总体">网站总体</h2>
 <p>仅在主题的<code>footer.ejs</code>或<code>header.ejs</code>中加入</p>
@@ -155,6 +156,10 @@
 <pre><code class="language-html">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;
 </code></pre>
 <p>汉字均可替换成其他。</p>
+<h1 id="结果">结果</h1>
+<p>修了个🔨<br>
+原来的错误结果也没清零，bug也还在那。<br>
+这个问题暂时搁置，改日再说。</p>
 <hr>
 <p>网站bug修复贴统一发布在自带的<a href="https://tangent617.github.io/tag/p60EWOgwH/">Gridea</a>标签下。</p>
 
@@ -174,6 +179,7 @@
 </li>
 </ul>
 </li>
+<li><a href="#%E7%BB%93%E6%9E%9C">结果</a></li>
 </ul>
 
               </div>
@@ -181,15 +187,6 @@
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://tangent617.github.io/post/recognize-an-unsigned-number-and-calculate-its-value/">
-              <h3 class="post-title">
-                识别无符号数并计算其值
-              </h3>
-            </a>
-          </div>
         
 
         

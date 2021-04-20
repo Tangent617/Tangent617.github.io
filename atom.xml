@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-19T13:19:09.501Z</updated>
+    <updated>2021-04-20T03:37:20.360Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -11,46 +11,269 @@
     <icon>https://tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
     <entry>
-        <title type="html"><![CDATA[浏览量重复统计bug已修复]]></title>
-        <id>https://tangent617.github.io/post/fix-bug-of-duplicate-pageview-statistics/</id>
-        <link href="https://tangent617.github.io/post/fix-bug-of-duplicate-pageview-statistics/">
+        <title type="html"><![CDATA[正规或正则表达式与状态迁移图]]></title>
+        <id>https://tangent617.github.io/post/regular-expression-and-state-transition-diagram/</id>
+        <link href="https://tangent617.github.io/post/regular-expression-and-state-transition-diagram/">
         </link>
-        <updated>2021-04-19T12:49:23.000Z</updated>
-        <summary type="html"><![CDATA[<p>我就说我的博客不会有那么多人看嘛😩</p>
+        <updated>2021-04-20T02:53:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>编译原理作业 exercise-3</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>我就说我的博客不会有那么多人看嘛😩</p>
+        <content type="html"><![CDATA[<p>编译原理作业 exercise-3</p>
 <!-- more -->
 <p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
-<h1 id="问题">问题</h1>
-<p>每点一次任何一篇文章都会给所有文章加访问量。</p>
-<h1 id="原因">原因</h1>
-<p><em>可能</em>是我给每一篇文章都加上了引入<code>busuanzi.js</code>的片段。</p>
-<h1 id="解决">解决</h1>
-<h2 id="网站总体">网站总体</h2>
-<p>仅在主题的<code>footer.ejs</code>或<code>header.ejs</code>中加入</p>
-<pre><code class="language-html">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
+<h1 id="状态迁移图或语法树编程绘制">状态迁移图或语法树编程绘制</h1>
+<p>利用画图工具Graphviz绘制如上的状态迁移图，要求提交对应的GV代码。<br>
+参考如下的网址进行学习:</p>
+<ul>
+<li>http://www.graphviz.org/gallery/</li>
+<li>https://www.cnblogs.com/shuqin/p/11897207.html</li>
+<li>http://icodeit.org/2012/01/使用graphviz绘制流程图/</li>
+</ul>
+<pre><code>digraph main {
+    rankdir = LR;
+
+    node [shape = circle] A, B, C, D;
+    node [shape = doublecircle] E, F;
+    
+    A -&gt; D [label = &quot;0&quot;];
+    B -&gt; A [label = &quot;0&quot;];
+    B -&gt; C [label = &quot;1&quot;];
+    C -&gt; A [label = &quot;0&quot;];
+    C -&gt; F [label = &quot;1&quot;];
+    D -&gt; B [label = &quot;0&quot;];
+    E -&gt; B [label = &quot;0&quot;];
+    E -&gt; C [label = &quot;1&quot;];
+    F -&gt; A [label = &quot;1&quot;];
+    F -&gt; E [label = &quot;0&quot;];
+}
 </code></pre>
-<p>使用<code>Gridea</code>写博客的话该文件保存在</p>
-<pre><code>/Users/[用户名]/Documents/Gridea/themes/[主题名]/templates/includes
+<p>生成图片</p>
+<pre><code class="language-shell">dot -Tpng 图1.dot -o 图1.png
 </code></pre>
-<p>其中<code>/Users/[用户名]/Documents/Gridea</code>为其Mac客户端的默认目录。</p>
-<h2 id="每一页">每一页</h2>
-<h3 id="显示站点总访问量">显示站点总访问量</h3>
-<p>仅在<a href="https://tangent617.github.io/post/about/">关于</a>页面中加入<br>
-算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。</p>
-<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;
+<p><img src="https://tangent617.github.io/post-images/1618888098075.png" alt="" loading="lazy"><br>
+另外，Graphviz提供了C语言、Java语言或Python语言等相对接的编程接口，请学习后通过编程实现生成如上状态迁移图对应的GV代码。<br>
+学习的目的:编译原理实验需要把语法分析生成的语法树进行图形化显示。<br>
+下面是利用Graphviz提供的C语言接口编写的一个C程序的Memo，这个程序可生成一个test.eps矢量图。请参考。</p>
+<pre><code class="language-c">#include &lt;gvc.h&gt;
+
+int main()
+{
+    GVC_t *gv;
+    Agraph_t *g;
+    Agnode_t *a, *b;
+    Agedge_t *e;
+
+    gv = gvContext();
+    g = agopen(&quot;Test&quot;, Agdirected, 0);
+
+    a = agnode(g, &quot;node a&quot;, 1);
+    b = agnode(g, &quot;node b&quot;, 1);
+
+    agsafeset(a, &quot;shape&quot;, &quot;record&quot;, &quot;ellipse&quot;);
+    agsafeset(a, &quot;shape&quot;, &quot;ellipse&quot;, &quot;ellipse&quot;);
+
+    e = agedge(g, a, b, &quot;edge e&quot;, 1);
+    agsafeset(e, &quot;label&quot;, &quot;edge a -&gt; b&quot;, &quot;&quot;);
+
+    gvLayout(gv, g, &quot;dot&quot;);
+
+    gvRenderFilename(gv, g, &quot;eps&quot;, &quot;test.eps&quot;);
+
+    // gvRender(gv, g, &quot;dot&quot;, stdout);
+
+    gvFreeLayout(gv, g);
+
+    agclose(g);
+
+    gvFreeContext(gv);
+    
+    return 0;
+}
 </code></pre>
-<p>算法b：uv的方式，单个用户连续点击n篇文章，只记录1次访客数。</p>
-<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;本站总访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人&lt;/span&gt;
+<p>通过如下的命令进行编译。</p>
+<pre><code class="language-shell">gcc-10 -o memo memo.c `pkg-config --libs --cflags libgvc`
 </code></pre>
-<h3 id="显示单页面访问量">显示单页面访问量</h3>
-<p>在每一篇文章的页面加入<br>
-算法：pv的方式，单个用户点击1篇文章，本篇文章记录1次阅读量。</p>
-<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;
+<p>然后运行</p>
+<pre><code class="language-shell">./memo
 </code></pre>
-<p>汉字均可替换成其他。</p>
+<p>即可生成test.eps。<br>
+<img src="https://tangent617.github.io/post-images/1618888268910.png" alt="" loading="lazy"><br>
+如果要生成其它类型的图片格式，请修改<code>gvRenderFilename</code>的参数，如产生png文件:</p>
+<pre><code class="language-c">gvRenderFilename(gv, g, &quot;png&quot;, &quot;test.png&quot;);
+</code></pre>
+<h1 id="针对正规式或正则表达式开展具体的使用写成课程报告要求提交源代码和实验截图">针对正规式或正则表达式开展具体的使用写成课程报告，要求提交源代码和实验截图。</h1>
+<h2 id="学习java语言的正则表达式并编写程序在文件中查找特定模式的字符串要求针对ipv4地址字符串检查">学习Java语言的正则表达式，并编写程序在文件中查找特定模式的字符串，要求针对IPV4地址字符串检查。</h2>
+<h3 id="思路">思路</h3>
+<p>运用String中的matches方法：要匹配的串.matches(正则表达式)，若匹配成功则会返回True。</p>
+<ul>
+<li>任何一个1位或2位数字，即0-99：<code>\d{1,2}</code></li>
+<li>任何一个以1开头的3位数字，即100-199：<code>1\d{2}</code></li>
+<li>任何一个以2开头、第2位数字是0-4之间的3位数字，即200-249：<code>2[0-4]\d</code></li>
+<li>任何一个以25开头，第3位数字在0-5之间的3位数字，即250-255：<code>25[0-5]</code></li>
+<li>把它们组合起来，就得到一个匹配0-255数字的正则表达式了：<code>(\d{1,2})|(1\d{2})|(2[0-4]\d)|( 25[0-5])</code></li>
+<li>IPV4由四组这样的数字组成，中间由.隔开，或者说由三组数字和字符.和一组数字组成，所以匹配IPV4的正则表达式如下：<code>(((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))\.){3}((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))</code></li>
+<li>添加限制条件，前后要么是边界，要么是非数字：<code>(?&lt;=(\\b|\\D))(((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))\.){3}((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))(?=(\\b|\\D))</code></li>
+</ul>
+<h3 id="实现">实现</h3>
+<h4 id="代码">代码</h4>
+<pre><code class="language-java">import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String regex = &quot;(?&lt;=(\\b|\\D))(((\\d{1,2})|(1\\d{2})|(2[0-4]\\d)|(25[0-5]))\\.){3}((\\d{1,2})|(1\\d{2})|(2[0-4]\\d)|(25[0-5]))(?=(\\b|\\D))&quot;;
+        String str;
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(&quot;test.txt&quot;));
+            while ((str = in.readLine()) != null) {
+                if (str.matches(regex))
+                    System.out.println(str);
+            }
+        }
+        catch (IOException e) {}
+    }
+}
+</code></pre>
+<h4 id="编译">编译</h4>
+<pre><code class="language-shell">javac Main.java
+</code></pre>
+<h4 id="运行">运行</h4>
+<pre><code class="language-shell">java Main
+</code></pre>
+<p>测试数据在test.txt，其中含有合法ipv4地址也有非法的：</p>
+<pre><code>abcd
+a.b.c.d
+abcd.efgh.ijkl.mnop
+0.0.0.0
+1.2.3.4
+1.2.3.4.5
+127.0.0.1
+192.168.0.0
+255.255.255.255
+255.255.0.256
+256.256.256.256
+300.300.300.300
+1234.5678.9012.3456
+123456.789
+1/2/3/4
+[1.2.3.4]
+1.2.a.b
+</code></pre>
+<p>运行后得到的结果为：</p>
+<pre><code>0.0.0.0
+1.2.3.4
+127.0.0.1
+192.168.0.0
+255.255.255.255
+</code></pre>
+<p>过滤成功！</p>
+<h2 id="学习c语言中的利用regcomp-regexec函数进行正则表达式匹配并编写程序在-文件中查找特定模式的字符串要求针对ipv4地址字符串检查">学习C语言中的利用regcomp/ regexec函数进行正则表达式匹配，并编写程序在 文件中查找特定模式的字符串，要求针对IPV4地址字符串检查。</h2>
+<h3 id="思路-2">思路</h3>
+<p>正则表达式略有不同，但推导步骤与上面相同：</p>
+<pre><code>^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
+</code></pre>
+<p><code>regex_t</code>是一种特殊的格式，先用<code>regcomp</code>将正则转换为这种格式，再使用<code>regexec</code>判断输入的字符串是否符合规则。</p>
+<h3 id="实现-2">实现</h3>
+<h4 id="代码-2">代码</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;regex.h&gt;
+
+int main(int argc, const char * argv[])
+{
+    FILE *fp = fopen(&quot;test.txt&quot;, &quot;r&quot;);
+    char *pregexstr = &quot;^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&quot;;
+    char ptext[100];
+    regex_t oregex;
+    regcomp(&amp;oregex, pregexstr, REG_EXTENDED|REG_NOSUB);
+    while (1) {
+        fscanf(fp, &quot;%s&quot;, ptext);
+        if (feof(fp))
+            break;
+        if (regexec(&amp;oregex, ptext, 0, NULL, 0) == 0) {
+            printf(&quot;%s\n&quot;, ptext);
+        }
+    }
+    regfree(&amp;oregex);
+    fclose(fp);
+    return 0;
+}
+</code></pre>
+<h4 id="编译-2">编译</h4>
+<pre><code class="language-shell">gcc main.c -o main
+</code></pre>
+<h4 id="运行-2">运行</h4>
+<pre><code class="language-shell">./main
+</code></pre>
+<p>结果同上。</p>
+<h2 id="学习c语言中利用boost库的正则表达式进行正则表达式匹配并编写程序-在文件中查找特定模式的字符串要求针对ipv4地址字符串检查">学习C++语言中利用boost库的正则表达式进行正则表达式匹配，并编写程序 在文件中查找特定模式的字符串，要求针对IPV4地址字符串检查。</h2>
+<h3 id="思路-3">思路</h3>
+<p>正则表达式同上，保存在<code>reg</code>中；使用<code>regex_match</code>判断输入的串是否与正则相匹配。</p>
+<h3 id="实现-3">实现</h3>
+<h4 id="代码-3">代码</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;boost/regex.hpp&gt;
+using namespace std;
+
+int main(int argc, const char * argv[])
+{
+    freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);
+    boost::regex reg(&quot;^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&quot;);
+    string s;
+    while (cin &gt;&gt; s) {
+        if(regex_match(s, reg))
+            cout &lt;&lt; s &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<h4 id="编译-3">编译</h4>
+<pre><code class="language-shell">gcc main.c -I/usr/include -o main
+</code></pre>
+<h4 id="运行-3">运行</h4>
+<pre><code class="language-shell">./main
+</code></pre>
+<p>结果同上。</p>
+<h2 id="ultraedit-vscode-atom等常用工具都支持正则表达式查找特定模式的字符-串请选择一种编辑器说明正则表达式的支持状况并截图举例查找特定模式-的字符串-任选一个工具">Ultraedit、VScode、Atom等常用工具都支持正则表达式查找特定模式的字符 串，请选择一种编辑器说明正则表达式的支持状况，并截图举例查找特定模式 的字符串。(任选一个工具)</h2>
+<p>VScode中可以使用正则表达式（格式同上面C/C++程序）查找特定模式的字符串。<br>
+例如：<br>
+使用<code>\b[0-9]*\.*[0-9]+\b</code>查找所有十进制整数和小数：<br>
+<img src="https://tangent617.github.io/post-images/1618888834576.png" alt="" loading="lazy"><br>
+使用<code>^\s*(?=\r?$)\n</code>匹配所有空白行：<br>
+<img src="https://tangent617.github.io/post-images/1618888840665.png" alt="" loading="lazy"><br>
+使用<code>\b0[xX]([0-9a-fA-F])\b</code>匹配所有十六进制数等等。</p>
+<h2 id="在常用的linux-shell命令中grep-awk与sed等命令都支持正则表达式而另-外一些命令如ls-cp与find命令支持的是通配符两者是不同的-请试比较并实-验验证-两类命令各任选一个">在常用的Linux Shell命令中，grep、awk与sed等命令都支持正则表达式，而另 外一些命令如ls、cp与find命令支持的是通配符，两者是不同的。请试比较并实 验验证。(两类命令各任选一个)</h2>
+<h3 id="grep">grep</h3>
+<p>grep的命令格式：<code>grep [OPTIONS] PATTERN [FILE...]</code>，例：<br>
+查找main.c中带有regex的行：<br>
+<img src="https://tangent617.github.io/post-images/1618889157154.png" alt="" loading="lazy"><br>
+尝试使用<strong>正则表达式</strong>：<br>
+由于[:alnum:] 代表所有的大小写英文字符和数字，即0-9, A-Z, a-z。查找全部串：<br>
+<img src="https://tangent617.github.io/post-images/1618889162999.png" alt="" loading="lazy"><br>
+查找以#开头的行，使用-n打印出行号：<br>
+<img src="https://tangent617.github.io/post-images/1618889173070.png" alt="" loading="lazy"><br>
+.可代表任意符号，以此查找p和e中间隔1个字符的词：<br>
+<img src="https://tangent617.github.io/post-images/1618889178054.png" alt="" loading="lazy"><br>
+*代表可重复多个，以此查找一个b接不论数量的o的串：<br>
+<img src="https://tangent617.github.io/post-images/1618889183075.png" alt="" loading="lazy"><br>
+[]代表匹配中间任意字符，以此查找所有的数字：<br>
+<img src="https://tangent617.github.io/post-images/1618889188072.png" alt="" loading="lazy"><br>
+-E选项使用扩展正则表达式，还是用之前C/C++程序中的正则表达式，使用grep命令进行匹配ipv4地址：<br>
+<img src="https://tangent617.github.io/post-images/1618889193419.png" alt="" loading="lazy"><br>
+可达到相同的目的。</p>
+<h3 id="ls">ls</h3>
+<p><code>ls + 正则表达式</code>直接打印出当前目录下所有符合条件的文件名，但它的正则表达式与上面grep的语法略有不同，被称为<strong>通配符</strong>。<br>
+/exercise-3/1.2文件夹下所有文件如下：<br>
+<img src="https://tangent617.github.io/post-images/1618889320205.png" alt="" loading="lazy"><br>
+*代表任意个数个字符，查找所有m开头的文件：<br>
+<img src="https://tangent617.github.io/post-images/1618889325885.png" alt="" loading="lazy"><br>
+?代表只有1个字符，查找所有main.开头末尾只有1个字符的文件：<br>
+<img src="https://tangent617.github.io/post-images/1618889332361.png" alt="" loading="lazy"><br>
+可见main.cpp并没有被包括进来。<br>
+[]是选择其中一个字符，只要在[]内的字符都可以被匹配；查找以Main或main开头的文件：<br>
+<img src="https://tangent617.github.io/post-images/1618889339203.png" alt="" loading="lazy"></p>
 <hr>
-<p>网站bug修复贴统一发布在自带的<a href="https://tangent617.github.io/tag/p60EWOgwH/">Gridea</a>标签下。</p>
+<p>今晚更<a href="https://tangent617.github.io/post/tencent-timi-background-development-internship-interview/">腾讯TiMi二面</a></p>
 ]]></content>
     </entry>
     <entry>
@@ -247,7 +470,7 @@ g++-10 main.cpp -o main
 <p>通过<code>Proxifier</code>软件单独对某一个app，如Gridea进行代理。（前提是已有可用代理）<br>
 我用的是Mac，PC上的操作相似，下面的软件也都是双平台均可用的。</p>
 <ol>
-<li>Proxifier可用<code>Homebrew</code>或在<a href="https://www.proxifier.com">官网</a>下载<pre><code class="language-bash">brew install proxifier
+<li>Proxifier可用<code>Homebrew</code>或在<a href="https://www.proxifier.com">官网</a>下载<pre><code class="language-shell">brew install proxifier
 </code></pre>
 二代Mac版激活码<pre><code>P427L-9Y552-5433E-8DSR3-58Z68
 </code></pre>

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
 <title>关于 | Xiaoyan Guo</title>
-<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618838345944">
+<link rel="shortcut icon" href="https://tangent617.github.io/favicon.ico?v=1618889831964">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tangent617.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="关于 | Xiaoyan Guo - Atom Feed" href="https://tangent617.github.io/atom.xml">
@@ -19,7 +19,9 @@
 是一个半私密的小窝，不小心被你发现了呢😲
 反正挂在Github上，没人看的话就是私密，看的人多就考虑开评论功能💭
 时不时更新一些文章，都是我喜欢或者希望收藏的东西呐🌟
-欢迎你..." />
+
+
+ ..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -29,7 +31,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://tangent617.github.io">
-  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618838345944" alt="">
+  <img class="avatar" src="https://tangent617.github.io/images/avatar.png?v=1618889831964" alt="">
   </a>
   <h1 class="site-title">
     Xiaoyan Guo
@@ -122,8 +124,32 @@
 <h2 id="关于本站">🏠 关于本站</h2>
 <p>是一个半私密的小窝，不小心被你发现了呢😲<br>
 反正挂在Github上，没人看的话就是私密，看的人多就考虑开评论功能💭<br>
-时不时更新一些文章，都是我喜欢或者希望收藏的东西呐🌟<br>
-<span id="busuanzi_container_site_uv">欢迎你第 <span id="busuanzi_value_site_uv"></span>  位小伙伴</span>🤗<br>
+时不时更新一些文章，都是我喜欢或者希望收藏的东西呐🌟</p>
+<div id="div1"></div>
+<script>
+    function time() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var week;
+        if(date.getDay()==0) week="星期日";
+        if(date.getDay()==1) week="星期一";
+        if(date.getDay()==2) week="星期二";
+        if(date.getDay()==3) week="星期三";
+        if(date.getDay()==4) week="星期四";
+        if(date.getDay()==5) week="星期五";
+        if(date.getDay()==6) week="星期六";
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var str = "现在是" + year + "年" + month + "月" + day + "日" + week + " " + hour + "时" + minutes + "分" + seconds + "秒🕰";
+        var div1 = document.getElementById("div1");
+        div1.innerHTML = str;
+    }
+    setInterval(time,1000);
+</script>
+<p><span id="busuanzi_container_site_uv">欢迎你第 <span id="busuanzi_value_site_uv"></span>  位小伙伴</span>🤗<br>
 <span id="busuanzi_container_site_pv">目前小站的总访问量为<span id="busuanzi_value_site_pv"></span> 次</span>👀</p>
 <h2 id="博主是谁">👨‍💻 博主是谁</h2>
 <p>郭笑嫣😎<br>

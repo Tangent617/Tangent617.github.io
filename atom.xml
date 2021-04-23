@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-04-22T05:08:01.721Z</updated>
+    <updated>2021-04-23T05:10:14.389Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -274,6 +274,56 @@ int main(int argc, const char * argv[])
 <img src="https://tangent617.github.io/post-images/1618889339203.png" alt="" loading="lazy"></p>
 <hr>
 <p>今晚更<a href="https://tangent617.github.io/post/tencent-timi-background-development-internship-interview/">腾讯TiMi二面</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[浏览量重复统计bug修复]]></title>
+        <id>https://tangent617.github.io/post/fix-bug-of-duplicate-pageview-statistics/</id>
+        <link href="https://tangent617.github.io/post/fix-bug-of-duplicate-pageview-statistics/">
+        </link>
+        <updated>2021-04-19T12:49:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>我就说我的博客不会有那么多人看嘛😩</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>我就说我的博客不会有那么多人看嘛😩</p>
+<!-- more -->
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
+<h1 id="问题">问题</h1>
+<p>每点一次任何一篇文章都会给所有文章加访问量。</p>
+<h1 id="原因">原因</h1>
+<p>依然在调查。</p>
+<h1 id="解决">解决</h1>
+<h2 id="网站总体">网站总体</h2>
+<p>仅在主题的<code>footer.ejs</code>或<code>header.ejs</code>中加入</p>
+<pre><code class="language-html">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>使用<code>Gridea</code>写博客的话该文件保存在</p>
+<pre><code>/Users/[用户名]/Documents/Gridea/themes/[主题名]/templates/includes
+</code></pre>
+<p>其中<code>/Users/[用户名]/Documents/Gridea</code>为其Mac客户端的默认目录。</p>
+<h2 id="每一页">每一页</h2>
+<h3 id="显示站点总访问量">显示站点总访问量</h3>
+<p>仅在<a href="https://tangent617.github.io/post/about/">关于</a>页面中加入<br>
+算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。</p>
+<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;
+</code></pre>
+<p>算法b：uv的方式，单个用户连续点击n篇文章，只记录1次访客数。</p>
+<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;本站总访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人&lt;/span&gt;
+</code></pre>
+<h3 id="显示单页面访问量">显示单页面访问量</h3>
+<p>在每一篇文章的页面加入<br>
+算法：pv的方式，单个用户点击1篇文章，本篇文章记录1次阅读量。</p>
+<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;
+</code></pre>
+<p>汉字均可替换成其他。</p>
+<h1 id="结果">结果</h1>
+<p>修了个🔨<br>
+原来的错误结果也没清零，bug也还在那。<br>
+这个问题暂时搁置，改日再说。</p>
+<h1 id="改日">改日</h1>
+<p>放弃卜算子了，换statcounter，访客IP统计结果会定期发到我的邮箱。<br>
+试试这个准不准（不过你们也看不到，只有我能看见结果）。</p>
+<hr>
+<p>网站bug修复贴统一发布在自带的<a href="https://tangent617.github.io/tag/p60EWOgwH/">Gridea</a>标签下。</p>
 ]]></content>
     </entry>
     <entry>
@@ -1426,56 +1476,6 @@ int main(int argc, const char * argv[])
 嚎啕大哭.jpg</p>
 <hr>
 <p>看完<a href="https://movie.douban.com/subject/30337857/">《行尸走肉》第十季</a>了，更个<a href="https://tangent617.github.io/post/the-walking-dead-s10-tvshow-review/">剧评</a>。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[腾讯TEG后台开发实习面试]]></title>
-        <id>https://tangent617.github.io/post/tencent-teg-background-development-internship-interview/</id>
-        <link href="https://tangent617.github.io/post/tencent-teg-background-development-internship-interview/">
-        </link>
-        <updated>2021-04-04T07:59:01.000Z</updated>
-        <summary type="html"><![CDATA[<p>提前批的最后一波。🏄‍♀<br>
-笔试应该是下一轮的，但是也是今天做所以一会顺便写了。📝</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>提前批的最后一波。🏄‍♀<br>
-笔试应该是下一轮的，但是也是今天做所以一会顺便写了。📝</p>
-<!-- more -->
-<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
-<h1 id="一面">一面</h1>
-<p>形式：腾讯会议。</p>
-<h2 id="面试">面试</h2>
-<h3 id="自我介绍">自我介绍</h3>
-<p>略</p>
-<h3 id="操作系统">操作系统</h3>
-<p>Q：查看进程的命令？<br>
-A：不知道。（应该是netstat）</p>
-<h3 id="网络">网络</h3>
-<p>Q：TCP的三次握手和四次挥手？<br>
-A：SYN/ACK，FIN/ACK讲了下。<br>
-Q：time_wait？<br>
-A：（咋这么爱问这个？）发完请求后等待的时间。</p>
-<h3 id="数据库">数据库</h3>
-<p>Q：索引？<br>
-A：<em>梅开二度</em><br>
-Q：查看用了哪些索引？<br>
-A：忘了。（应该是explain）</p>
-<h3 id="算法">算法</h3>
-<p>Q：给一排人发奖品，有10个奖，要怎样保证每个人的获奖概率一样？<br>
-A：听不明白题。<br>
-Q：划出一个10个人位置的中奖区，每来一个人就随机把它放进中奖区，再随机一个人出来。<br>
-A：那已经出来的人中奖概率不就是固定了吗？后面再来人也不会改变他们的状态了，就不可能所有人获奖概率一样了。为啥不先全进去再一个个随机出来，最后留10个人？<br>
-Q：算了下为啥每个人获奖概率一样，新来的获奖要被选中后不能再被选出去，算这个概率是10/n。<br>
-A：行，你说的有道理（依然没懂）。</p>
-<h3 id="反问">反问</h3>
-<p>Q：因为又新开了一轮面试，所以想问问你们是做什么的？<br>
-A：TEG部门，游戏方面的，但不是直接做游戏，是做一个平台。</p>
-<h2 id="笔试">笔试</h2>
-<p>无</p>
-<h2 id="总结">总结</h2>
-<p>真的啥也不会，啥也想不起来，有史以来答得最烂的一次，要凉。但量面试官很和蔼。<br>
-更新：确实凉了。</p>
-<hr>
-<p>最近感冒了，脑壳疼，先睡了，明天更<a href="https://tangent617.github.io/post/tencent-2021-intern-tech-development-exam/">笔试帖子</a>。</p>
 ]]></content>
     </entry>
 </feed>

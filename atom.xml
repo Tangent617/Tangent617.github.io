@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-05-11T08:07:18.494Z</updated>
+    <updated>2021-05-17T15:56:58.599Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -10,6 +10,83 @@
     <logo>https://tangent617.github.io/images/avatar.png</logo>
     <icon>https://tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
+    <entry>
+        <title type="html"><![CDATA[银川赛]]></title>
+        <id>https://tangent617.github.io/post/the-2021-icpc-asia-yinchuan-regional-contest/</id>
+        <link href="https://tangent617.github.io/post/the-2021-icpc-asia-yinchuan-regional-contest/">
+        </link>
+        <updated>2021-05-17T15:01:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>退役了👋</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>退役了👋</p>
+<!-- more -->
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
+<h1 id="比赛篇">比赛篇</h1>
+<h2 id="热身赛">热身赛</h2>
+<p><img src="https://tangent617.github.io/post-images/1621265443735.JPG" alt="" loading="lazy"><br>
+这白开水怎么没味啊？</p>
+<h3 id="a">A</h3>
+<p>评测姬被搞炸了</p>
+<h3 id="b">B</h3>
+<p>评测姬开始可用，但不久也被搞炸了</p>
+<h3 id="c">C</h3>
+<p>AC了<br>
+测试了一下评测姬只可以1s跑1e8，很拉。</p>
+<h3 id="d">D</h3>
+<p>也AC了</p>
+<h2 id="正式赛">正式赛</h2>
+<h3 id="a-2">A</h3>
+<p>我负责从前往后读题，发现了这个签到题于是迅速签了个到。</p>
+<h3 id="b-2">B</h3>
+<p>队友写了个半成品。</p>
+<h3 id="e">E</h3>
+<p>阅读题，队友Vindicator表现了对于化学知识的深刻记忆（我已经忘没了）于是交给了他写。</p>
+<h3 id="j">J</h3>
+<p>队友int-lyy写的，在行末空格上<code>WA</code>了一发。<br>
+吐槽：为什么不返回<code>PE</code>？</p>
+<h3 id="k">K</h3>
+<p>字典树，我写。<br>
+一直<code>TLE</code>。尝试了反复分析复杂度、优化了<code>cin/cout</code>，把<code>map</code>替换掉等方法均未解决。</p>
+<h2 id="结果">结果</h2>
+<p>打铁了😞<br>
+耻辱退役<br>
+<img src="https://tangent617.github.io/post-images/1621265195589.JPG" alt="" loading="lazy"><br>
+我：第一排右一<br>
+Vindicator：第二排右二<br>
+int-lyy：第二排右四</p>
+<h1 id="干饭篇">干饭篇</h1>
+<h2 id="早餐">早餐</h2>
+<p>酒店的是真滴难吃</p>
+<h2 id="烤全羊">烤全羊</h2>
+<p>给大一学弟馋坏了<br>
+<img src="https://tangent617.github.io/post-images/1621265422550.JPG" alt="" loading="lazy"><br>
+还有<strong>羊汤</strong><br>
+<img src="https://tangent617.github.io/post-images/1621265480389.JPG" alt="" loading="lazy"><br>
+迷惑行为：他们还开了几瓶酒<br>
+<em>就怕第二天知乎热榜：</em><br>
+<em>如何评价ICPC银川赛中西北工业大学4支队伍上了30多次卫生间？</em><br>
+<em>谢邀，人在宁夏理工，刚出体育馆。强烈推荐大家烤羊庄这家店，来银川必吃。</em></p>
+<h2 id="学校">学校</h2>
+<p>食堂还行，比酒店的强。<br>
+送了一盒枸杞</p>
+<h1 id="娱乐篇">娱乐篇</h1>
+<h2 id="舍友">舍友</h2>
+<p>被我成功安利了《灵笼》并看完了第一季，孩子被刀挺惨。</p>
+<h2 id="队友">队友</h2>
+<h3 id="v全程尬聊">V全程尬聊</h3>
+<p>在地铁、车上讨论思维题；<br>
+《灵笼》《进击的巨人》《西部世界》《生化危机》《行尸走肉》《丧尸围城》《异形》《布列斯特要塞》；<br>
+比特币、显卡、尬英语、养猫、北京和宁夏的区别。</p>
+<h3 id="lyy憨憨">lyy憨憨</h3>
+<p>以为上次也打铁了，听到上海赛有一个铜之后很兴奋；<br>
+希望我去香港之后能给他带一个港版PS5.</p>
+<hr>
+<ol>
+<li>补更《灵笼》第一季特别篇的<a href="https://tangent617.github.io/post/incarnation-anime-review/">剧评</a></li>
+<li>写一个《爱、死亡与机器人》第二季的剧评</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[本博客已内置空调]]></title>
         <id>https://tangent617.github.io/post/air-conditioner/</id>
@@ -1022,448 +1099,6 @@ Dashboard-设置<br>
 <p>复制这段内容后打开百度网盘App，操作更方便哦。 链接:https://pan.baidu.com/s/19RQBdBhoi2BQkvorugsOJg 提取码:b641</p>
 <hr>
 <p>有关为什么博客里的外链图片会挂掉依然在调查中。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[腾讯天美工作室后台开发实习面试]]></title>
-        <id>https://tangent617.github.io/post/tencent-timi-background-development-internship-interview/</id>
-        <link href="https://tangent617.github.io/post/tencent-timi-background-development-internship-interview/">
-        </link>
-        <updated>2021-04-09T09:25:33.000Z</updated>
-        <summary type="html"><![CDATA[<p>大本营暴露了🐒</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>大本营暴露了🐒</p>
-<!-- more -->
-<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
-<h1 id="一面">一面</h1>
-<h2 id="面试">面试</h2>
-<p>形式：腾讯会议。<br>
-面试官是个留长发的老哥。</p>
-<h3 id="提前聊天">提前聊天</h3>
-<p>怀疑他能看到前面其他面试官对我的评价，强调了他的岗位重视基础知识扎实。<br>
-Q：是否熟悉Linux？<br>
-A：不太用，但是我用苹果的很多命令很像。<br>
-Q：基础知识学得怎么样？<br>
-A：（那我能说啥，我只能说）不错啊。有些太细节的忘记了，但是大体的能记住。<br>
-Q：学校的课学得怎么样？<br>
-A：平均83分吧。<br>
-Q：哪个课学得最好？<br>
-A：有好几个学期以前的记不住了，都差不多吧。</p>
-<h3 id="无自我介绍">无自我介绍</h3>
-<p>因为被面试官发现了这个博客网站。🐵<br>
-直接挑明了看到了我Github上的项目和博客，并说不会问我其他面试问过的。🙈<br>
-我只是在简历上放了两个项目的链接，没想到他点开我的Github帐号看到了这个博客。🙉<br>
-幸好昨天网不好博客没更新上阿里的二面部分🙊</p>
-<h3 id="操作系统">操作系统</h3>
-<p>Q：进程的调度？<br>
-A：先来先服务、短作业优先、时间片轮转。<br>
-Q：具体解释一下？先来先服务会造成什么样的问题？<br>
-A：前面的一个进程很长时间运行不完，就占着地方后面的也运行不了。<br>
-Q：给进程分配内存？<br>
-A：有固定分区的有根据大小分的，不够用时候有交换内存（说的不够详细）。<br>
-Q：JVM？<br>
-A：是个Java的虚拟机，有管分配和垃圾回收。</p>
-<h3 id="网络">网络</h3>
-<p>Q：用UDP实现可靠传输？<br>
-A：在应用层做。每一个数据帧有编号要确认。<br>
-Q：说到应用层，那说说一共有哪些层？<br>
-A：OSI的是7层，TCP/IP的5层。物理层、数据链路层、网络层、传输层、（会话层、表示层、）应用层。<br>
-Q：网络层有哪些协议？<br>
-A：IP、ICMP、ARP。<br>
-Q：在博客里看到其他面试官问到RPC给解释一下呗？<br>
-A：我依然不会。</p>
-<h3 id="数据库">数据库</h3>
-<p>Q：关系数据库的组成？<br>
-A：？？？就一个个table组成的，底层是B+树。<br>
-Q：B+树的优劣（好像是问的这个吧？）<br>
-A：不适合单点查询，没有Hash那么快，但是适合范围查询。</p>
-<h3 id="c">C++</h3>
-<p>Q：<em>问了一系列邪门知识：</em></p>
-<ul>
-<li>定义一个变量，在操作系统和内存中进行了哪些操作？</li>
-<li>你写的这个<code>cin</code>它为什么是输入，怎么做到的？</li>
-<li>对象的结构是什么？</li>
-<li>templete是如何实现的？</li>
-<li>……</li>
-</ul>
-<p>A：我这C++主要是学了怎样用，它底层怎么实现的这我真就没了解过。</p>
-<h3 id="游戏">游戏</h3>
-<p>Q：平时玩游戏吗？<br>
-A：偶尔玩呀。（TiMi问这我倒也不惊讶）<br>
-Q：喜欢玩游戏吗？<br>
-A：喜欢当然是喜欢呀！（会有人不喜欢玩游戏吗啊喂！）<br>
-Q：很惊奇，以为你是那种学霸女生的形象。<br>
-A：（题外话：我也很惊奇为什么好多人都觉得我不玩游戏，看到我空间里的吃鸡第6的截图就感叹我很厉害，听到我说起steam一脸惊讶“你居然知道steam？”，不然我吃鸡哪里下载的呢？再说我用着一原神的头像你觉得是哪里来的？）<br>
-Q：喜欢什么样的游戏？<br>
-A：单机的，音游，能挑战自我的这种。（我总不能说我下载过王者荣耀等等很多流行游戏玩了2天觉得不是我喜欢的类型就弃了吧）节奏大师入的坑，之后也玩了类似的几个下落式比如Deemo和Arcaea，现在在玩出现式的CytusII。<br>
-Q：（看反应是听说过节奏大师与Deemo）感叹了一下节奏大师确实很老了和Deemo确实好看。<br>
-Q：你觉得设计不好的地方有哪些？<br>
-A：有的歌不好找拍（比如Deemo，还有歌比较难听的比如节奏大师），有的谱面设计不够合理把note放在不好打不符合人体工学的位置上。</p>
-<h3 id="其他">其他</h3>
-<p>Q：为啥喜欢后台开发？你说的做程序、管理数据之类听起来很无聊呀。<br>
-A：（那你又是为啥搞后台开发呢？）有用到一些算法，自己去创造一个程序出来比较有成就感吧。<br>
-Q：看什么书？<br>
-A：刘汝佳的《算法竞赛入门经典》还有另一个感觉它排版好好看于是经常用来当作比赛模版的《挑战程序设计》<br>
-Q：除了算法还对什么感兴趣？<br>
-A：大数据，现在在搞Hadoop和Mapreduce。<br>
-Q：为啥对这感兴趣？<br>
-A：觉得未来会是个发展趋势，以后的数据量会越来越大。<br>
-Q：你知道Hadoop是哪年发明的吗？<br>
-A：（这么说很老？）不知道诶。<br>
-Q：怎样了解到的呢？<br>
-A：关注了一些公众号和B站up主，喜欢看数码科技类的东西。<br>
-Q：我是说怎样了解到Hadoop的？<br>
-A：这学期选了个大数据的课，在做一点小程序。<br>
-Q：提前批快结束了，所以一两天对比一下其他同学会给结果。<br>
-A：行。<br>
-Q：还有啥你觉得可以介绍自己的方面？<br>
-A：有时候上Github上看看软件，看见好玩的也研究一下。简单讲了在看的网络攻防的那个检测程序是否有木马的那个。<br>
-Q：反问？<br>
-A：昨天晚上问差不多了，就这些了。</p>
-<h2 id="写代码">写代码</h2>
-<p>形式：腾讯会议共享桌面写代码。</p>
-<h3 id="题目">题目</h3>
-<p>给一个矩形区域，里面有很多个小矩形，求画出一个矩形不能与给定的小矩形们重叠。</p>
-<h3 id="方法1">方法1</h3>
-<p>首先想到的是从头到尾枚举左上角、右下角。</p>
-<blockquote>
-<p>那要是边界不是整数型的呢？</p>
-</blockquote>
-<h3 id="方法2">方法2</h3>
-<p>记录每一个小矩形的上下左右边，枚举这个。</p>
-<h4 id="代码">代码</h4>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-struct node {
-    double x1, y1, x2, y2;
-} a[1000];
-
-int main(int argc, const char * argv[])
-{
-    double m, n;
-    int k;
-    cin &gt;&gt; m &gt;&gt; n &gt;&gt; k;
-    double up[1000], down[1000], left[1000], right[1000];
-    up[0] = 0, down[0] = 0, left[0] = 0, right[0] = 0;
-    up[k+1] = m, down[k+1] = m, left[k+1] = n, right[k+1] = n;
-    for (int i = 1; i &lt;= k; i++) {
-        cin &gt;&gt; a[i].x1 &gt;&gt; a[i].y1 &gt;&gt; a[i].x2 &gt;&gt; a[i].y2;
-        up[i] = a[i].x2, down[i] = a[i].x1, left[i] = a[i].y1, right[i] = a[i].y2;
-    }
-
-    sort(up, up + k);
-    sort(down, down + k);
-    sort(left, left + k);
-    sort(right, right + k);
-
-    double ans = 0;
-    for (int x1 = 0; x1 &lt;= k + 1; x1++) {
-        for (int y1 = 0; y1 &lt;= k + 1; y1++) {
-            for (int x2 = x1 + 1; x2 &lt;= k + 1; x2++) {
-                for (int y2 = y1 + 1; y2 &lt;= k + 1; y2++) {
-                    // 判断重叠
-                    ans = max(ans, (down[x2] - up[x1]) * (left[y2] - right[y1]));
-                }
-            }
-        }
-    }
-
-    cout &lt;&lt; ans &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
-<blockquote>
-<p>那要是小矩形有覆盖重叠呢？</p>
-</blockquote>
-<p>覆盖一大一小的话就按大的算，重叠没想好。</p>
-<h3 id="方法3">方法3</h3>
-<p>如果是一维的话就2个指针i和j依次找出每一段空隙，二维就每个空隙在纵坐标里也找。<br>
-觉得有点麻烦，没写。</p>
-<h3 id="方法4">方法4</h3>
-<p>过了两天面试官又问我有没有新想法，我说了“离散化+DP”，于是诞生了这个毒瘤方法。</p>
-<h4 id="题解">题解</h4>
-<p>开始动态规划的转移方程想得不对，后来灵机一动想到这么个神奇的东西：<br>
-先把所有点<strong>离散化</strong>，再记录每一个小网格的面积，把所有不能选的地方（小矩形所在处）全置为负无穷，然后用得到的新地图跑一遍<strong>最大子矩阵</strong>。<br>
-<strong>离散化</strong>是把所有点排序，用连续的整数值代替坐标，方便后续计算。<br>
-<strong>最大子矩阵</strong>是个二维的<strong>最大子序列</strong>，具体见<a href="https://www.jianshu.com/p/d5a5c75720c8">这个博客</a>，前人写过的东西菜鸡我就不复述一遍啦。<br>
-支持面重叠，未考虑边重叠的原因：输入数据为<code>double</code>，而浮点数是不能比较等于的。精度损失是可以忽略不计的。<br>
-时间复杂度O(k<sup>3</sup>)，空间复杂度O(k<sup>2</sup>)。</p>
-<h4 id="代码-2">代码</h4>
-<p>有点长，但是认真写了注释。</p>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#include &lt;map&gt;
-#include &lt;cstring&gt;
-using namespace std;
-
-const int maxk = 1005, inf = 0x7fffffff;
-double n, m; // 场地边界
-int k; // 矩形个数
-struct square {
-    double x1, y1, x2, y2; // 原对角
-    int _x1, _y1, _x2, _y2; // 离散化后的对角
-} a[maxk];
-struct point {
-    double x, y; // 点坐标
-    int _x, _y; // 离散化后的点坐标
-} b[maxk*2];
-double pos_x[maxk*2], pos_y[maxk*2]; // 用序号找原位置
-map&lt;double, int&gt; mp_x, mp_y; // 查找离散化坐标，与pos_x和pos_y相反
-double g[maxk*2][maxk*2]; // 离散后的地图，存当前小块的面积
-int ans_x1, ans_y1, ans_x2, ans_y2; // 答案的对角坐标id
-
-void init() { // 初始化，置边界值
-    pos_x[0] = 0;
-    pos_x[k*2+1] = n;
-    pos_y[0] = 0;
-    pos_y[k*2+1] = n;
-
-    b[0]._x = 0;
-    b[k*2+1]._x = n;
-    b[0]._y = 0;
-    b[k*2+1]._y = m;
-}
-
-// 排序用
-bool cmp_x(point p1, point p2) {
-    return p1.x &lt; p2.x;
-}
-bool cmp_y(point p1, point p2) {
-    return p1.y &lt; p2.y;
-}
-
-void lsh() { // 离散化
-    sort(b, b + k * 2 + 1, cmp_x);
-    for (int i = 1; i &lt;= k * 2; i++) {
-        b[i]._x = i;
-        pos_x[i] = b[i].x;
-        mp_x[b[i].x] = i;
-    }
-    sort(b, b + k * 2 + 1, cmp_y);
-    for (int i = 1; i &lt;= k * 2; i++) {
-        b[i]._y = i;
-        pos_y[i] = b[i].y;
-        mp_y[b[i].y] = i;
-    }
-
-    for (int i = 1; i &lt;= k; i++) {
-        a[i]._x1 = mp_x[a[i].x1];
-        a[i]._x2 = mp_x[a[i].x2];
-        a[i]._y1 = mp_y[a[i].y1];
-        a[i]._y2 = mp_y[a[i].y2];
-    }
-}
-
-void make_map() {
-    // 存每一个小格的面积
-    for (int i = 0; i &lt;= k * 2 + 1; i++) {
-        for (int j = 0; j &lt;= k * 2 + 1; j++) {
-            g[i][j] = (pos_x[i+1] - pos_x[i]) * (pos_y[j+1] - pos_y[j]);
-        }
-    }
-
-    // 被占用的赋值为负无穷
-    for (int cnt = 1; cnt &lt;= k; cnt++) {
-        for (int i = a[cnt]._x1; i &lt; a[cnt]._x2; i++) {
-            for (int j = a[cnt]._y1; j &lt; a[cnt]._y2; j++) {
-                g[i][j] = -inf;
-            }
-        }
-    }
-}
-
-void test() { // 测试用，输出离散化后的地图
-    for (int i = 0; i &lt;= k * 2 + 1; i++) {
-        cout &lt;&lt; pos_x[i] &lt;&lt; ' ';
-    }
-    cout &lt;&lt; endl;
-    for (int j = 0; j &lt;= k * 2 + 1; j++) {
-        cout &lt;&lt; pos_y[j] &lt;&lt; ' ';
-    }
-    cout &lt;&lt; endl;
-
-    for (int i = 0; i &lt;= k * 2; i++) {
-        for (int j = 0; j &lt;= k * 2; j++) {
-            printf(&quot;%5lf &quot;, g[i][j]);
-        }
-        cout &lt;&lt; endl;
-    }
-}
-
-double max_matrix() { // 最大子矩阵和
-    double tmp[maxk*2], ans = -inf, ans_y1_tmp;
-    for (int i = 0; i &lt;= 2 * k; i++) {
-        memset(tmp, 0, sizeof tmp);
-        for (int j = i; j &lt;= 2 * k; j++) {
-            double sum = 0;
-            for (int h = 0; h &lt;= 2 * k; h++) {
-                tmp[h] += g[j][h];
-                sum += tmp[h];
-                if (sum &lt; 0) {
-                    sum = tmp[h];
-                    ans_y1_tmp = h;
-                }
-                if (sum &gt; ans) {
-                    ans = sum;
-                    ans_y1 = ans_y1_tmp;
-                    ans_y2 = h;
-                    ans_x1 = i;
-                    ans_x2 = j;
-                }
-            }
-        }
-    }
-    return ans;
-}
-
-int main(int argc, const char * argv[])
-{
-    //freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);
-    cin &gt;&gt; k &gt;&gt; n &gt;&gt; m;
-    init();
-    for (int i = 1; i &lt;= k; i++) { // 输入同时保存所有的点
-        cin &gt;&gt; a[i].x1 &gt;&gt; a[i].y1 &gt;&gt; a[i].x2 &gt;&gt; a[i].y2;
-        b[i*2-1].x = a[i].x1;
-        b[i*2-1].y = a[i].y1;
-        b[i*2].x = a[i].x2;
-        b[i*2].y = a[i].y2;
-    }
-    lsh();
-    make_map();
-    //test();
-    cout &lt;&lt; &quot;面积：&quot; &lt;&lt; max_matrix() &lt;&lt; endl;
-    //cout&lt;&lt; ans_x1 &lt;&lt; ',' &lt;&lt; ans_y1 &lt;&lt; ' ' &lt;&lt; ans_x2 &lt;&lt; ',' &lt;&lt; ans_y2 &lt;&lt; endl;
-    cout &lt;&lt; &quot;左上角：&quot; &lt;&lt; pos_x[ans_x1] &lt;&lt; ',' &lt;&lt; pos_y[ans_y1] &lt;&lt; endl;
-    cout &lt;&lt; &quot;右下角：&quot; &lt;&lt; pos_x[ans_x2+1] &lt;&lt; ',' &lt;&lt; pos_y[ans_y2+1] &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
-<h2 id="总结">总结</h2>
-<p>腾讯的面试简直一个比一个令人自闭。<br>
-但令人社死这是第一回嗷。</p>
-<h1 id="二面">二面</h1>
-<h2 id="面试-2">面试</h2>
-<p>形式：腾讯会议，面试官没开视频</p>
-<h3 id="无自我介绍-2">无自我介绍</h3>
-<p>Q：看了简历，觉得没什么项目。<br>
-A：嗯，没做什么比较大的，主要是些课程大作业，而且有些不太相关就没往上写。</p>
-<h3 id="网络-2">网络</h3>
-<p>Q：网络序、主机序？<br>
-A：没听过。。<br>
-Q：http传一个int数？<br>
-A：会包装成一个包传，有首部有数据段，首部放序号效验码什么的，数据段放它。<br>
-Q：大小端？<br>
-A：在操作系统里学的，地址从大往小存还是从小往大存，不同电脑可能不一样。<br>
-Q：你搜一下<code>ntohl()</code>然后说说。<br>
-A：它把网络序转化为主机序，那应该是接收到网络包存到本地之后会根据大小端改变序号。<br>
-Q：因为主机序有大端有小端，网络序统一为大端。你觉得<code>ntohl()</code>大小端都具体怎样计算？<br>
-A：大端的直接加减一个系数，小端加减系数之后还要把序号反过来。<br>
-Q：嗯，其实没有系数。</p>
-<p>Q：对于游戏来说有很大的访问量，如何设计一个非阻塞server？<br>
-A：游戏的话不同于平常做的东西只有一个服务器，它可能有很多个。<br>
-Q：但是每一个服务器依然会要同时服务上万个人。<br>
-A：多线程？<br>
-Q：如何安排？一个人一个线程吗？<br>
-A：我觉得可以，毕竟一个人不会同时点出两个操作来。<br>
-Q：<em>觉得不太行</em><br>
-A：<em>也没讲出来什么其他的</em></p>
-<p>Q：游戏里很多用UDP，为啥呀？<br>
-A：因为UDP不保证可靠传输，游戏丢包掉个帧可能也看不出来吧。<br>
-Q：你说的视频是这样，很多时候游戏丢包不太行。<br>
-A：那就UDP不需要建立三次握手连接比较快。<br>
-Q：用UDP保证可靠传输？<br>
-A：给数据帧编号，没收到要重传，还可以弄个拥塞控制啥的。（恭喜您在应用层实现了TCP，不过为什么贵公司总是要做这种闲得蛋疼的事情呢？）<br>
-Q：重传时间怎样设计？<br>
-A：设个初始值，总是丢包就加倍。<br>
-Q：为什么是倍数和减半的关系？<br>
-A：一种二分的思想吧，最快地找到合适的等待时间。</p>
-<h3 id="操作系统-2">操作系统</h3>
-<p>Q：写C++程序时候用变量，它们怎样通过逻辑地址找到物理地址？<br>
-A：全局变量和静态变量在数据段里，函数里的变量在栈里。它们都有一个相对的偏移地址，访问时候会根据这去找它真实的地址。<br>
-Q：想问的是怎样找的？<br>
-A：内存里是分成页的，每个页有目录。有高速缓存会先找这里的。</p>
-<h3 id="书">书</h3>
-<p>Q：安利《<a href="https://book.douban.com/subject/26912767/">深入理解计算机系统</a>》和软件工程方面的。<br>
-A：好的，仔细看看。</p>
-<h2 id="写代码-2">写代码</h2>
-<p>形式：腾讯会议共享屏幕</p>
-<h3 id="问题">问题</h3>
-<p>给一串没规律的数，找中位数。<br>
-中位数：奇数个是中间的那个，偶数个是中间靠左的那个。</p>
-<h3 id="分析">分析</h3>
-<p>A：最烂的方法复杂度是先排序再找中间的了。<br>
-Q：想想是所有数都要排吗？<br>
-Q：你打算用什么排序？<br>
-A：O(nlogn)的话快排。<br>
-Q：想想快排可不可以优化？<br>
-A：先把第一个数拿出来，所有比它小的放左边，比它大的放右边，多的一边继续。</p>
-<h3 id="代码-3">代码</h3>
-<p>先上成品，dfs是找0-n里第k大的数：</p>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-using namespace std;
-
-#define n 11
-
-int nn = n;
-int a[n] = {2,5,1,6,3,9,7,8,4,10,11};
-int small[n], big[n];
-
-void cpy(int* x, int* y, int k) {
-    for (int i = 0; i &lt; k; i++)
-        x[i] = y[i];
-}
-
-int dfs(int r, int k) {
-    int cnt1 = 0, cnt2 = 0;
-    for (int i = 1; i &lt; r; i++) {
-        if (a[i] &lt; a[0]) {
-            small[cnt1++] = a[i];
-        } else {
-            big[cnt2++] = a[i];
-        }
-    }
-    if (cnt1 == k) {
-        return a[0];
-    } else if (cnt1 &gt;= cnt2) {
-        //a = small;
-        cpy(a, small, cnt1);
-        nn--;
-        return dfs(cnt1, k - 1);
-    } else {
-        //a = big;
-        cpy(a, big, cnt2);
-        nn--;
-        return dfs(cnt2, k - cnt1 - 1);
-    }
-}
-
-int main(int argc, const char * argv[])
-{
-    cout &lt;&lt; dfs(n, (n+1) / 2 - 1) &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
-<p>Q：你写那么多n，我n要是改了你得改多少个？<br>
-A：行，改成宏定义。<br>
-Q：你这空间复杂度多少？<br>
-A：O(3*n)，都在a一个数组里捯饬也不是不行，主要写着麻烦，就又开两个数组。<br>
-Q：用时间太长了。<br>
-A：确实，dfs结束判断开始写错了卡了很久。</p>
-<h2 id="反问">反问</h2>
-<p>Q：具体干啥？网络前面说的那些函数是需要自己写的吗？我以为是有现成可以调的。<br>
-A：嗯所以让多看看工程方面的书，确实有些开源的但也要懂它的原理。比如看看这<code>protobuf</code>。<br>
-Q：这是二面吗？官网上还是显示的初试。<br>
-A：不同部门面试次数不太一样，微信和这都是至少三轮面试的。<br>
-Q：就是这次如果通过的话还有一个主管面？<br>
-A：✅</p>
-<h2 id="总结-2">总结</h2>
-<p>长达100min的超长之旅，但他说看到聪明的学生想多聊几句。<br>
-我：😟-&gt; 😃<br>
-但还是挂了，结束了自闭之旅。不面了面不动了，去阿里了。</p>
-<hr>
-<p>要说令人自闭，下一个就是你了，諫山老贼！</p>
 ]]></content>
     </entry>
 </feed>

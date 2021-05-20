@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-05-18T13:55:02.020Z</updated>
+    <updated>2021-05-20T07:28:49.632Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -57,7 +57,11 @@
 海的那边，是敌人呐！<br>
 塔塔开！塔塔开！</p>
 <hr>
-<p><a href="https://tangent617.github.io/post/incarnation-anime-review/">《灵笼》</a>下次一定写</p>
+<ol>
+<li>更新<a href="https://tangent617.github.io/post/attack-on-titan-manga-review/">《进击的巨人》漫评</a>加页内容</li>
+<li>更新<a href="https://tangent617.github.io/post/incarnation-anime-review/">《灵笼》剧评</a>特别篇内容</li>
+<li>写一篇《生化危机8》Ethan纪念文章</li>
+</ol>
 ]]></content>
     </entry>
     <entry>
@@ -149,7 +153,9 @@ int-lyy：第二排右四</p>
 <!-- more -->
 <p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
 <iframe height="740" src="https://ac.yunyoujun.cn"></iframe>
-<p>📺还可以看<a href="http://tvdang.ddns.net:8000/">电视</a></p>
+<p>📺看<a href="http://tvdang.ddns.net:8000/">电视</a><br>
+🎮打<a href="https://www.yikm.net/">游戏机</a><br>
+🚨玩<a href="https://game.chronodivide.com/">红警</a></p>
 ]]></content>
     </entry>
     <entry>

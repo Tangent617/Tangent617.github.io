@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tangent617.github.io</id>
     <title>Xiaoyan Guo</title>
-    <updated>2021-05-22T15:31:25.083Z</updated>
+    <updated>2021-05-23T09:06:52.863Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tangent617.github.io"/>
     <link rel="self" href="https://tangent617.github.io/atom.xml"/>
@@ -10,6 +10,36 @@
     <logo>https://tangent617.github.io/images/avatar.png</logo>
     <icon>https://tangent617.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Xiaoyan Guo</rights>
+    <entry>
+        <title type="html"><![CDATA[《速度与激情9》彩蛋]]></title>
+        <id>https://tangent617.github.io/post/f9-the-fast-saga-easter-eggs/</id>
+        <link href="https://tangent617.github.io/post/f9-the-fast-saga-easter-eggs/">
+        </link>
+        <updated>2021-05-23T08:49:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>封面：当太空人<br>
+原文：https://movie.douban.com/review/13562382/</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>封面：当太空人<br>
+原文：https://movie.douban.com/review/13562382/</p>
+<!-- more -->
+<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
+<h2 id="神奇女侠">神奇女侠</h2>
+<p>反派好像也叫Areis，和《速度与激情9》中的发光绿球一样。<br>
+盖尔·加朵就回来说了两句台词。</p>
+<h2 id="星球大战">星球大战</h2>
+<p>楚巴卡：猩猩人，和汉·索罗一起开飞船<br>
+千年隼：他们的飞船<br>
+卢克·天行者：男主，daddy issue是指其父亲阿纳金·天行者（达斯·维达）是反派<br>
+汉·索罗：游侠一般的一个角色，后和卢克妹妹莱娅成婚<br>
+尤达：小绿外星人，倒装句大师</p>
+<h2 id="神偷奶爸">神偷奶爸</h2>
+<p>嗯，那个像小黄人一样的宇航服属实离谱。</p>
+<h2 id="二次元">二次元</h2>
+<p>最后，那个在玻璃屋里的反派<img src="https://img3.doubanio.com/view/thing_review/l/public/p6033290.jpg" alt="塞弗" loading="lazy">好像《进击的巨人》里的耶蕾娜<br>
+<img src="https://img2.doubanio.com/view/thing_review/l/public/p6032473.jpg" alt="耶姐侧脸" loading="lazy"><br>
+<img src="https://img9.doubanio.com/view/thing_review/l/public/p6032474.jpg" alt="耶姐正脸" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《爱，死亡和机器人》第二季 整活剧评]]></title>
         <id>https://tangent617.github.io/post/love-death-and-robots-s2-tvshow-review/</id>
@@ -61,7 +91,7 @@
 <li>更新<a href="https://tangent617.github.io/post/attack-on-titan-manga-review/">《进击的巨人》漫评</a>加页内容</li>
 <li>更新<a href="https://tangent617.github.io/post/incarnation-anime-review/">《灵笼》剧评</a>特别篇内容</li>
 <li>更新<a href="https://tangent617.github.io/post/music-games/">音游总结</a>中有关<code>BanG Dream!</code>的部分</li>
-<li>写一篇《速度与激情8》影评</li>
+<li>写一篇《速度与激情9》影评</li>
 </ol>
 ]]></content>
     </entry>
@@ -991,29 +1021,6 @@ Dashboard-设置<br>
 <p>https://mitsea.medium.com/macos-下对特定软件使用科学代理-7a70d8236f62</p>
 <hr>
 <p>明天更<a href="https://tangent617.github.io/post/huawei-general-software-development-internship-interview/">华为面经</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[外链图片显示问题已修复]]></title>
-        <id>https://tangent617.github.io/post/fix-bug-of-linking-pictures-not-showing/</id>
-        <link href="https://tangent617.github.io/post/fix-bug-of-linking-pictures-not-showing/">
-        </link>
-        <updated>2021-04-14T03:01:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>受影响的主要为两篇影评。😌</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>受影响的主要为两篇影评。😌</p>
-<!-- more -->
-<p><span id="busuanzi_container_page_pv">👀 <span id="busuanzi_value_page_pv"></span> views</span></p>
-<h2 id="解决方案">解决方案</h2>
-<p>在网页<code>head</code>部分加入以下代码，屏蔽自己网站的Referrer，在head标签内添加如下mata标签：</p>
-<pre><code class="language-html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-</code></pre>
-<p>直接在主题设置中修改以对所有页面生效：<br>
-<img src="https://tangent617.github.io/post-images/1618371374687.png" alt="代码截图" loading="lazy"></p>
-<h2 id="参考">参考：</h2>
-<p>https://blog.csdn.net/c__chao/article/details/94554283</p>
-<hr>
-<p>由于<code>GitHub</code>国内联网很慢所以博客经常更新不及时，下一步会修复一下这件事。</p>
 ]]></content>
     </entry>
 </feed>

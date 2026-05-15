@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://tangent617.github.io</id>
+    <title>稽窝</title>
+    <updated>2026-05-15T14:39:17.174Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://tangent617.github.io"/>
+    <link rel="self" href="https://tangent617.github.io/atom.xml"/>
+    <subtitle>一只滑稽写博客的地方</subtitle>
+    <logo>https://tangent617.github.io/images/avatar.png</logo>
+    <icon>https://tangent617.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2026, 稽窝</rights>
+    <entry>
+        <title type="html"><![CDATA[上交所社招]]></title>
+        <id>https://tangent617.github.io/post/shanghai-stock-exchange-interview/</id>
+        <link href="https://tangent617.github.io/post/shanghai-stock-exchange-interview/">
+        </link>
+        <updated>2026-05-15T14:25:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>先做了笔试，面试还没给消息。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>先做了笔试，面试还没给消息。</p>
+<!-- more -->
+<h1 id="笔试">笔试</h1>
+<h2 id="技术">技术</h2>
+<p>C/C++, Java，计网，进程线程等基础知识；</p>
+<p>编程题特别简单，最难的是一道找数组最大值；</p>
+<h2 id="思想政治">思想政治</h2>
+<p>智力题、图片找规律、近义词填空、逻辑题，有难度；</p>
+<p>材料分析题很简单，在文章中找到对应的数字即可；</p>
+<p>政治类包含一些比较近期的内容，比如20届四中全会的内容、抗战开始时间是77事变还是918事变（我上学的时候还是讲的8年抗战【我还是东北人诶？】，后来好像改成14年了）、新质生产力（根本没听过这个词），毕业之后多年没看过这些内容的话需要注意下。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[XTransfer社招面经]]></title>
+        <id>https://tangent617.github.io/post/xtransfer-interview/</id>
+        <link href="https://tangent617.github.io/post/xtransfer-interview/">
+        </link>
+        <updated>2026-05-13T09:16:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>昨天面的乒乓智能就问项目了，所以没写。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>昨天面的乒乓智能就问项目了，所以没写。</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="项目">项目</h2>
+<p>如何实现控制的切流</p>
+<h2 id="八股">八股</h2>
+<p>Threadlocal线程池</p>
+<h2 id="代码">代码</h2>
+<h3 id="伪代码">伪代码</h3>
+<pre><code class="language-java">transactionTemplate.execute(
+            select * from tableA where biz_id = 123 for update;(biz_id 是UK)
+
+    B b = select * from tableB where instruction_id = 456 and biz_id =123);
+    if(b == null){
+        insert tableB
+    }
+</code></pre>
+<p>对于mysql 在RR和RC 下，如果tableA biz_id = 123不存在，会重复插入tableB吗，tableB  instruction_id = 456 and biz_id 没有UK</p>
+<h3 id="leetcode">leetcode</h3>
+<p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/">236. 二叉树的最近公共祖先</a></p>
+<p>思路：</p>
+<ol>
+<li>先从根节点开始，dfs扫一遍全图把父结节保存到HashMap</li>
+<li>从节点p开始往上找，一路打标记</li>
+<li>从节点q往上找，找到的第一个带标记的节点就是答案</li>
+</ol>
+<pre><code class="language-java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    Map&lt;TreeNode, TreeNode&gt; fa = new HashMap&lt;&gt;();
+    public void dfs(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        if (root.left != null) {
+            fa.put(root.left, root);
+            dfs(root.left);
+        }
+        if (root.right != null) {
+            fa.put(root.right, root);
+            dfs(root.right);
+        }
+    }
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        dfs(root);
+        Map&lt;TreeNode, Boolean&gt; vis = new HashMap&lt;&gt;();
+        while (p != null) {
+            vis.put(p, true); 
+            p = fa.get(p);
+        }
+        while (q != null) {
+            if (vis.get(q) != null &amp;&amp; vis.get(q) == true) {
+                return q;
+            }
+            q = fa.get(q);
+        }
+        return root;
+    }
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[网易云音乐平台业务后台开发面经]]></title>
+        <id>https://tangent617.github.io/post/netease-platform-java-developer-interview/</id>
+        <link href="https://tangent617.github.io/post/netease-platform-java-developer-interview/">
+        </link>
+        <updated>2026-05-11T12:54:47.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="项目">项目</h2>
+<p>问了多线程、灰度相关问题</p>
+<h2 id="八股">八股</h2>
+<p>协程</p>
+<blockquote>
+<p>DeepSeek, 面试问到我forgeC（大概读音），说是是在jvm垃圾回收时可能出现的一种错误，会导致性能下降，这是什么啊？</p>
+</blockquote>
+<p>你听到的“forgeC”是个很好的切入点，它实际上指的是JVM中CMS垃圾回收器的一个特定概念：<strong>Foreground GC（前台垃圾回收）</strong>。</p>
+<p>你可以把它理解成CMS垃圾回收的**“强制模式”**，一旦触发，就会导致严重的性能下降。</p>
+<h3 id="什么是-foreground-gc">🧐 什么是 Foreground GC？</h3>
+<p>为了方便理解，我们先看一下CMS垃圾回收器的两种工作模式：</p>
+<ul>
+<li><strong>Background GC (后台GC)</strong>：这是CMS的<strong>理想并发模式</strong>。它和你的Java业务线程交替运行，大部分工作不会暂停应用，只会在开始和结束时有短暂的停。目的是在后台默默打扫，将对应用性能的影响降到最低。</li>
+<li><strong>Foreground GC (前台GC)</strong>：这就是<strong>你提到的“forgeC”</strong>。当后台清理速度跟不上了，JVM就会紧急启动这种模式。<strong>它会暂停所有业务线程（Stop-The-World）</strong>，以最快速度进行全堆垃圾回收。之所以影响巨大，就是因为它会强制打断你的程序，造成非常明显的卡顿。</li>
+</ul>
+<h3 id="️-它是如何被触发的">⚙️ 它是如何被触发的？</h3>
+<p>两种情况会触发 Foreground GC：</p>
+<ul>
+<li><strong>并发模式失败 (Concurrent Mode Failure)</strong>：CMS后台还在并发清理，但此时需要晋升到老年代的对象太多了，老年代<strong>在并发清理完成前就被填满了</strong>。JVM会立即停止所有线程，退化成串行或并行的单线程Full GC来完成回收，这种“降级”会导致停顿时间变得非常长。</li>
+<li><strong>晋升失败 (Promotion Failed)</strong>：新生代Minor GC时，有大量对象需要晋升到老年代，但老年代剩余空间严重不足，哪怕次Young GC也无法腾出空间，也会立刻触发Full GC。</li>
+</ul>
+<p>这两种情况都指向<strong>老年代空间不足</strong>。</p>
+<h3 id="为什么会导致性能下降">📉 为什么会导致性能下降？</h3>
+<p>性能下降的核心原因在于以下三点：</p>
+<ol>
+<li><strong>单线程/少线程回收，效率低</strong>：当CMS并发失败时，通常会启用<code>Serial Old</code>收集器，使用<strong>单线程</strong>进行整个堆的标记-整理回收。对于几个GB的大堆，单线程回收将持续<strong>几秒甚至几分钟</strong>，期间程序完全无响应。</li>
+<li><strong>漫长的STW暂停</strong>：Foreground GC期间，所有用户线程都被暂停。对延迟敏感的在线服务来说，一次漫长的暂停就可能造成大量请求超时，对交易系统等关键应用是致命的。</li>
+<li><strong>连锁反应，恶性循环</strong>：一次Foreground GC的长时间暂停，可能积压更多等待处理的请求。服务恢复后，大量请求涌入又会迅速填满内存，可能<strong>立刻触发下一次Foreground GC</strong>，形成恶性循环，最终导致系统雪崩。</li>
+</ol>
+<h3 id="如何优化与避坑">💡 如何优化与避坑？</h3>
+<p>优化目标是<strong>尽量避免Foreground GC</strong>，其本质是尽力保障CMS并发回收能顺利完成。</p>
+<ul>
+<li>
+<p><strong>1. 提前触发GC，预留空间</strong>：CMS并发回收时用户线程仍在运行，会产生“浮动垃圾”。可将<code>CMSInitiatingOccupancyFraction</code>参数调低（如 <strong>70%-80%</strong>），让CMS更早启动，为浮动垃圾预留空间。反之，如果值太高（如默认的92%），CMS启动太晚就容易失败。</p>
+<pre><code class="language-bash">-XX:CMSInitiatingOccupancyFraction=75
+</code></pre>
+</li>
+<li>
+<p><strong>2. 合理配置年轻代大小</strong>：新生代太小，会导致对象过快晋升到老年代，增加并发失败风险。可尝试将新生代调大（<strong>建议1-2GB</strong>），让短命对象有足够空间，减缓老年代增长压力。</p>
+</li>
+<li>
+<p><strong>3. 解决内存碎片</strong>：CMS基于“标记-清除”算法，会产生内存碎片。当对象无法找到连续空间时，也会触发Full GC。</p>
+<ul>
+<li>开启GC后碎片整理：<code>-XX:+UseCMSCompactAtFullCollection</code></li>
+<li>设置整理频率：<code>-XX:CMSFullGCsBeforeCompaction=n</code> (如设为5，即每5次Full GC后进行1次内存整理，默认0表示每次Full GC都整理)</li>
+</ul>
+</li>
+<li>
+<p><strong>4. 快速排查思路</strong>：如果生产环境已发生此问题，可按以下优先级排查：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">步骤</th>
+<th style="text-align:left">排查要点</th>
+<th style="text-align:left">关键参数/命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>1</strong></td>
+<td style="text-align:left"><strong>确认GC日志</strong></td>
+<td style="text-align:left"><code>jstat -gcutil &lt;pid&gt; 1000</code> 或开启 <code>-Xloggc:gc.log</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2</strong></td>
+<td style="text-align:left"><strong>分析问题原因</strong></td>
+<td style="text-align:left">观察GC日志，看YGC晋升速度、老年代使用率、Full GC频率等</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>3</strong></td>
+<td style="text-align:left"><strong>检查大对象</strong></td>
+<td style="text-align:left"><code>jmap -histo:live &lt;pid&gt;</code> 分析老年代对象；<br><code>jmap -F -dump:...</code> 导出堆转储，用VisualVM、MAT等工具分析</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>4</strong></td>
+<td style="text-align:left"><strong>调整配置</strong></td>
+<td style="text-align:left">根据分析结果，调整新生代大小、<code>CMSInitiatingOccupancyFraction</code>、开启碎片整理等参数</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>5</strong></td>
+<td style="text-align:left"><strong>考虑升级</strong></td>
+<td style="text-align:left">如果优化成本高，可考虑切换到G1 GC（<code>-XX:+UseG1GC</code>），它会进行自动内存整理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="面试回答参考">🧑‍🏫 面试回答参考</h3>
+<p>如果面试中再被问到，你可以这样组织语言，结合初学者的视角由浅入深地进行回答：</p>
+<p>“您提到的‘forgeC’应该是指CMS垃圾回收器里的<code>Foreground GC</code>。要理解它，我们可以把CMS想成一个在后台默默打扫的清洁工，这就是它的<code>Background GC</code>模式，这种模式下工作几乎不影响我们。</p>
+<p>但当后台清洁工的速度跟不上了，也就是出现了<code>Concurrent Mode Failure</code>（并发模式失败）或<code>Promotion Failed</code>（晋升失败）时，<code>Foreground GC</code>就登场了。它就像一个紧急警报，会立刻暂停所有工作线程，自己动手进行快速清理。这个清理过程因为是单线程的，并且需要对整个内存空间进行压缩整理，所以会造成非常漫长的停顿（STW），对线上服务的性能影响非常大。</p>
+<p>为了避免这种情况，我们通常会通过调整<code>CMSInitiatingOccupancyFraction</code>等参数来提早触发后台清理，并合理分配新生代的内存空间。您想深入了解这其中某一种调优策略的具体原理吗？”</p>
+<p>以上是关于CMS垃圾回收器中Foreground GC的全面解析。如果你还想了解其他垃圾回收器（如G1, ZGC）的相关问题，或者JVM其他方面的知识，随时可以继续交流。</p>
+<blockquote>
+<p>应该如何预防和排查这种问题呢？</p>
+</blockquote>
+<p>针对 Foreground GC 的预防和排查，核心思路就是一句话：<strong>力保 CMS 并发回收能顺利完成，一旦出现苗头，能通过日志和工具快速定位根因。</strong></p>
+<p>下面我从预防和排查两个维度为你拆解，也附上了面试中可以用的回答思路。</p>
+<hr>
+<h3 id="️-如何预防">🛡️ 如何预防</h3>
+<p>预防的目标是避免出现 “并发模式失败” 和 “晋升失败”。</p>
+<h4 id="1-预留浮动垃圾空间提前触发gc">1. 预留“浮动垃圾”空间，提前触发GC</h4>
+<p>CMS 并发清理时，用户线程还在产生新垃圾（浮动垃圾），如果等到老年代快满了才回收，很可能没空间存放这些浮动垃圾。</p>
+<ul>
+<li><strong>核心参数</strong>：<code>-XX:CMSInitiatingOccupancyFraction=75</code></li>
+<li><strong>含义</strong>：老年代占用率达到 75% 时就启动 CMS 后台回收，留出 25% 的缓冲。</li>
+<li><strong>注意</strong>：这个值需要配合 <code>-XX:+UseCMSInitiatingOccupancyOnly</code> 使用，否则 JVM 可能动态调整触发阈值。</li>
+</ul>
+<h4 id="2-合理调控对象晋升速率">2. 合理调控对象晋升速率</h4>
+<p>新生代太小，对象会过早晋升到老年代，快速填满老年代；新生代太大，Young GC 时间又会变长。</p>
+<ul>
+<li><strong>调优做法</strong>：适当增大新生代（建议 <strong>1~2 GB</strong> 起步），让短命对象有足够空间被回收。</li>
+<li><strong>关键参数</strong>：<code>-Xmn</code>、<code>-XX:NewRatio</code>、<code>-XX:SurvivorRatio</code>。</li>
+<li><strong>观察指标</strong>：查看 GC 日志中每次 Young GC 后晋升到老年代的平均大小，若持续过大，就需要调整。</li>
+</ul>
+<h4 id="3-解决内存碎片问题">3. 解决内存碎片问题</h4>
+<p>CMS 基于“标记-清除”会产生碎片，当无法找到连续空间存放较大对象时，也会触发 Full GC。</p>
+<ul>
+<li><strong>核心参数</strong>：<pre><code class="language-bash">-XX:+UseCMSCompactAtFullCollection       # 开启碎片整理
+-XX:CMSFullGCsBeforeCompaction=5         # 每5次Full GC后做一次整理，避免每次整理开销太大
+</code></pre>
+</li>
+<li><strong>权衡</strong>：整理过程本身是 STW 的，不必每次 Full GC 都整理，设置一个合理的频率。</li>
+</ul>
+<h4 id="4-避免大对象直接进入老年代">4. 避免大对象直接进入老年代</h4>
+<p>大对象会直接分配到老年代，频繁分配大对象会极速消耗老年代空间。</p>
+<ul>
+<li><strong>参数</strong>：可通过 <code>-XX:PretenureSizeThreshold</code> 指定阈值（仅对 Serial 和 ParNew 有效）。</li>
+<li><strong>代码层面</strong>：审查是否有不断创建大数组、大缓存等行为，尽量复用对象。</li>
+</ul>
+<h4 id="5-终极方案升级垃圾回收器">5. 终极方案：升级垃圾回收器</h4>
+<p>如果应用内存大、对延迟敏感，CMS 已经力不从心，可以考虑升级：</p>
+<ul>
+<li><strong>G1 GC (推荐)</strong>：可设定期望暂停时间 <code>-XX:MaxGCPauseMillis=200</code>，它会自动处理碎片和区域回收，从设计上避免了 CMS 这类并发失败问题。</li>
+<li><strong>ZGC / Shenandoah</strong>：追求亚毫秒级暂停，适合极低延迟场景。</li>
+</ul>
+<hr>
+<h3 id="如何排查">🔍 如何排查</h3>
+<p>线上出现频繁 Full GC 或停顿，可按下面步骤快速定位。</p>
+<h4 id="1-事先开启详细的gc日志">1. 事先开启详细的GC日志</h4>
+<p><strong>这是排查的根基，必须先打开</strong>。</p>
+<pre><code class="language-bash">-XX:+PrintGCDetails       # 打印详细日志
+-XX:+PrintGCDateStamps    # 打印可读日期
+-Xloggc:/path/to/gc.log   # 日志输出路径
+-XX:+PrintHeapAtGC        # 可选，每次GC前后打印堆信息
+-XX:+PrintTenuringDistribution  # 查看对象年龄分布，辅助晋升分析
+</code></pre>
+<h4 id="2-从日志中识别-foreground-gc-的特征">2. 从日志中识别 Foreground GC 的特征</h4>
+<p>当出现问题时，日志中会有非常明显的标识：</p>
+<ul>
+<li><strong>并发模式失败</strong>：会看到 <code>(concurrent mode failure)</code> 字样，随后通常是一个 <code>Full GC (Allocation Failure)</code>。</li>
+<li><strong>晋升失败</strong>：会看到 <code>(promotion failed)</code> 字样，紧接着也是 Full GC。</li>
+<li><strong>关键对比</strong>：这种 Full GC 通常会伴随 <code>ParNew</code> 接着 <code>Serial Old</code> 这样的组合，表示退化为单线程回收。</li>
+</ul>
+<p><strong>看到这些关键字，就说明你遇到了 Foreground GC 问题。</strong></p>
+<h4 id="3-使用命令行工具实时监控">3. 使用命令行工具实时监控</h4>
+<p>在没有可视化界面的服务器上，这是最快捷的手段。</p>
+<pre><code class="language-bash"># 每秒打印一次堆内存各区使用率，重点关注 FGC 次数和 FGC 时间
+jstat -gcutil &lt;pid&gt; 1000
+
+# 示例输出：
+  S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
+  0.00  99.80  78.12  85.67  97.32  92.19     23    0.123     3    2.456    2.579
+</code></pre>
+<ul>
+<li><strong>FGC 列</strong>：Full GC 次数，观察是否频繁增长。</li>
+<li><strong>FGCT 列</strong>：Full GC 总耗时，结合次数看单次停顿是否过长。</li>
+<li><strong>O 列</strong>：老年代使用率，如果一直居高不下且 FGC 后降不下来，说明内存泄漏或配置不足。</li>
+</ul>
+<h4 id="4-分析内存中的对象">4. 分析内存中的对象</h4>
+<p>当确认老年代增长异常，需要知道是什么对象占用了空间。</p>
+<pre><code class="language-bash"># 快速查看存活对象的直方图
+jmap -histo:live &lt;pid&gt; | head -20
+
+# 深度分析：导出堆转储文件
+jmap -dump:format=b,file=heap.hprof &lt;pid&gt;
+</code></pre>
+<ul>
+<li>将 <code>.hprof</code> 文件用 <strong>Eclipse MAT</strong> 或 <strong>VisualVM</strong> 打开。</li>
+<li>重点分析<strong>老年代中大量存活的对象</strong>，看是否是预期内的缓存、还是内存泄漏导致（如集合类不断增长）。</li>
+</ul>
+<h4 id="5-针对性解决">5. 针对性解决</h4>
+<p>根据以上排查，对症下药：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">现象</th>
+<th style="text-align:left">可能原因</th>
+<th style="text-align:left">应对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">日志中频繁出现 <code>concurrent mode failure</code></td>
+<td style="text-align:left">CMS 启动阈值太高，老年代预留空间不足</td>
+<td style="text-align:left">降低 <code>CMSInitiatingOccupancyFraction</code>，或增大堆内存</td>
+</tr>
+<tr>
+<td style="text-align:left">日志中频繁出现 <code>promotion failed</code></td>
+<td style="text-align:left">老年代碎片化严重，或对象晋升速度过快</td>
+<td style="text-align:left">开启内存碎片整理；增大新生代或 Survivor 区</td>
+</tr>
+<tr>
+<td style="text-align:left">Young GC 后大量对象晋升</td>
+<td style="text-align:left">Survivor 区太小，对象过早晋升</td>
+<td style="text-align:left">调整 <code>-XX:SurvivorRatio=8</code>，增大 Survivor 空间</td>
+</tr>
+<tr>
+<td style="text-align:left">单次 Full GC 时间超长（几十秒）</td>
+<td style="text-align:left">堆内存过大，Serial Old 单线程回收效率低</td>
+<td style="text-align:left">升级到 G1 GC，或调小堆内存</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="面试这样回答">🧑‍🏫 面试这样回答</h3>
+<p>如果面试中要你谈谈“如何预防和排查 Foreground GC”，你可以这样组织：</p>
+<blockquote>
+<p>“预防的核心，是保证 CMS 并发回收能顺利完成。我会从三方面入手：<strong>第一，降低触发阈值</strong>，比如把 <code>CMSInitiatingOccupancyFraction</code> 调到 75，预留浮动垃圾空间；<strong>第二，减缓晋升速度</strong>，适当调大年轻代，让对象在新生代多待一会儿；<strong>第三，处理碎片</strong>，开启 <code>UseCMSCompactAtFullCollection</code> 并设置整理频率。如果业务延迟要求更高，可以直接考虑升级到 G1 这种天生避免该问题的回收器。</p>
+<p>排查时，GC 日志是关键。我会先开启 <code>PrintGCDetails</code>，一旦看到 <code>concurrent mode failure</code> 或 <code>promotion failed</code> 日志，就定位到了 Foreground GC。接着，用 <code>jstat -gcutil</code> 观察老年代增长趋势和 FGC 频率，用 <code>jmap</code> 分析内存大户。最终，根据是阈值太低、晋升太快还是内存泄漏，做相应调整。”</p>
+</blockquote>
+<p>这样回答既体现了你有预防意识，也展示了你的排查实战能力。</p>
+<h2 id="代码">代码</h2>
+<p>无</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[迅雷视频中台后端开发面经]]></title>
+        <id>https://tangent617.github.io/post/thunder-video-platform-backend-develop-interview/</id>
+        <link href="https://tangent617.github.io/post/thunder-video-platform-backend-develop-interview/">
+        </link>
+        <updated>2026-05-08T08:18:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>面试邀请写的是最右，不过马上也合并了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>面试邀请写的是最右，不过马上也合并了。</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<p>就问了项目，没啥好说的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[快手社招]]></title>
+        <id>https://tangent617.github.io/post/kuaishou-interview/</id>
+        <link href="https://tangent617.github.io/post/kuaishou-interview/">
+        </link>
+        <updated>2026-04-29T14:41:08.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="电商">电商</h1>
+<h2 id="一面">一面</h2>
+<h3 id="项目">项目</h3>
+<p>定时任务捞账单如何保证，多个机器一起捞不会重复。</p>
+<h3 id="代码">代码</h3>
+<p>LRU，要求O(1)实现。<br>
+我想法是HashMap+优先队列但put还是要O(N)找。</p>
+<p>挂</p>
+<hr>
+<h1 id="商业化">商业化</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[思托瑞java后端开发社招]]></title>
+        <id>https://tangent617.github.io/post/stori-java-developer-interview/</id>
+        <link href="https://tangent617.github.io/post/stori-java-developer-interview/">
+        </link>
+        <updated>2026-04-29T05:21:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>一家给墨西哥做信用卡的金融公司<br>
+（bro你的<a href="https://www.storicard.com">官网</a>只有西班牙语的吗？连个中文网站都没有？）</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一家给墨西哥做信用卡的金融公司<br>
+（bro你的<a href="https://www.storicard.com">官网</a>只有西班牙语的吗？连个中文网站都没有？）</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<p>第一次去线下面试</p>
+<h2 id="项目">项目</h2>
+<p>这块是聊得最多的</p>
+<h2 id="基础知识">基础知识</h2>
+<ul>
+<li>equals() 和 hashCode()关系</li>
+<li>== 和 equals()区别</li>
+<li>HashMap 和 ConcurrentHashMap</li>
+<li>线程池参数</li>
+<li>ThreadLocal</li>
+<li>如何排查慢sql</li>
+<li>JVM垃圾回收</li>
+</ul>
+<h2 id="代码">代码</h2>
+<p>3个线程分别按顺序输出1-100</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[字节跳动社招]]></title>
+        <id>https://tangent617.github.io/post/bytedance-tiktok-backend-developer-interview/</id>
+        <link href="https://tangent617.github.io/post/bytedance-tiktok-backend-developer-interview/">
+        </link>
+        <updated>2026-04-23T13:43:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>省流：二面挂了</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>省流：二面挂了</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="项目">项目</h2>
+<h3 id="在支付宝做的链路统一项目">在支付宝做的链路统一项目</h3>
+<ul>
+<li>两种链路的区别、数据表的设计</li>
+<li>切流的设计</li>
+<li>如果切流过程中新签约怎么办</li>
+</ul>
+<h2 id="基础知识">基础知识</h2>
+<ul>
+<li>分布式系统sql更新数据怎么上锁才不会一边查给另一个改了，中间件&amp;redis</li>
+</ul>
+<h2 id="代码">代码</h2>
+<h3 id="英语题目">英语题目</h3>
+<p>给一个数组，如{4,2,3,0,3,1,2}和一个起点5。从下标为5的开始，3代表可以向左或向右移动3步，走到下标为1的2，再向右走2到0。输出是否可以最后走到0的位置上。</p>
+<h3 id="解法">解法</h3>
+<p>dfs，判断是否越界和是否访问过，递归向左和向右。<br>
+也可以用个队列bfs。</p>
+<h3 id="提问">提问</h3>
+<ul>
+<li>static静态变量的生命周期</li>
+<li>dfs与bfs的时间空间复杂度</li>
+<li>jvm的垃圾回收</li>
+</ul>
+<h2 id="反问">反问</h2>
+<p>Q: 部门用的什么技术栈？什么业务？<br>
+A: GO语言，TikTok支付对接国外的一些各种支付方式。</p>
+<h1 id="二面">二面</h1>
+<h2 id="项目-2">项目</h2>
+<p>主要在聊chargedecision项目，没啥好说的。<br>
+重点问了失败重试的设计</p>
+<h2 id="基础知识-2">基础知识</h2>
+<p>数据库事件的隔离级别</p>
+<h2 id="伪代码">伪代码</h2>
+<p>设计一套转账系统<br>
+答：余额表、账单表，加锁更新余额</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[zilliz社招一面]]></title>
+        <id>https://tangent617.github.io/post/zilliz-java-developer-interview/</id>
+        <link href="https://tangent617.github.io/post/zilliz-java-developer-interview/">
+        </link>
+        <updated>2026-04-21T08:38:27.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/RsV6tWm0d2L3ZXJrjS7bfg">写在 Milvus4 万 Star 之际：Zilliz这七年如何走来，又要去往何处？</a><br>
+<a href="https://zilliverse.feishu.cn/wiki/UceDwcwKriDPZBkq1brcyrd9nmd">以下是公司的发展历程和一些报道介绍，信息更全一些。</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/RsV6tWm0d2L3ZXJrjS7bfg">写在 Milvus4 万 Star 之际：Zilliz这七年如何走来，又要去往何处？</a><br>
+<a href="https://zilliverse.feishu.cn/wiki/UceDwcwKriDPZBkq1brcyrd9nmd">以下是公司的发展历程和一些报道介绍，信息更全一些。</a></p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://tangent617.github.io/post-images/1776761040448.jpg" alt="" loading="lazy"></figure>
+<h3 id="八股">八股</h3>
+<ul>
+<li>threadlocal</li>
+<li>HashMap</li>
+<li>锁</li>
+</ul>
+<h3 id="代码">代码</h3>
+<p><a href="https://leetcode.cn/problems/permutations/solutions/218275/quan-pai-lie-by-leetcode-solution-2">一个字符数组如&quot;abcd&quot;的全排列</a></p>
+<hr>
+<p>挂了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2026新年计划]]></title>
+        <id>https://tangent617.github.io/post/2026-new-year-resolution/</id>
+        <link href="https://tangent617.github.io/post/2026-new-year-resolution/">
+        </link>
+        <updated>2026-01-08T13:54:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>元旦在俄罗斯玩，前两天又感冒了，所以今天才开始写。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>元旦在俄罗斯玩，前两天又感冒了，所以今天才开始写。</p>
+<!-- more -->
+<h3 id="2025年总结">2025年总结</h3>
+<ul>
+<li>多邻国：学完了韩语，啥也没记住。因为想去俄罗斯玩所以又学了俄语。<br>
+<img src="https://tangent617.github.io/post-images/1767881309672.jpg" alt="多邻国" loading="lazy"></li>
+<li>看书看剧：书看不下去，倒是刷完了23季的《出生之家》，主打一个通俗。<br>
+<img src="https://tangent617.github.io/post-images/1767881538491.JPG" alt="豆瓣" loading="lazy"></li>
+<li>旅游：国内去看了<a href="https://tangent617.github.io/post/greater-khingan-autumn/">大兴安岭</a>，路过哈尔滨去看了童年回忆哈药六厂，去<a href="https://www.bilibili.com/video/BV1SAxAzMEAa/?spm_id_from=333.1387.homepage.video_card.click">景德镇</a>看了陶瓷，还去上海打卡了网红文景点<br>
+<img src="https://tangent617.github.io/post-images/1767881757924.jpg" alt="网红景点" loading="lazy"><br>
+国外去了<a href="https://tangent617.github.io/post/russia-art-and-ice/">俄罗斯</a>，相当满足。</li>
+</ul>
+<h3 id="2026年规划">2026年规划</h3>
+<ul>
+<li>多邻国继续学学西班牙语</li>
+<li>找个什么远方的好玩的地方旅游，去哪没想好。<br>
+国内可能是西藏或者海南<img src="https://tangent617.github.io/post-images/1767882328058.png" alt="中国制霸" loading="lazy"><br>
+国外如图<img src="https://tangent617.github.io/post-images/1767882616472.png" alt="全球制霸" loading="lazy"></li>
+<li>把《丝之歌》全成就，把拖了好久的《王国之泪》通关</li>
+<li>《有氧拳击2》快全成就了，后面打一下3，坚持每天锻炼身体</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[俄罗斯：艺术与冰雪]]></title>
+        <id>https://tangent617.github.io/post/russia-art-and-ice/</id>
+        <link href="https://tangent617.github.io/post/russia-art-and-ice/">
+        </link>
+        <updated>2026-01-06T14:48:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>携程上报了个团</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>携程上报了个团</p>
+<!-- more -->
+<div style="position: relative; padding: 30% 45%;">
+<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="//player.bilibili.com/player.html?isOutside=true&aid=115840720569847&bvid=BV12MixBzEK1&cid=35199582386&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+</div>
+<p>被审核拿下的部分：<br>
+<img src="https://tangent617.github.io/post-images/1767711530811.gif" alt="习近平立牌" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>

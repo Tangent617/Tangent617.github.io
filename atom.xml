@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://tangent617.github.io</id>
+    <title>稽窝</title>
+    <updated>2026-07-01T09:04:39.311Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://tangent617.github.io"/>
+    <link rel="self" href="https://tangent617.github.io/atom.xml"/>
+    <subtitle>一只滑稽写博客的地方</subtitle>
+    <logo>https://tangent617.github.io/images/avatar.png</logo>
+    <icon>https://tangent617.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2026, 稽窝</rights>
+    <entry>
+        <title type="html"><![CDATA[flexport后台开发面经]]></title>
+        <id>https://tangent617.github.io/post/flexport-interview/</id>
+        <link href="https://tangent617.github.io/post/flexport-interview/">
+        </link>
+        <updated>2026-06-29T08:31:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>Software Engineer I</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Software Engineer I</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<p>给了个Google的会议链接，还得翻墙，6。</p>
+<h2 id="项目">项目</h2>
+<p>比对多长时间</p>
+<p>失败处理</p>
+<h2 id="代码">代码</h2>
+<p>实现一个wordle</p>
+<p>给出wordle结果求可能的字符串</p>
+<h1 id="二面">二面</h1>
+<h2 id="coding-test">Coding Test</h2>
+<p>多米诺骨牌，给一个字符串，里面有<code>L</code>向左倒<code>R</code>向右倒<code>.</code>不动，问终态。</p>
+<p>找每一段<code>.</code>的左右端点，分类处理即可。</p>
+<ul>
+<li>都是L/左边是空：都向左</li>
+<li>都是R/右边是空：都向右</li>
+<li>向中间倒：前半段R后半段L，注意奇偶数两种情况，奇数个.的话最中间不动</li>
+</ul>
+<p>复杂度O(n)</p>
+<p>请给它设计测试用例</p>
+<h1 id="三面">三面</h1>
+<h2 id="hiring-manager-interview">Hiring Manager Interview</h2>
+<p>项目、遇到的难点、解决</p>
+<p>自己的优点</p>
+<p>mbti</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[百度文库社招]]></title>
+        <id>https://tangent617.github.io/post/baidu-wenku-interview/</id>
+        <link href="https://tangent617.github.io/post/baidu-wenku-interview/">
+        </link>
+        <updated>2026-06-08T04:42:20.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="项目">项目</h2>
+<p>就问了下我是负责的是哪一部分</p>
+<h2 id="基础知识">基础知识</h2>
+<p>Golang 不了解没用过这个</p>
+<p>TCP三次握手4次挥手</p>
+<p>死锁</p>
+<p>事务</p>
+<p>数据库隔离级别</p>
+<p>索引</p>
+<p>Redis数据类型，但项目没用过</p>
+<h2 id="代码">代码</h2>
+<p>给一个数组，找到3个数和为0的所有不重复的方案。</p>
+<p>写了一个O(N^2)的，面试官提示下排序双指针可以O(logN)做，说了下思路没写代码。</p>
+<h1 id="二面">二面</h1>
+<h2 id="项目-2">项目</h2>
+<p>分库分表</p>
+<p>sql相关</p>
+<h2 id="八股">八股</h2>
+<p>sql binlog</p>
+<p>HTTP错误码</p>
+<h2 id="代码-2">代码</h2>
+<p>三数之和</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[字节跳动地理中台社招]]></title>
+        <id>https://tangent617.github.io/post/bytedance-lds-interview/</id>
+        <link href="https://tangent617.github.io/post/bytedance-lds-interview/">
+        </link>
+        <updated>2026-05-29T04:48:08.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="项目">项目</h2>
+<h2 id="基础知识">基础知识</h2>
+<p>Kafka消息队列 offset</p>
+<p>Java SpringBoot各层结构、DAO层mybatis实现原理</p>
+<h2 id="代码">代码</h2>
+<p>判断一个二叉树是不是另一个二叉树的子树</p>
+<hr>
+<p>挂</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Shopee社招]]></title>
+        <id>https://tangent617.github.io/post/shopee-interview/</id>
+        <link href="https://tangent617.github.io/post/shopee-interview/">
+        </link>
+        <updated>2026-05-28T10:07:01.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="一面">一面</h1>
+<p>面试官态度很差很不耐烦的样子。<br>
+<img src="https://tangent617.github.io/post-images/1780029686278.jpg" alt="soldier boy" loading="lazy"></p>
+<h2 id="项目">项目</h2>
+<h2 id="基础知识">基础知识</h2>
+<p>MQ消息队列</p>
+<p>sql索引</p>
+<h2 id="代码">代码</h2>
+<p>多个数组，求它们的并集。</p>
+<p>set解决就好了。</p>
+<hr>
+<p>挂</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[兴业数金面经]]></title>
+        <id>https://tangent617.github.io/post/cib-fintech-interview/</id>
+        <link href="https://tangent617.github.io/post/cib-fintech-interview/">
+        </link>
+        <updated>2026-05-22T08:58:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>先一面，笔试还没做。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>先一面，笔试还没做。</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<p>项目</p>
+<p>Java SpringBoot</p>
+<p>多线程</p>
+<p>事务</p>
+<h1 id="笔试">笔试</h1>
+<p>Java 50道单选 10道多选；</p>
+<p>编程题是括号匹配，用栈做就可以了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[招商银行笔试]]></title>
+        <id>https://tangent617.github.io/post/china-merchants-bank-interview/</id>
+        <link href="https://tangent617.github.io/post/china-merchants-bank-interview/">
+        </link>
+        <updated>2026-05-21T14:32:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>先给了笔试链接，还没面。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>先给了笔试链接，还没面。</p>
+<!-- more -->
+<h1 id="笔试">笔试</h1>
+<h2 id="素质测评">素质测评</h2>
+<p>选出以下最符合和最不符合你的特征：A长远考虑 B乐于助人 C倾听他人建议</p>
+<p>类似这种题。</p>
+<h2 id="技术笔试">技术笔试</h2>
+<h3 id="java基础知识">Java基础知识</h3>
+<p>爷忘啦</p>
+<h3 id="代码">代码</h3>
+<p>牛客平台</p>
+<h4 id="实现一个线程安全的读写缓存">实现一个线程安全的读写缓存</h4>
+<p>ConcurrentHashMap大大方方用。</p>
+<h4 id="给一个只有a和b组成的字符串最少删除多少字符使前面全是a后面全是b">给一个只有'A'和'B'组成的字符串，最少删除多少字符使前面全是'A'后面全是'B'</h4>
+<p>两个数组，一个从前往后遍历，记录当前点左边<code>B</code>的数量；<br>
+另一个从后往前遍历，记录当前点右边<code>A</code>的数量。<br>
+然后遍历两者和的最大值即可。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[滴滴社招]]></title>
+        <id>https://tangent617.github.io/post/didi-interview/</id>
+        <link href="https://tangent617.github.io/post/didi-interview/">
+        </link>
+        <updated>2026-05-20T09:11:01.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="国际化安全">国际化安全</h1>
+<h2 id="一面">一面</h2>
+<h3 id="项目">项目</h3>
+<p>用到的中间件</p>
+<h3 id="基础知识">基础知识</h3>
+<p>更新数据库，刷新缓存，通知下游，怎么保持一致性</p>
+<p>futuretask</p>
+<h3 id="代码">代码</h3>
+<p>反转链表</p>
+<pre><code class="language-java">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or
+// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.
+
+class Node {
+    int val;
+    Node next;
+}
+
+public Node reverse(Node head) {
+
+    Node prev = null;
+    Node cur = head;
+
+    while (cur != null) {
+        Node next = cur.next;
+        cur.next = prev;
+        prev = cur;
+        cur = next;
+    }
+
+    return prev;
+}
+
+void main() {
+    //TIP Press &lt;shortcut actionId=&quot;ShowIntentionActions&quot;/&gt; with your caret at the highlighted text
+    // to see how IntelliJ IDEA suggests fixing it.
+
+    Node head = new Node();
+    head.val = 1;
+    Node head1 = new Node();
+    head1.val = 2;
+    Node head2 = new Node();
+    head2.val = 3;
+    head.next = head1;
+    head1.next = head2;
+
+    Node ans = reverse(head);
+
+    for (Node p = ans; p != null; p = p.next) {
+        System.out.println(p.val);
+    }
+
+}
+</code></pre>
+<p>用本地IDE写的，不知道IDEA试用期有多久，一会我搞个盗版装上吧。</p>
+<hr>
+<p>挂</p>
+<h1 id="配送引擎">配送引擎</h1>
+<h2 id="一面-2">一面</h2>
+<h3 id="项目-2">项目</h3>
+<p>稳定性保障</p>
+<h3 id="代码-2">代码</h3>
+<p>数据流取中位数，用两个优先队列实现。</p>
+<pre><code class="language-java">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or
+// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.
+
+PriorityQueue&lt;Integer&gt; qMin = new PriorityQueue&lt;&gt;(),
+        qMax = new PriorityQueue&lt;&gt;((o1, o2) -&gt; o2 - o1);
+
+void main() {
+    //TIP Press &lt;shortcut actionId=&quot;ShowIntentionActions&quot;/&gt; with your caret at the highlighted text
+    // to see how IntelliJ IDEA suggests fixing it.
+
+    int[] a = {10,9,8,7,6,5,4,3,2,1};
+
+    for (int i = 0; i &lt; a.length; i++) {
+        add(a[i]);
+        System.out.println(getMid());
+    }
+
+}
+
+void add(int n) {
+    qMax.offer(n);
+    qMin.offer(qMax.poll());
+
+    if (qMin.size() &gt; qMax.size()) {
+        qMax.offer(qMin.poll());
+    }
+}
+
+double getMid() {
+    if (qMax.isEmpty()) {
+        return 0;
+    }
+    if (qMax.size() &gt; qMin.size()) {
+        return qMax.peek();
+    }
+    return (qMax.peek() + qMin.peek()) / 2.0;
+}
+</code></pre>
+<h3 id="问题">问题</h3>
+<p>优先队列的底层实现<br>
+秒杀系统如何保证库存一致性</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[特斯拉社招]]></title>
+        <id>https://tangent617.github.io/post/tesla-interview/</id>
+        <link href="https://tangent617.github.io/post/tesla-interview/">
+        </link>
+        <updated>2026-05-18T12:53:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>上海 Sr. Software Engineer，C#/Java</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>上海 Sr. Software Engineer，C#/Java</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://tangent617.github.io/post-images/1779169941759.GIF" alt="牢马镇楼" loading="lazy"></figure>
+<h1 id="笔试">笔试</h1>
+<p>是英语题目，且给的平台Codility加载有点慢。</p>
+<h2 id="数据库">数据库</h2>
+<p>给两个表，一个是题目和分数，另一个是提交的题目、结果是否正确。取出每一个题目提交的次数、正确的次数、得的总分，按得分从大到小、如果相同按题目字典序</p>
+<pre><code class="language-SQL">select test_groups.name as name,
+count(*) as all_test_cases,
+count(if(test_cases.status=&quot;OK&quot;, 1, 0)) as passed_test_cases,
+sum(if(test_cases.status=&quot;OK&quot;, test_cases.test_value, 0)) as total_value
+from test_groups left join test_cases
+on test_groups.name = test_cases.group_name
+group by test_groups.name
+order by total_value desc, name
+</code></pre>
+<p>只有PostgreSQL和SQLite，但是我只熟悉mySQL有点难办。</p>
+<h2 id="字符串">字符串</h2>
+<p>给一个字符串，问最多可以插入多少个a，使其不会出现连续3个a。如果给的字符串已经有aaa则返回-1。</p>
+<p>遍历，出现a则tmp++，不是a则ans += 2 - tmp，tmp &gt;= 3返回-1。</p>
+<h2 id="前缀和">前缀和</h2>
+<p>给一个数组，求所有和为0的子数组的数量。长度范围1e5，答案超过1e9返回-1。</p>
+<p>遍历求一个sum前缀和数组，将每个sum[i]保存在map里，如果sum[i]出现过则ans += map.get(sum[i]);并且对应的value++。</p>
+<hr>
+<figure data-type="image" tabindex="2"><img src="https://tangent617.github.io/post-images/1779110716420.png" alt="一点建议" loading="lazy"></figure>
+<h1 id="一面">一面</h1>
+<p>主要聊项目</p>
+<p>英语自我介绍</p>
+<h1 id="二面">二面</h1>
+<p>英语自我介绍</p>
+<p>英语问有没用过微服务</p>
+<p>DRM用什么实现的</p>
+<p>api是用什么框架发布的</p>
+<p>抽象类和接口区别</p>
+<hr>
+<p>二面挂</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[上交所社招]]></title>
+        <id>https://tangent617.github.io/post/shanghai-stock-exchange-interview/</id>
+        <link href="https://tangent617.github.io/post/shanghai-stock-exchange-interview/">
+        </link>
+        <updated>2026-05-15T14:25:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>先做了笔试，面试还没给消息。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>先做了笔试，面试还没给消息。</p>
+<!-- more -->
+<h1 id="笔试">笔试</h1>
+<h2 id="技术">技术</h2>
+<p>C/C++, Java，计网，进程线程等基础知识；</p>
+<p>编程题特别简单，最难的是一道找数组最大值；</p>
+<h2 id="思想政治">思想政治</h2>
+<p>智力题、图片找规律、近义词填空、逻辑题，有难度；</p>
+<p>材料分析题很简单，在文章中找到对应的数字即可；</p>
+<p>政治类包含一些比较近期的内容，比如20届四中全会的内容、抗战开始时间是77事变还是918事变（我上学的时候还是讲的8年抗战【我还是东北人诶？】，后来好像改成14年了）、新质生产力（根本没听过这个词），毕业之后多年没看过这些内容的话需要注意下。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[XTransfer社招面经]]></title>
+        <id>https://tangent617.github.io/post/xtransfer-interview/</id>
+        <link href="https://tangent617.github.io/post/xtransfer-interview/">
+        </link>
+        <updated>2026-05-13T09:16:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>昨天面的乒乓智能就问项目了，所以没写。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>昨天面的乒乓智能就问项目了，所以没写。</p>
+<!-- more -->
+<h1 id="一面">一面</h1>
+<h2 id="项目">项目</h2>
+<p>如何实现控制的切流</p>
+<h2 id="八股">八股</h2>
+<p>Threadlocal线程池</p>
+<h2 id="代码">代码</h2>
+<h3 id="伪代码">伪代码</h3>
+<pre><code class="language-java">transactionTemplate.execute(
+            select * from tableA where biz_id = 123 for update;(biz_id 是UK)
+
+    B b = select * from tableB where instruction_id = 456 and biz_id =123);
+    if(b == null){
+        insert tableB
+    }
+</code></pre>
+<p>对于mysql 在RR和RC 下，如果tableA biz_id = 123不存在，会重复插入tableB吗，tableB  instruction_id = 456 and biz_id 没有UK</p>
+<h3 id="leetcode">leetcode</h3>
+<p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/">236. 二叉树的最近公共祖先</a></p>
+<p>思路：</p>
+<ol>
+<li>先从根节点开始，dfs扫一遍全图把父结节保存到HashMap</li>
+<li>从节点p开始往上找，一路打标记</li>
+<li>从节点q往上找，找到的第一个带标记的节点就是答案</li>
+</ol>
+<pre><code class="language-java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    Map&lt;TreeNode, TreeNode&gt; fa = new HashMap&lt;&gt;();
+    public void dfs(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        if (root.left != null) {
+            fa.put(root.left, root);
+            dfs(root.left);
+        }
+        if (root.right != null) {
+            fa.put(root.right, root);
+            dfs(root.right);
+        }
+    }
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        dfs(root);
+        Map&lt;TreeNode, Boolean&gt; vis = new HashMap&lt;&gt;();
+        while (p != null) {
+            vis.put(p, true); 
+            p = fa.get(p);
+        }
+        while (q != null) {
+            if (vis.get(q) != null &amp;&amp; vis.get(q) == true) {
+                return q;
+            }
+            q = fa.get(q);
+        }
+        return root;
+    }
+}
+</code></pre>
+<h1 id="二面">二面</h1>
+<h2 id="项目-2">项目</h2>
+<p>主管的评价，优点和缺点</p>
+<h2 id="八股-2">八股</h2>
+<p>String StringBuffer StringBuilder 区别</p>
+<p>Java有哪些异常基类</p>
+<p>反射</p>
+<p>MQ是否有序</p>
+<p>Spring事务</p>
+<p>OM如何优化</p>
+<h2 id="代码-2">代码</h2>
+<p>多线程生产者、消费者</p>
+<hr>
+<p>太恐怖了这个，一面就很难顶了，二面比一面还恐怖</p>
+]]></content>
+    </entry>
+</feed>
